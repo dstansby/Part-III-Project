@@ -1,0 +1,36 @@
+\begin{thebibliography}{6}
+\providecommand\natexlab[1]{#1}
+\providecommand\JournalTitle[1]{#1}
+
+\bibitem[{Deguen \& Cardin(2009)}]{Deguen2009a}
+Deguen, R., \& Cardin, P. 2009,
+  \href{http://dx.doi.org/10.1038/ngeo522}{\JournalTitle{Nature Geoscience}, 2,
+  419}
+
+\bibitem[{Deuss(2014)}]{Deuss2014}
+Deuss, A. 2014,
+  \href{http://dx.doi.org/10.1146/annurev-earth-060313-054658}{\JournalTitle{Annual
+  Review of Earth and Planetary Sciences}, 42, 103}
+
+\bibitem[{Kennett {et~al.}(1995)Kennett, Engdahl, \& Buland}]{Kennett1995}
+Kennett, B. L.~N., Engdahl, E.~R., \& Buland, R. 1995,
+  \href{http://dx.doi.org/10.1111/j.1365-246X.1995.tb03540.x}{\JournalTitle{Geophysical
+  Journal International}, 122, 108}
+
+\bibitem[{Nissen-Meyer {et~al.}(2014)Nissen-Meyer, van Driel, St\"{a}hler,
+  Hosseini, Hempel, Auer, Colombi, \& Fournier}]{Nissen-Meyer2014}
+Nissen-Meyer, T., van Driel, M., St\"{a}hler, S.~C., {et~al.} 2014,
+  \href{http://dx.doi.org/10.5194/se-5-425-2014}{\JournalTitle{Solid Earth}, 5,
+  425}
+
+\bibitem[{Waszek \& Deuss(2011)}]{Waszek2011a}
+Waszek, L., \& Deuss, A. 2011,
+  \href{http://dx.doi.org/10.1029/2011JB008650}{\JournalTitle{Journal of
+  Geophysical Research}, 116, B12313}
+
+\bibitem[{Waszek {et~al.}(2011)Waszek, Irving, \& Deuss}]{Waszek2011b}
+Waszek, L., Irving, J., \& Deuss, A. 2011,
+  \href{http://dx.doi.org/10.1038/ngeo1083}{\JournalTitle{Nature Geoscience},
+  4, 264}
+
+\end{thebibliography}

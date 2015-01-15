@@ -1,0 +1,47 @@
+This is BibTeX, Version 0.99d (TeX Live 2014)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: Project Summary.aux
+The style file: yahapj.bst
+Database file #1: /Users/dstansby/Physics/Papers/library.bib
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+You've used 6 entries,
+            3220 wiz_defined-function locations,
+            714 strings with 6243 characters,
+and the built_in function-call counts, 3133 in all, are:
+= -- 272
+> -- 174
+< -- 3
++ -- 74
+- -- 62
+* -- 260
+:= -- 542
+add.period$ -- 6
+call.type$ -- 6
+change.case$ -- 43
+chr.to.int$ -- 6
+cite$ -- 6
+duplicate$ -- 172
+empty$ -- 214
+format.name$ -- 73
+if$ -- 637
+int.to.chr$ -- 1
+int.to.str$ -- 1
+missing$ -- 6
+newline$ -- 23
+num.names$ -- 24
+pop$ -- 70
+preamble$ -- 1
+purify$ -- 43
+quote$ -- 0
+skip$ -- 98
+stack$ -- 0
+substring$ -- 162
+swap$ -- 6
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 54
+warning$ -- 0
+while$ -- 30
+width$ -- 0
+write$ -- 64
