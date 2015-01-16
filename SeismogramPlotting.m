@@ -8,19 +8,15 @@ t = 60*3;	% Length of trace in seconds
 % Create sample titmes
 sampletimes = linspace(mytraceZ.startTime,mytraceZ.endTime,mytraceZ.sampleCount)';
 
-% Convert the time series to seconds since start of event
-secondtimes = sampletimes - sampletimes(1);
-secondtimes = secondtimes*(t/secondtimes(end));
-
 % Create data
-dataZ(:,1) = secondtimes;
+dataZ(:,1) = sampletimes;
 dataZ(:,2) = mytraceZ.data;
 
-dt = t/size(secondtimes,1);	% Sampling rate
+dt = t/size(sampletimes,1);	% Sampling rate
 fNyq = 1/(2*dt);	% Maximum frequency for wavelet transform
 fMin = 100/(2*t);		% Minimum frequency for wavelet transform
 
-clear sampletimes secondtimes mytraceZ;
+%clear sampletimes secondtimes mytraceZ;
 %% Band pass data
 x = [0.7 2];    % Filter between 0.7Hz and 2Hz
 
@@ -61,11 +57,17 @@ ylabel('log10(Frequency /Hz')
 figure;
 subplot(2,1,1);
 plot(FilterdataZ(:,1),FilterdataZ(:,2));
+title('Filtered data');
+datetick;
 
 subplot(2,1,2);
 plot(dataZ(:,1),dataZ(:,2));
-
+title('Original data');
+datetick;
 %% Plot power spectra
 power = psdchc(dataZ, 1, 1);
 figure;
 plot(log10(power(:,1)),log10(power(:,2)));
+xlabel('log10(Freq /Hz)');
+ylabel('Power');
+datetick;
