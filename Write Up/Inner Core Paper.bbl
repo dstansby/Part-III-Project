@@ -1,5 +1,21 @@
-\begin{thebibliography}{0}
+\begin{thebibliography}{3}
 \providecommand\natexlab[1]{#1}
 \providecommand\JournalTitle[1]{#1}
+
+\bibitem[{Nissen-Meyer {et~al.}(2014)Nissen-Meyer, van Driel, St\"{a}hler,
+  Hosseini, Hempel, Auer, Colombi, \& Fournier}]{Nissen-Meyer2014}
+Nissen-Meyer, T., van Driel, M., St\"{a}hler, S.~C., {et~al.} 2014,
+  \href{http://dx.doi.org/10.5194/se-5-425-2014}{\JournalTitle{Solid Earth}, 5,
+  425}
+
+\bibitem[{Waszek \& Deuss(2011)}]{Waszek2011a}
+Waszek, L., \& Deuss, A. 2011,
+  \href{http://dx.doi.org/10.1029/2011JB008650}{\JournalTitle{Journal of
+  Geophysical Research}, 116, B12313}
+
+\bibitem[{Waszek \& Deuss(2013)}]{Waszek2013a}
+---. 2013,
+  \href{http://dx.doi.org/10.1093/gji/ggt368}{\JournalTitle{Geophysical Journal
+  International}, 195, 2005}
 
 \end{thebibliography}

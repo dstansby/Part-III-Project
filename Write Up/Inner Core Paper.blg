@@ -2,48 +2,46 @@ This is BibTeX, Version 0.99d (TeX Live 2014)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: Inner Core Paper.aux
 The style file: yahapj.bst
-I found no \citation commands---while reading file Inner Core Paper.aux
 Database file #1: /Users/dstansby/Physics/Papers/library.bib
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
-You've used 0 entries,
+You've used 3 entries,
             3220 wiz_defined-function locations,
-            654 strings with 4448 characters,
-and the built_in function-call counts, 25 in all, are:
-= -- 0
-> -- 0
-< -- 0
-+ -- 0
-- -- 0
-* -- 2
-:= -- 8
-add.period$ -- 0
-call.type$ -- 0
-change.case$ -- 0
-chr.to.int$ -- 0
-cite$ -- 0
-duplicate$ -- 0
-empty$ -- 1
-format.name$ -- 0
-if$ -- 1
+            685 strings with 5330 characters,
+and the built_in function-call counts, 1724 in all, are:
+= -- 149
+> -- 102
+< -- 2
++ -- 45
+- -- 37
+* -- 145
+:= -- 297
+add.period$ -- 3
+call.type$ -- 3
+change.case$ -- 24
+chr.to.int$ -- 3
+cite$ -- 3
+duplicate$ -- 92
+empty$ -- 110
+format.name$ -- 45
+if$ -- 347
 int.to.chr$ -- 1
 int.to.str$ -- 1
-missing$ -- 0
-newline$ -- 5
-num.names$ -- 0
-pop$ -- 0
+missing$ -- 3
+newline$ -- 14
+num.names$ -- 12
+pop$ -- 38
 preamble$ -- 1
-purify$ -- 0
+purify$ -- 24
 quote$ -- 0
-skip$ -- 1
+skip$ -- 53
 stack$ -- 0
-substring$ -- 0
-swap$ -- 0
+substring$ -- 91
+swap$ -- 3
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 0
+type$ -- 27
 warning$ -- 0
-while$ -- 0
+while$ -- 15
 width$ -- 0
-write$ -- 4
-(There was 1 error message)
+write$ -- 34
