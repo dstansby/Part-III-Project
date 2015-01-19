@@ -4,6 +4,7 @@
 \usepackage[breaklinks,colorlinks,urlcolor=blue,citecolor=blue,linkcolor=blue]{hyperref} 	% Hyperlinks everywhere!
 \usepackage{natbib}		% Include bibliography
 \usepackage{graphicx}	% Include pictures
+\usepackage{amsmath}	% Use \eqref
 
 \begin{document}
 
@@ -18,7 +19,23 @@ Since its discovery in 1936, the Earth's inner core has been well documented by 
 \newpage
 \section{Introduction}
 
+\section{Theoretical Background}
+This project centres around using seismic body wave analysis in order to investigate the velocity structure of the upper inner core. These are elastic waves, caused by earthquakes, that travel through the interior of the Earth. Under the assumptions of a continuous, linearly elastic medium, infinitesimal strains and a locally uniform medium one can derive the elastic wave equation\footnote{This section is essentially summarised from \cite{Shearer2009}}
+\begin{equation}
+	\rho \frac{\partial^{2} \vec{u}}{\partial t^{2}} = \left ( \lambda + \mu \right ) \nabla \left ( \nabla \cdot \vec{u} \right ) + \mu \nabla^{2} \vec{u}
+	\label{eq:Wave Equation}
+\end{equation}
+where u is the displacement vector, $\rho$ the density of the medium and $\lambda$ and $\mu$  Lam\'{e} parameters of the medium. A general displacement vector can be decomposed into a irrotational scalar and solenoidal vector potentials such that
+\begin{equation}
+	u = \nabla \phi + \nabla \times \vec{\psi}
+	\label{eq:Displacement}
+\end{equation}
 
+Substituting \eqref{eq:Displacement} in to \eqref{eq:Wave Equation} yields two independent wave equations, one for $\phi$ and one for $\vec{\psi}$, which describe P-waves and S-waves respectively. P-waves are compressional with motion occurring parallel to the wave vector, whereas S-waves are transverse with motion occurring perpendicular to the wave vector.
+
+RAY THEORY HERE
+
+Because the outer core is liquid with $\mu \approx 0$ and thus does not transmit S-waves, it is P-waves that are used to sample the inner core.
 
 \section{Papers}
 \begin{itemize}
