@@ -22,7 +22,7 @@ Since its discovery in 1936, the Earth's inner core has been well documented by 
 \section{Introduction}
 
 \section{Theoretical Background}
-This project centres around using seismic body wave analysis in order to investigate the velocity structure of the upper inner core. These are elastic waves, caused by earthquakes, that travel through the interior of the Earth. Under the assumptions of a continuous, linearly elastic medium, infinitesimal strains and a locally uniform medium one can derive the elastic wave equation\footnote{This section is essentially summarised from \cite{Shearer2009}}
+This project centres around using seismic body wave analysis in order to investigate the velocity structure of the upper inner core. These are elastic waves, caused by earthquakes, that travel through the interior of the Earth. Under the assumptions of a continuous, linearly elastic medium, infinitesimal strains and constant medium properties one can derive the elastic wave equation\footnote{This section is essentially summarised from \cite{Shearer2009}}
 \begin{equation}
 	\rho \frac{\partial^{2} \vec{u}}{\partial t^{2}} = \left ( \lambda + \mu \right ) \nabla \left ( \nabla \cdot \vec{u} \right ) + \mu \nabla^{2} \vec{u}
 	\label{eq:Wave Equation}
@@ -32,10 +32,16 @@ where u is the displacement vector, $\rho$ the density of the medium and $\lambd
 	u = \nabla \phi + \nabla \times \vec{\psi}
 	\label{eq:Displacement}
 \end{equation}
+Solving this equation can be achieved for high-frequency waves, or rays, yielding the Eikonal equation which describes how the rays propagate through a given velocity field. This high frequency ray approximation is valid for $\delta \left ( \Delta c \left ( \vec{x} \right ) \right ) \ll c \left ( \vec{x} \right )$.
 
-Substituting \eqref{eq:Displacement} in to \eqref{eq:Wave Equation} yields two independent wave equations, one for $\phi$ and one for $\vec{\psi}$, which describe P-waves and S-waves respectively. P-waves are compressional with motion occurring parallel to the wave vector, whereas S-waves are transverse with motion occurring perpendicular to the wave vector.
+Substituting \eqref{eq:Displacement} in to \eqref{eq:Wave Equation} yields two independent wave equations, one for $\phi$ and one for $\vec{\psi}$, which describe P-waves and S-waves respectively. These equations have different but constant phase velocities. P-waves are compressional with motion occurring parallel to the wave vector, whereas S-waves are transverse with motion occurring perpendicular to the wave vector.
 
-RAY THEORY HERE
+In general we cannot make the assumption that the medium has constant parameters; this certainly is not the case for the Earth! To take varying properties into account the constant phase velocity wave equation can be generalised to have a position dependant velocity
+\begin{equation}
+	\frac{\partial^{2} \phi}{\partial t^{2}} = c^{2} \left ( \vec{x} \right ) \nabla^{2} \phi
+\end{equation}
+the condition for this approximation to be valid is 
+
 
 Because the outer core is liquid with $\mu \approx 0$ and thus does not transmit S-waves, it is P-waves that are used to sample the inner core.
 
