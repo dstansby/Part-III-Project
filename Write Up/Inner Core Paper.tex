@@ -1,5 +1,5 @@
 \documentclass[11pt,a4paper]{article}
-\usepackage{fullpage}	% Bigger pages
+%\usepackage{fullpage}	% Bigger pages
 \usepackage{cite} 		% Include citations
 \usepackage{hyperref} 	% Hyperlinks everywhere!
 \usepackage{natbib}		% Include bibliography
@@ -20,43 +20,132 @@ Since its discovery in 1936, the Earth's inner core has been well documented by 
 
 \newpage
 \section{Introduction}
+The inner core was first discovered by Inge Lehmann in 1936, who used the existence of P wave arrivals within the P wave shadow zone to infer a solid-liquid boundary lying within the core mantle boundary (\cite{Lehmann}). Over the following 80 years large progress has been made on measuring the properties of the inner core, but there is much still to learn.
 
+Of particular interest is the velocity and attenuation structure, which can be used to infer the chemical and physical properties of the inner core's constituent material. \cite{Deuss2014} gives a comprehensive review of the current state of research into this area. Current research shows that the inner core is split into two hemispheres, a western and an eastern one, each of which have differing attenuation and anisotropy properties (\cite{Waszek2011a}, \cite{Waszek2013a}). READ PAPERS AND SUMMARISE DIFFERENCES.
+
+The upper inner core is of particular interest, as material from the outer core is currently freezing onto it at a rate of around 1mm/year. Modelling performed by \cite{Deguen2009a} shows that the velocity structure of the upper inner core should reflect recent processes in the lower upper core, and thus determine the WHAT history of the outer core. This in turn could give insights into areas such as how the outer core generates the Earth's magnetic field AND. 
+
+So far only large scale velocity structures have been measured, with the most recent velocity models BEING VERY COARSE GRAINED. In addition it is not clear what the limits of the methodology used here and elsewhere is to measuring the velocity structure, specifically what is the minimum depth below the inner core boundary this method can be used to resolve. In this paper we take individual earthquakes that travel to multiple seismic stations in an attempt to measure the velocity structure on the order of PUT REGION SIZE HERE. We constrain our analysis to the uppermost inner core as far as is possible, and area not yet investigated in published literature.
+
+Section \ref{sec:Theory} gives an brief theoretical background, with section \ref{sec:Data} describes our data collection and pre-processing. Waveform analysis is discussed in section \ref{sec:Waveforms} leading to regional velocity model results presented in section \ref{sec:Models}.
+
+%%%
 \section{Theoretical Background}
-This project centres around using seismic body wave analysis in order to investigate the velocity structure of the upper inner core. These are elastic waves, caused by earthquakes, that travel through the interior of the Earth. Under the assumptions of a continuous, linearly elastic medium, infinitesimal strains and constant medium properties one can derive the elastic wave equation\footnote{This section is essentially summarised from \cite{Shearer2009}}
+\label{sec:Theory}
+We use seismic body wave analysis in order to investigate the velocity structure of the upper inner core. These waves elastic waves, caused by earthquakes, that travel through the interior of the Earth. Below we summarise the main aspects of seismic body wave theory; for a more comprehensive review the reader is referred to \cite{Shearer2009}.
+
+\subsection{Body Wave Theory}
+Under the assumptions of a continuous, linearly elastic medium, infinitesimal strains and constant medium properties one can derive the elastic wave equation
 \begin{equation}
 	\rho \frac{\partial^{2} \vec{u}}{\partial t^{2}} = \left ( \lambda + \mu \right ) \nabla \left ( \nabla \cdot \vec{u} \right ) + \mu \nabla^{2} \vec{u}
 	\label{eq:Wave Equation}
 \end{equation}
-where u is the displacement vector, $\rho$ the density of the medium and $\lambda$ and $\mu$  Lam\'{e} parameters of the medium. A general displacement vector can be decomposed into a irrotational scalar and solenoidal vector potentials such that
+where u is the displacement vector, $\rho$ the density of the medium and $\lambda$ and $\mu$  Lam\'{e} parameters of the medium. A general displacement vector can be decomposed into irrotational scalar and solenoidal vector potentials such that
 \begin{equation}
-	u = \nabla \phi + \nabla \times \vec{\psi}
+	u \equiv \nabla \phi + \nabla \times \vec{\psi}
 	\label{eq:Displacement}
 \end{equation}
-Solving this equation can be achieved for high-frequency waves, or rays, yielding the Eikonal equation which describes how the rays propagate through a given velocity field. This high frequency ray approximation is valid for $\delta \left ( \Delta c \left ( \vec{x} \right ) \right ) \ll c \left ( \vec{x} \right )$.
+In the high frequency limit\footnote{ The high frequency ray approximation is valid for $\delta \left ( \Delta c \left ( \vec{x} \right ) \right ) \ll c \left ( \vec{x} \right )$} equation \eqref{eq:Wave Equation} yields the Eikonal equation which describes how the rays propagate through a given velocity field.
 
-Substituting \eqref{eq:Displacement} in to \eqref{eq:Wave Equation} yields two independent wave equations, one for $\phi$ and one for $\vec{\psi}$, which describe P-waves and S-waves respectively. These equations have different but constant phase velocities. P-waves are compressional with motion occurring parallel to the wave vector, whereas S-waves are transverse with motion occurring perpendicular to the wave vector.
+Substituting \eqref{eq:Displacement} in to \eqref{eq:Wave Equation} yields two independent wave equations, one for $\phi$ and one for $\vec{\psi}$, which describe P-waves and S-waves respectively. P-waves are compressional with motion occurring parallel to the wave vector, whereas S-waves are transverse with motion occurring perpendicular to the wave vector.
 
-In general we cannot make the assumption that the medium has constant parameters; this certainly is not the case for the Earth! To take varying properties into account the constant phase velocity wave equation can be generalised to have a position dependant velocity
+In general we cannot make the assumption that the medium has constant parameters; this certainly is not the case for the Earth! To take varying properties into account a constant phase velocity wave equation can be generalised to have a position dependant velocity
 \begin{equation}
 	\frac{\partial^{2} \phi}{\partial t^{2}} = c^{2} \left ( \vec{x} \right ) \nabla^{2} \phi
 \end{equation}
-the condition for this approximation to be valid is 
-
 
 Because the outer core is liquid with $\mu \approx 0$ and thus does not transmit S-waves, it is P-waves that are used to sample the inner core.
 
-\section{Papers}
-\begin{itemize}
-	\item \cite{Nissen-Meyer2014} - Describes the AxiSEM waveform modelling software. Discusses the need for full waveform modelling, and the computational constraints that AxiSEM overcomes.
+\subsection{Sampling the Inner Core}
+The velocity structure of the inner core is measured using arrival times for PKIKP and PKiKP phases. Figure PUT FIGURE HERE shows the ray path for each phase; they travel almost identical paths through the Crust, Mantle and upper Outer Core, after which PKIKP reflects off the Inner Core boundary, whereas PKiKP travels just underneath the boundary in the Inner Core CHECK ME. This means that any difference in arrival times of the two phases depends only on the upper Inner Core velocity structure, which is what we seek to measure here.
 
-	\item \cite{Waszek2013a} - Calculate attenuation properties, after taking into account velocity structure from \cite{Waszek2011a}.
+All measurements are compared to the radially symmetric AK135 global velocity model (\cite{Kennett1995b}), from which we seek to measure perturbations about. The residual travel time CHECK ME is defined after \cite{Waszek2011a} as
+\begin{equation}
+	\delta t = \left ( t_{PKiKP} - t_{PKIKP} \right )_{model} -  \left ( t_{PKiKP} - t_{PKIKP} \right )_{observed}
+\end{equation}
+This equation can be reformulated as an integral along the ray paths
+\begin{equation}
+		\delta t = \left (  \int \frac{1}{v_{model}} - \frac{1}{v_{obs}} ds  \right )_{PKiKP} - \left (  \int \frac{1}{v_{model}} - \frac{1}{v_{obs}} ds  \right )_{PKIKP}
+\end{equation}
+where the path to be integrated along is indicated by the subscript outside the brackets, and in general the velocities vary as a function of position.
+
+INSERT OUTER CORE VISCOSITY ARGUMENT HERE
+
+Additionally taking $v_{obs} = v_{model} + \delta v$ gives
+\begin{equation}
+	\delta t = \int \frac{\delta v}{v^{2}_{model}} ds
+\end{equation}
+
+For depths below the Inner Core boundary of less than 50km $v_{model}$ is constant and we assume $\delta v$ is also a constant such that we are measuring only the average velocity perturbation along the ray path. We are thus left with the equation that will allow us to compute $\delta v$
+\begin{equation}
+	\delta v = \frac{\delta t}{t} v_{model}
+\end{equation}
+where $t$ is the PKiKP arrival time predicted by the model.
+\section{Data Selection}
+
+We present regional velocity models, derived from INSERT NUMBER HERE earthquakes. These earthquakes were specifically selected to meet the following criteria:
+
 \begin{itemize}
-	\item Large enough earthquakes to provide visible signal.
-	\item Deep enough to prevent surface reflection interference.
-	\item Filter from 0.7 Hz to 2 Hz.
+	\item An epicentral distance of $115^{\circ}$ - $135^{\circ}$ from the earthquake covers the majority of North America, where there is the highest worldwide density of seismograms.
+	\item Depths greater than 15km, to minimise possible interference between PKIKP (PKiKP) and pPKIKP (pPKiKP) waves.
+	\item Magnitude greater than 5.3 and less than 6.3 to ensure a large enough earthquake to produce an observable signal, whilst a small enough earthquake such that the rupture mechanism is likely to be impulsive.
 \end{itemize}
 
-\end{itemize}
+Each seismogram is filtered between 0.7Hz - 2Hz in order to focus on the expected frequency of $\sim$1Hz whilst removing unnecessary noise. Individual seismograms were checked by hand, and only those showing a clear PKiKP signal near the predicted arrival time are kept for further analysis.
+
+%%%
+\section{Waveform Analysis}
+\label{sec:Waveforms}
+The same analysis was performed on each individual event, allowing construction of a detailed velocity model for several CHANGE ME regions. Here we describe the analysis performed using the specific example of the Celebes Sea earthquake that occurred on 2014/04/16.\footnote{For a complete listing of all events and associated parameters see Appendix \ref{App:Event listing}.}
+
+Synthetic waveforms are computed using the WKBJ ray tracing program (\cite{Chapman1976}), and predicted ray paths and travel times computed using the TauP toolkit (\cite{Crotwell1999}). Initial plots are shown for both real and synthetic data in figures \ref{fig:Real nonaligned} and \ref{fig:Synth nonaligned} respectively, with zero time occurring at the time of the earthquake, taken from the global CMT catalogue (\cite{Dziewonski1981}, \cite{Alboussiere2012}). Overplotted are theoretical PKIKP and PKiKP travel times computed using the AK135 model (\cite{Kennett1995b}). The predicted travel times agree well with the data in both cases. For shorter epicentral distances the predicted arrival time become closer, suggesting that eventually there will be a minimum distance at which the two phases will be observable. In the next subsection we attempt to quantify this minimum distance.
+
+\begin{figure}
+	\includegraphics[width=\textwidth]{figures/celebessea_real.pdf}
+	\caption{Real seismogram data from the Celebes Sea event after clear event selection. Each seismogram is zeroed on the earthquake time. Over plotted lines show theoretical phase arrivals computed using the AK135 model. A clear signal is seen near the expected arrival time.}
+	\label{fig:Real nonaligned}
+\end{figure}
+
+\begin{figure}
+	\includegraphics[width=\textwidth]{figures/celebessea_synthetic_both.pdf}
+	\caption{Synthetic seismogram data for the Celebes Sea event.. Each seismogram is zeroed on the earthquake time. Over plotted lines show theoretical phase arrivals computed using the AK135 model. The synthetic data is in broad agreement with figure \ref{fig:Synth nonaligned}.}
+	\label{fig:Synth nonaligned}
+\end{figure}
+
+\subsection{Quantifying minimum resolvable depth}
+In order to see more clearly the contributions of the individual phases to the overall seismogram we plot individual PKIKP and PKiKP synthetics, and align them to the final large upswing of the PKiKP phase. Figure \ref{fig:Synth aligned} shows the results of this analysis. At smaller epicentral distances PKIKP gets weaker and PKiKP develops a large upswing to the left. Both of these features could mean that when measuring the peak to peak difference at low distances on the combined seismogram (or equivalently the real data) we are measuring two features of PKiKP and not one feature from each phase. This criterial will be met either when PKIKP differences are larger than combined differences, or when PKiKP and combined differences coincide.
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.49\textwidth]{figures/celebessea_KIK_aligned}
+	\includegraphics[width=0.49\textwidth]{figures/celebessea_pkikp_aligned}
+	\includegraphics[width=0.49\textwidth]{figures/celebessea_both_aligned}
+	\caption{Separated PKIKP (top left) PKiKP (top right), and combined (bottom) synthetic seismograms for the Celebes Sea event. At distances below  $\sim125^{\circ}$ the combined waveform is dominated by the PKiKP waveform, and thus it is impossible to detect the arrival of PKIKP.}
+	\label{fig:Synth aligned}
+\end{figure}
+
+Figure \ref{fig:Min distance} shows measurements of peak to peak differences for PKiKP, PKIKP and combined synthetic waveforms. It can be clearly seen that below $126^{\circ}$ PKiKP and combined measurements coincide, thus setting $126^{\circ}$ as the maximum epicentral distance at which the two phases can be distinguished.
+
+\begin{figure}
+	\centering
+	\includegraphics[width=\textwidth]{figures/min_distance}
+	\caption{Peak to peak travel times recorded from synthetic data generated for the Celebes Sea earthquake. PKIKP measurements cross combined measurements at $124^{\circ}$, and PKiKP measurements coincide with combined measurements below $126^{\circ}$. The larger of these two sets a minimum distance at which we can make reliable PKiKP - PKIKP residual travel time measurements.}
+	\label{fig:Min distance}
+\end{figure}
+
+\section{Updated velocity models}
+\label{sec:Models}
+
+\appendix
+\section{Event Listing}
+\label{App:Event listing}
+\begin{tabular}{| l | l | l | l | l | l |}
+	\hline Location		& Latitude	& Longitude	& Depth /km	& Date		& Time (GMT) \\
+	\hline Celebes Sea	& 4.55	& 122.82		& 575.0		& 2014/04/16	& 4:28:20.0 \\ 
+	\hline
+\end{tabular}
+
 % Bibliography
 \bibliographystyle{yahapj}
 \bibliography{/Users/dstansby/Physics/Papers/library}
