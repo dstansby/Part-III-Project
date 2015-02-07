@@ -18,15 +18,23 @@ Idata = Idata';
 
 Idata = Idata((Idata(:,1) < 128),:);
 
-errboth = 0.01*ones([size(bothdata,1) 1]);
-erri = 0.01*ones([size(idata,1) 1]);
-errI = 0.01*ones([size(Idata,1) 1]);
+% errboth = 0.01*ones([size(bothdata,1) 1]);
+% erri = 0.01*ones([size(idata,1) 1]);
+% errI = 0.01*ones([size(Idata,1) 1]);
+% 
+% % Colours
+% bcol = [0 1 1];
+% icol = [1 0 0];
+% Icol = [0 1 0];
 
 figure;
 hold on;
-herrorbar(bothdata(:,2),bothdata(:,1),errboth,'+');
-herrorbar(idata(:,2),idata(:,1),erri,'+');
-herrorbar(Idata(:,2),Idata(:,1),errI,'+');
+bhan = scatter(bothdata(:,2),bothdata(:,1),'+');
+ihan = scatter(idata(:,2),idata(:,1),'+');
+Ihan = scatter(Idata(:,2),Idata(:,1),'+');
+
+% herrorbar(bothdata(:,2),bothdata(:,1),errboth,bcol);
+% herrorbar(idata(:,2),idata(:,1),erri,icol);
 
 leg = legend('Combined', 'PKIKP', 'PKiKP');
 leg.FontSize = 12;
