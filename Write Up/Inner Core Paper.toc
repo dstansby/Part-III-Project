@@ -5,5 +5,5 @@
 \contentsline {section}{\numberline {3}Data Selection}{4}{section.3}
 \contentsline {section}{\numberline {4}Waveform Analysis}{5}{section.4}
 \contentsline {subsection}{\numberline {4.1}Quantifying minimum resolvable depth}{5}{subsection.4.1}
-\contentsline {section}{\numberline {5}Updated velocity models}{10}{section.5}
-\contentsline {section}{\numberline {A}Event Listing}{10}{appendix.A}
+\contentsline {section}{\numberline {5}Updated velocity models}{8}{section.5}
+\contentsline {section}{\numberline {A}Event Listing}{8}{appendix.A}

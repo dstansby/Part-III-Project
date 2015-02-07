@@ -1,4 +1,4 @@
-\begin{thebibliography}{11}
+\begin{thebibliography}{12}
 \providecommand\natexlab[1]{#1}
 \providecommand\JournalTitle[1]{#1}
 
@@ -16,6 +16,11 @@ Chapman, C.~H. 1976,
 Crotwell, H.~P., Owens, T.~J., \& Ritsema, J. 1999,
   \href{http://dx.doi.org/10.1785/gssrl.70.2.154}{\JournalTitle{Seismological
   Research Letters}, 70, 154}
+
+\bibitem[{de~Wijs {et~al.}(1998)de~Wijs, Kresse, Vocadlo, Dobson, Alfe, Gillan,
+  \& Price}]{Wijs1998}
+de~Wijs, G.~A., Kresse, G., Vocadlo, L., {et~al.} 1998,
+  \href{http://dx.doi.org/10.1038/33905}{\JournalTitle{Nature}, 392, 805}
 
 \bibitem[{Deguen \& Cardin(2009)}]{Deguen2009a}
 Deguen, R., \& Cardin, P. 2009,

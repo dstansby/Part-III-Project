@@ -66,13 +66,14 @@ All measurements are compared to the radially symmetric AK135 global velocity mo
 \end{equation}
 This equation can be reformulated as an integral along the ray paths
 \begin{equation}
-		\delta t = \left (  \int \frac{1}{v_{model}} - \frac{1}{v_{obs}} ds  \right )_{PKiKP} - \left (  \int \frac{1}{v_{model}} - \frac{1}{v_{obs}} ds  \right )_{PKIKP}
+		\delta t = \left (  \int \frac{1}{v_{model}} - \frac{1}{v_{obs}} ds  \right )_{PKiKP} - \left (  \int \frac{1}{v_{model}} - \frac{1}{v_{obs}} ds \right )_{PKIKP}
+		\label{eq:deltat}
 \end{equation}
 where the path to be integrated along is indicated by the subscript outside the brackets, and in general the velocities vary as a function of position.
 
-INSERT OUTER CORE VISCOSITY ARGUMENT HERE
+As the outer core has a low viscosity it is unable to support any large scale lateral heterogeneities (\cite{Wijs1998}). We therefore expect the velocity structure of the outer core to only depend on depth, and assume that the AK135 radial symmetric model is correct for the outer core. The second integral in equation \eqref{eq:deltat} then vanishes.
 
-Additionally taking $v_{obs} = v_{model} + \delta v$ gives
+Taking $v_{obs} = v_{model} + \delta v$ gives
 \begin{equation}
 	\delta t = \int \frac{\delta v}{v^{2}_{model}} ds
 \end{equation}

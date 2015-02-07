@@ -4,44 +4,44 @@ The top-level auxiliary file: Inner Core Paper.aux
 The style file: yahapj.bst
 Database file #1: /Users/dstansby/Physics/Papers/library.bib
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
-You've used 11 entries,
+You've used 12 entries,
             3220 wiz_defined-function locations,
-            759 strings with 7195 characters,
-and the built_in function-call counts, 5131 in all, are:
-= -- 450
-> -- 228
+            770 strings with 7574 characters,
+and the built_in function-call counts, 5786 in all, are:
+= -- 504
+> -- 281
 < -- 10
-+ -- 98
-- -- 73
-* -- 391
-:= -- 876
-add.period$ -- 11
-call.type$ -- 11
-change.case$ -- 67
-chr.to.int$ -- 17
-cite$ -- 11
-duplicate$ -- 304
-empty$ -- 400
-format.name$ -- 96
-if$ -- 1073
++ -- 119
+- -- 94
+* -- 452
+:= -- 994
+add.period$ -- 12
+call.type$ -- 12
+change.case$ -- 78
+chr.to.int$ -- 18
+cite$ -- 12
+duplicate$ -- 332
+empty$ -- 435
+format.name$ -- 117
+if$ -- 1201
 int.to.chr$ -- 1
 int.to.str$ -- 1
-missing$ -- 11
-newline$ -- 38
-num.names$ -- 44
-pop$ -- 111
+missing$ -- 12
+newline$ -- 41
+num.names$ -- 48
+pop$ -- 127
 preamble$ -- 1
-purify$ -- 65
+purify$ -- 76
 quote$ -- 0
-skip$ -- 186
+skip$ -- 201
 stack$ -- 0
-substring$ -- 281
-swap$ -- 12
+substring$ -- 306
+swap$ -- 13
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 96
+type$ -- 105
 warning$ -- 0
-while$ -- 54
+while$ -- 59
 width$ -- 0
-write$ -- 114
+write$ -- 124
