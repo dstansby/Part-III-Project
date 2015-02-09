@@ -37,12 +37,12 @@ end
 %% Find local gradients, and hence local means
 
 % Means stores Distance;Residual;Error in residual
-means(:,1) = (127:1:134)';
+means(:,1) = [127.5 ; 132.5];
 means(:,2:3) = zeros([size(means,1) 2]);
 for i = 1:size(means);
 	x = means(i,1);
 	% Find points in 2 degree range
-	toaverage = (resid(:,1) < x+1) & (resid(:,1) >= x-1);
+	toaverage = (resid(:,1) < x+2.5) & (resid(:,1) >= x-2.5);
 	toaverage = resid(toaverage,:);
 	% If we have too few points to fit a line to
 	if size(toaverage,1) <= 2
@@ -59,23 +59,37 @@ meanVerrs = 1*ones([size(means,1) 1]);
 
 %% Plot residuals
 figure;
-%subplot(1,2,1);
+subplot(1,2,1);
 hold on;
 scatter(resid(:,2),resid(:,1),'+');
-scatter(means(:,2),means(:,1),'o');
-ax = gca;
-herrorbar(resid(:,2),resid(:,1),residErr,ax.ColorOrder(1,:));
-herrorbar(means(:,2),means(:,1),means(:,3),ax.ColorOrder(2,:));
 
+ax1 = gca;
+herrorbar(resid(:,2),resid(:,1),residErr,ax1.ColorOrder(1,:));
 vline(0);
 
 % Plot formatting
-ax.YDir = 'reverse';
-ax.XAxisLocation = 'top';
+ax1.YDir = 'reverse';
+ax1.XAxisLocation = 'top';
 xlabel('\delta t /s');
 ylabel('Epicentral distance /^{\circ}');
-ax.FontSize = 14;
+ax1.FontSize = 14;
+title('Celebes Sea Residuals');
 
+subplot(1,2,2);
+scatter(means(:,2),means(:,1),'o');
+ax2 = gca;
+herrorbar(means(:,2),means(:,1),means(:,3),ax2.ColorOrder(1,:));
+
+% Plot formatting
+ax2.YDir = 'reverse';
+ax2.XAxisLocation = 'top';
+xlabel('\delta t /s');
+ylabel('Epicentral distance /^{\circ}');
+ax2.YLim = ax1.YLim;
+ax2.XLim = ax1.XLim;
+ax2.FontSize = 14;
+title('Celebes Sea residual averages');
+vline(0);
 
 %% Plot synthetic and real data separatley
 figure;
