@@ -35,27 +35,35 @@ end
 %% Find local gradients, and hence local means
 
 meanpoints = (127:1:134)';
-means = zeros([size(meanpoints,1) 1]);
+means = zeros([size(meanpoints,1) 2]);
 for i = 1:size(meanpoints);
+	y = meanpoints(i);
 	% Find points in 2 degree range
-	toaverage = (residuals(:,1) < meanpoints(i)+1) & (residuals(:,1) >= meanpoints(i)-1);
+	toaverage = (residuals(:,1) < y+1) & (residuals(:,1) >= y-1);
 	toaverage = residuals(toaverage,:);
 	% If we have too few points to fit a line to
 	if size(toaverage,1) <= 2
 		continue;
 	end
 	% Fit straight line to points
-	p = polyfit(toaverage(:,2),toaverage(:,1),1);
-	means(i) = (meanpoints(i) - p(2))/p(1);
+	[p,S] = polyfit(toaverage(:,2),toaverage(:,1),1);
+	means(i,1) = (y - p(2))/p(1);
+	[y,delta] = polyval(p,means(i,1),S);
+	means(i,2) = delta;
+	clear y delta p S
 end
+meanVerrs = 1*ones([size(means,1) 1]);
 
 %% Plot residuals
 figure;
-subplot(1,2,1);
+%subplot(1,2,1);
+hold on;
 scatter(residuals(:,2),residuals(:,1),'+');
-scatter(means,meanpoints,'+');
+scatter(means(:,1),meanpoints,'o');
 ax = gca;
 herrorbar(residuals(:,2),residuals(:,1),differr,ax.ColorOrder(1,:));
+verrorbar(means(:,1),meanpoints,meanVerrs,ax.ColorOrder(2,:));
+herrorbar(means(:,1),meanpoints,means(:,2)/2,ax.ColorOrder(2,:));
 
 vline(0);
 
@@ -65,6 +73,7 @@ ax.XAxisLocation = 'top';
 xlabel('\delta t /s');
 ylabel('Epicentral distance /^{\circ}');
 ax.FontSize = 14;
+
 
 %% Plot synthetic and real data separatley
 figure;
