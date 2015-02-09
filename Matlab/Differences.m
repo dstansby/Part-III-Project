@@ -2,54 +2,57 @@ clear
 
 %% Import data
 file = fopen('both_differences.txt');
-synth = fscanf(file,' %f %f', [2 inf]);
+synthData = fscanf(file,' %f %f', [2 inf]);
 fclose(file);
 
 file = fopen('real_differences.txt');
-real = fscanf(file,' %f %f', [2 inf]);
+realData = fscanf(file,' %f %f', [2 inf]);
 fclose(file);
+clear file;
 
-synth = synth';
-real = real';
+synthData = synthData';
+realData = realData';
 
 % Calculate errors
-realErr = 0.02*ones(size(real(:,1)));
-synthErr = 0.02*ones(size(synth(:,1)));
+realErr = 0.02*ones(size(realData(:,1)));
+synthErr = 0.02*ones(size(synthData(:,1)));
 
 % Set of distances common to real and synthetic data
-distances = intersect(synth(:,1),real(:,1));
-residuals = zeros([size(distances,1) 2]);
-differr = 0.04*ones([size(residuals,1) 1]);
+distances = intersect(synthData(:,1),realData(:,1));
+resid = zeros([size(distances,1) 2]);
+residErr = 0.04*ones([size(resid,1) 1]);
 
 % Calculate residuals
 for i = 1:size(distances)
 	d = distances(i);
-	ri = find(~(real(:,1) - d));
-	si = find(~(synth(:,1) - d));
+	ri = find(~(realData(:,1) - d));
+	si = find(~(synthData(:,1) - d));
 	si = si(1);
 	
-	dt = real(ri,2) - synth(si,2);
-	residuals(i,:) = [d dt];
+	dt = realData(ri,2) - synthData(si,2);
+	resid(i,:) = [d dt];
+	clear d dt ri si
 end
 
 %% Find local gradients, and hence local means
 
-meanpoints = (127:1:134)';
-means = zeros([size(meanpoints,1) 2]);
-for i = 1:size(meanpoints);
-	y = meanpoints(i);
+% Means stores Distance;Residual;Error in residual
+means(:,1) = (127:1:134)';
+means(:,2:3) = zeros([size(means,1) 2]);
+for i = 1:size(means);
+	x = means(i,1);
 	% Find points in 2 degree range
-	toaverage = (residuals(:,1) < y+1) & (residuals(:,1) >= y-1);
-	toaverage = residuals(toaverage,:);
+	toaverage = (resid(:,1) < x+1) & (resid(:,1) >= x-1);
+	toaverage = resid(toaverage,:);
 	% If we have too few points to fit a line to
 	if size(toaverage,1) <= 2
 		continue;
 	end
 	% Fit straight line to points
-	[p,S] = polyfit(toaverage(:,2),toaverage(:,1),1);
-	means(i,1) = (y - p(2))/p(1);
-	[y,delta] = polyval(p,means(i,1),S);
-	means(i,2) = delta;
+	[p,S] = polyfit(toaverage(:,1),toaverage(:,2),1);
+	means(i,2) = p(1)*x + p(2);
+	[y,delta] = polyval(p,x,S);
+	means(i,3) = delta;
 	clear y delta p S
 end
 meanVerrs = 1*ones([size(means,1) 1]);
@@ -58,12 +61,11 @@ meanVerrs = 1*ones([size(means,1) 1]);
 figure;
 %subplot(1,2,1);
 hold on;
-scatter(residuals(:,2),residuals(:,1),'+');
-scatter(means(:,1),meanpoints,'o');
+scatter(resid(:,2),resid(:,1),'+');
+scatter(means(:,2),means(:,1),'o');
 ax = gca;
-herrorbar(residuals(:,2),residuals(:,1),differr,ax.ColorOrder(1,:));
-verrorbar(means(:,1),meanpoints,meanVerrs,ax.ColorOrder(2,:));
-herrorbar(means(:,1),meanpoints,means(:,2)/2,ax.ColorOrder(2,:));
+herrorbar(resid(:,2),resid(:,1),residErr,ax.ColorOrder(1,:));
+herrorbar(means(:,2),means(:,1),means(:,3),ax.ColorOrder(2,:));
 
 vline(0);
 
@@ -78,12 +80,12 @@ ax.FontSize = 14;
 %% Plot synthetic and real data separatley
 figure;
 hold on;
-scatter(synth(:,2),synth(:,1),'+');
-scatter(real(:,2),real(:,1),'+');
+scatter(synthData(:,2),synthData(:,1),'+');
+scatter(realData(:,2),realData(:,1),'+');
 ax = gca;
 
-herrorbar(synth(:,2),synth(:,1),synthErr,ax.ColorOrder(1,:));
-herrorbar(real(:,2),real(:,1),realErr,ax.ColorOrder(2,:));
+herrorbar(synthData(:,2),synthData(:,1),synthErr,ax.ColorOrder(1,:));
+herrorbar(realData(:,2),realData(:,1),realErr,ax.ColorOrder(2,:));
 
 % Plot formatting
 legend('Synthetic', 'Real')
