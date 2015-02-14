@@ -6,24 +6,24 @@ Database file #1: /Users/dstansby/Physics/Papers/library.bib
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 You've used 13 entries,
             3220 wiz_defined-function locations,
-            778 strings with 7903 characters,
-and the built_in function-call counts, 6281 in all, are:
-= -- 551
-> -- 298
-< -- 11
+            777 strings with 7939 characters,
+and the built_in function-call counts, 6228 in all, are:
+= -- 542
+> -- 306
+< -- 10
 + -- 129
-- -- 99
+- -- 103
 * -- 488
 := -- 1073
 add.period$ -- 13
 call.type$ -- 13
-change.case$ -- 83
+change.case$ -- 84
 chr.to.int$ -- 19
 cite$ -- 13
-duplicate$ -- 366
-empty$ -- 473
-format.name$ -- 126
-if$ -- 1307
+duplicate$ -- 355
+empty$ -- 467
+format.name$ -- 127
+if$ -- 1291
 int.to.chr$ -- 1
 int.to.str$ -- 1
 missing$ -- 13
@@ -31,17 +31,17 @@ newline$ -- 44
 num.names$ -- 52
 pop$ -- 136
 preamble$ -- 1
-purify$ -- 81
+purify$ -- 82
 quote$ -- 0
-skip$ -- 221
+skip$ -- 217
 stack$ -- 0
-substring$ -- 343
+substring$ -- 325
 swap$ -- 14
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 114
 warning$ -- 0
-while$ -- 64
+while$ -- 62
 width$ -- 0
-write$ -- 134
+write$ -- 133
