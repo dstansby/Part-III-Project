@@ -22,13 +22,15 @@ Since its discovery in 1936, the Earth's inner core has been well documented by 
 \section{Introduction}
 The inner core was first discovered by Inge Lehmann in 1936, who used the existence of P wave arrivals within the P wave shadow zone to infer a solid-liquid boundary lying within the core mantle boundary (\cite{Lehmann}). Over the following 80 years large progress has been made on measuring the properties of the inner core, but there is much still to learn.
 
-Of particular interest is the velocity and attenuation structure, which can be used to infer the chemical and physical properties of the inner core's constituent material. \cite{Deuss2014} gives a comprehensive review of the current state of research into this area. Current research shows that the inner core is split into two hemispheres, a western and an eastern one, each of which have differing attenuation and anisotropy properties (\cite{Waszek2011a}, \cite{Waszek2013a}). READ PAPERS AND SUMMARISE DIFFERENCES.
+Of particular interest is the velocity and attenuation structure, which can be used to infer the chemical and physical properties of the inner core's constituent material PUT EXAMPLES HERE. \cite{Deuss2014} gives a comprehensive review of the current state of research into this area. Current research shows that the inner core is split into two hemispheres, a western and an eastern one, each of which have differing attenuation and anisotropy properties (\cite{Waszek2011a}, \cite{Waszek2013a}). READ PAPERS AND SUMMARISE DIFFERENCES.
 
-The upper inner core is of particular interest, as material from the outer core is currently freezing onto it at a rate of around 1mm/year. Modelling performed by \cite{Deguen2009a} shows that the velocity structure of the upper inner core should reflect recent processes in the lower upper core, and thus determine the WHAT history of the outer core. This in turn could give insights into areas such as how the outer core generates the Earth's magnetic field AND. 
+The upper inner core is of particular interest, as material from the outer core is currently freezing onto it at a rate of around 1mm/year REFERENCE ME. Modelling performed by \cite{Deguen2009a} shows that the velocity structure of the upper inner core should reflect recent processes in the lower upper core, and thus determine the WHAT history of the outer core. This in turn could give insights into areas such as how the outer core generates the Earth's magnetic field AND. 
 
-So far only large scale velocity structures have been measured, with the most recent velocity models BEING VERY COARSE GRAINED. In addition it is not clear what the limits of the methodology used here and elsewhere is to measuring the velocity structure, specifically what is the minimum depth below the inner core boundary this method can be used to resolve. In this paper we take individual earthquakes that travel to multiple seismic stations in an attempt to measure the velocity structure on the order of PUT REGION SIZE HERE. We constrain our analysis to the uppermost inner core as far as is possible, and area not yet investigated in published literature.
+So far only large scale velocity structures have been measured, with the most recent velocity models BEING VERY COARSE GRAINED. In addition the extent to which the methodology used here and elsewhere is not well understood. In this paper we tackle both of these problems.
 
-Section \ref{sec:Theory} gives an brief theoretical background, with section \ref{sec:Data} describes our data collection and pre-processing. Waveform analysis is discussed in section \ref{sec:Waveforms} leading to regional velocity model results presented in section \ref{sec:Models}.
+We do so by taking individual earthquakes that travel to multiple seismic stations and identifying the arrival of distant seismic phases in seismograms. We constrain our analysis to the uppermost inner core as far as is possible, and area not yet investigated in published literature.
+
+Section \ref{sec:Theory} gives an brief theoretical background, with section \ref{sec:Data} describing our data collection and pre-processing. Waveform analysis is discussed in section \ref{sec:Waveforms} leading to regional velocity model results presented in section \ref{sec:Models}.
 
 %%%
 \section{Theoretical Background}
@@ -71,7 +73,7 @@ This equation can be reformulated as an integral along the ray paths
 \end{equation}
 where the path to be integrated along is indicated by the subscript outside the brackets, and in general the velocities vary as a function of position.
 
-As the outer core has a low viscosity it is unable to support any large scale lateral heterogeneities (\cite{Wijs1998}). We therefore expect the velocity structure of the outer core to only depend on depth, and assume that the AK135 radial symmetric model is correct for the outer core. The first integral in equation \eqref{eq:deltat} then vanishes.
+As the outer core has a low viscosity it is unable to support any large scale lateral heterogeneities (\cite{Zhang2000}, \cite{Dai2013}). We therefore expect the velocity structure of the outer core to only depend on depth, and assume that the AK135 radial symmetric model is correct for the outer core. The first integral in equation \eqref{eq:deltat} then vanishes.
 
 Taking $v_{obs} = v_{model} + \delta v$ gives
 \begin{equation}
@@ -82,9 +84,11 @@ For depths below the Inner Core boundary of less than 50km $v_{model}$ is consta
 \begin{equation}
 	\delta v = \frac{\delta t}{t} v_{model}
 \end{equation}
-where $t$ is the time PKIKP spends in the inner core.
-\section{Data Selection}
+where $t$ is the time PKIKP spends in the inner core. If instead we wish to calculate a layered model, we simply apply the above results to the uppermost layer, and then take the effect of the new layer into account when calculating the properties of subsequent layers.
 
+%%%
+\section{Data Selection}
+\label{sec:Data}
 We present regional velocity models, derived from INSERT NUMBER HERE earthquakes. The datasets are selected to meet the following criteria:
 
 \begin{itemize}
