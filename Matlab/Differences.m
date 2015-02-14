@@ -1,11 +1,12 @@
 clear
-
+folder = 'celebessea';
+addpath('Library');
 %% Import data
-file = fopen('both_differences.txt');
+file = fopen([folder '/both_differences.txt']);
 synthData = fscanf(file,' %f %f', [2 inf]);
 fclose(file);
 
-file = fopen('real_differences.txt');
+file = fopen([folder '/real_differences.txt']);
 realData = fscanf(file,' %f %f', [2 inf]);
 fclose(file);
 clear file;
@@ -52,10 +53,10 @@ for i = 1:size(means);
 	[p,S] = polyfit(toaverage(:,1),toaverage(:,2),1);
 	means(i,2) = p(1)*x + p(2);
 	[y,delta] = polyval(p,x,S);
+	% This is wrong
 	means(i,3) = delta;
 	clear y delta p S
 end
-meanVerrs = 1*ones([size(means,1) 1]);
 
 %% Plot residuals
 figure;
@@ -78,7 +79,8 @@ title('Celebes Sea Residuals');
 subplot(1,2,2);
 scatter(means(:,2),means(:,1),'o');
 ax2 = gca;
-herrorbar(means(:,2),means(:,1),means(:,3),ax2.ColorOrder(1,:));
+% This is wrong
+%herrorbar(means(:,2),means(:,1),means(:,3),ax2.ColorOrder(1,:));
 
 % Plot formatting
 ax2.YDir = 'reverse';
@@ -103,9 +105,10 @@ herrorbar(realData(:,2),realData(:,1),realErr,ax.ColorOrder(2,:));
 
 % Plot formatting
 legend('Synthetic', 'Real')
-xlabel('Residual /s');
+xlabel('Peak to peak distance /s');
 ylabel('Epicentral distance /^{\circ}');
 ylim([126 135]);
 ax.XAxisLocation = 'top';
 ax.YDir = 'reverse';
 ax.FontSize = 14;
+legend('Synthetic','Real');
