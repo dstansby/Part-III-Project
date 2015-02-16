@@ -1,39 +1,30 @@
 clear
+close all
 folder = 'celebessea';
 addpath('Library');
 %% Import data
 file = fopen([folder '/both_differences.txt']);
-synthData = fscanf(file,' %f %f', [2 inf]);
+synthData = fscanf(file,'%*s %f %f', [2 inf]);
 fclose(file);
 
 file = fopen([folder '/real_differences.txt']);
-realData = fscanf(file,' %f %f', [2 inf]);
+realData = fscanf(file,'%*s %f %f', [2 inf]);
 fclose(file);
 clear file;
 
 synthData = synthData';
 realData = realData';
+synthData = sort(synthData);
+realData = sort(realData);
+
+% Calculate residuals
+resid(:,1) = realData(:,1);
+resid(:,2) = realData(:,2) - synthData(:,2);
 
 % Calculate errors
 realErr = 0.02*ones(size(realData(:,1)));
 synthErr = 0.02*ones(size(synthData(:,1)));
-
-% Set of distances common to real and synthetic data
-distances = intersect(synthData(:,1),realData(:,1));
-resid = zeros([size(distances,1) 2]);
-residErr = 0.04*ones([size(resid,1) 1]);
-
-% Calculate residuals
-for i = 1:size(distances)
-	d = distances(i);
-	ri = find(~(realData(:,1) - d));
-	si = find(~(synthData(:,1) - d));
-	si = si(1);
-	
-	dt = realData(ri,2) - synthData(si,2);
-	resid(i,:) = [d dt];
-	clear d dt ri si
-end
+residErr = 0.04*ones(size(resid(:,1)));
 
 %% Find local gradients, and hence local means
 
