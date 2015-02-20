@@ -1,5 +1,5 @@
 clear
-close all
+%close all
 folder = 'celebessea';
 addpath('Library');
 %% Import data
@@ -12,10 +12,23 @@ realData = fscanf(file,'%*s %f %f', [2 inf]);
 fclose(file);
 clear file;
 
+file = fopen([folder '/stationdetails.txt']);
+stationdetails = fscanf(file,'%f %*s %f %f %f %f %f %f %f %f %f %f %f %f', [13 inf]);
+fclose(file);
+clear file;
+
 synthData = synthData';
 realData = realData';
-synthData = sort(synthData);
-realData = sort(realData);
+stationdetails = stationdetails';
+
+synthData = sortrows(synthData);
+realData = sortrows(realData);
+stationdetails = sortrows(stationdetails);
+
+% Make lattitude span 0 --> 360 deg
+stationdetails(stationdetails(:,12) < 0,12) = stationdetails(stationdetails(:,12) < 0,12) + 360;
+% Change depth into depth below ICB
+stationdetails(:,13) = stationdetails(:,13) - 5153;
 
 % Calculate residuals
 resid(:,1) = realData(:,1);
@@ -51,54 +64,55 @@ end
 
 %% Plot residuals
 figure;
-subplot(1,2,1);
+%subplot(1,2,1);
 hold on;
-scatter(resid(:,2),resid(:,1),'+');
+scatter(resid(:,2),stationdetails(:,13),'+');
 
 ax1 = gca;
-herrorbar(resid(:,2),resid(:,1),residErr,ax1.ColorOrder(1,:));
+herrorbar(resid(:,2),stationdetails(:,13),residErr,ax1.ColorOrder(1,:));
 vline(0);
 
 % Plot formatting
 ax1.YDir = 'reverse';
 ax1.XAxisLocation = 'top';
 xlabel('\delta t /s');
-ylabel('Epicentral distance /^{\circ}');
+ylabel('Depth below ICB /km');
 ax1.FontSize = 14;
 title('Celebes Sea Residuals');
 
-subplot(1,2,2);
-scatter(means(:,2),means(:,1),'o');
-ax2 = gca;
-% This is wrong
-%herrorbar(means(:,2),means(:,1),means(:,3),ax2.ColorOrder(1,:));
-
-% Plot formatting
-ax2.YDir = 'reverse';
-ax2.XAxisLocation = 'top';
-xlabel('\delta t /s');
-ylabel('Epicentral distance /^{\circ}');
-ax2.YLim = ax1.YLim;
-ax2.XLim = ax1.XLim;
-ax2.FontSize = 14;
-title('Celebes Sea residual averages');
-vline(0);
+% subplot(1,2,2);
+% scatter(means(:,2),stationdetails(:,1),'o');
+% ax2 = gca;
+% % This is wrong
+% %herrorbar(means(:,2),means(:,1),means(:,3),ax2.ColorOrder(1,:));
+% 
+% % Plot formatting
+% ax2.YDir = 'reverse';
+% ax2.XAxisLocation = 'top';
+% xlabel('\delta t /s');
+% ylabel('Epicentral distance /^{\circ}');
+% ax2.YLim = ax1.YLim;
+% ax2.XLim = ax1.XLim;
+% ax2.FontSize = 14;
+% title(folder);
+% vline(0);
 
 %% Plot synthetic and real data separatley
 figure;
 hold on;
-scatter(synthData(:,2),synthData(:,1),'+');
-scatter(realData(:,2),realData(:,1),'+');
+scatter(synthData(:,2),stationdetails(:,13),'+');
+scatter(realData(:,2),stationdetails(:,13),'+');
 ax = gca;
 
-herrorbar(synthData(:,2),synthData(:,1),synthErr,ax.ColorOrder(1,:));
-herrorbar(realData(:,2),realData(:,1),realErr,ax.ColorOrder(2,:));
+herrorbar(synthData(:,2),stationdetails(:,13),synthErr,ax.ColorOrder(1,:));
+herrorbar(realData(:,2),stationdetails(:,13),realErr,ax.ColorOrder(2,:));
 
 % Plot formatting
 legend('Synthetic', 'Real')
+title(folder);
 xlabel('Peak to peak distance /s');
-ylabel('Epicentral distance /^{\circ}');
-ylim([126 135]);
+ylabel('Depth below ICB /km');
+ax.YLim = [0 40];
 ax.XAxisLocation = 'top';
 ax.YDir = 'reverse';
 ax.FontSize = 14;
