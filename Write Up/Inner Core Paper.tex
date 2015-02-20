@@ -30,7 +30,7 @@ Of particular interest is the velocity and attenuation structure, which can be u
 	\item Inner core superrotation is less than $0.5^{\circ}$ /yr and may even be as small as $0.1-1^{\circ}$ /Myr.
 \end{itemize}
 
-The upper inner core is of particular interest, as material from the outer core is currently freezing onto it at a rate of around 1mm/year REFERENCE ME. Modelling performed by \cite{Deguen2009a} shows that the velocity structure of the upper inner core should reflect recent processes in the lower upper core, and thus determine the WHAT history of the outer core. This in turn could give insights into areas such as how the outer core generates the Earth's magnetic field AND. 
+The upper inner core is of particular interest, as material from the outer core is currently freezing onto it at a rate of around 1mm/year (\cite{Labrosse2001}). Modelling performed by \cite{Deguen2009a} shows that the velocity structure of the upper inner core should reflect recent processes in the lower upper core. Thus measuring the structure of the upper inner core could in turn give insights into areas such as how the outer core generates the Earth's magnetic field. 
 
 So far only large scale velocity structures have been measured, with the most recent velocity models BEING VERY COARSE GRAINED. In addition the extent to which the methodology used here and elsewhere is not well understood. In this paper we tackle both of these problems.
 
@@ -41,32 +41,29 @@ Section \ref{sec:Theory} gives an brief theoretical background, with section \re
 %%%
 \section{Theoretical Background}
 \label{sec:Theory}
-We use seismic body wave analysis in order to investigate the velocity structure of the upper inner core. These waves elastic waves, caused by earthquakes, that travel through the interior of the Earth. Below we summarise the main aspects of seismic body wave theory; for a more comprehensive review the reader is referred to \cite{Shearer2009}.
+We use seismic body wave analysis in order to investigate the velocity structure of the upper inner core. These waves elastic waves, caused by earthquakes, that travel through the interior of the Earth.
 
 \subsection{Body Wave Theory}
+Here we summarise the main aspects of seismic body wave theory, taken from \cite{Shearer2009}.
+
 Under the assumptions of a continuous, linearly elastic medium, infinitesimal strains and constant medium properties one can derive the elastic wave equation
 \begin{equation}
 	\rho \frac{\partial^{2} \vec{u}}{\partial t^{2}} = \left ( \lambda + \mu \right ) \nabla \left ( \nabla \cdot \vec{u} \right ) + \mu \nabla^{2} \vec{u}
 	\label{eq:Wave Equation}
 \end{equation}
-where u is the displacement vector, $\rho$ the density of the medium and $\lambda$ and $\mu$  Lam\'{e} parameters of the medium. A general displacement vector can be decomposed into irrotational scalar and solenoidal vector potentials such that
+where u is the local displacement vector, $\rho$ the density of the medium and $\lambda$ and $\mu$  Lam\'{e} parameters of the medium. A general displacement vector can be decomposed into irrotational scalar and solenoidal vector potentials such that
 \begin{equation}
 	u \equiv \nabla \phi + \nabla \times \vec{\psi}
 	\label{eq:Displacement}
 \end{equation}
-In the high frequency limit\footnote{ The high frequency ray approximation is valid for $\delta \left ( \Delta c \left ( \vec{x} \right ) \right ) \ll c \left ( \vec{x} \right )$} equation \eqref{eq:Wave Equation} yields the Eikonal equation which describes how the rays propagate through a given velocity field.
-
-Substituting \eqref{eq:Displacement} in to \eqref{eq:Wave Equation} yields two independent wave equations, one for $\phi$ and one for $\vec{\psi}$, which describe P-waves and S-waves respectively. P-waves are compressional with motion occurring parallel to the wave vector, whereas S-waves are transverse with motion occurring perpendicular to the wave vector.
-
-In general we cannot make the assumption that the medium has constant parameters; this certainly is not the case for the Earth! To take varying properties into account a constant phase velocity wave equation can be generalised to have a position dependant velocity
+Substituting \eqref{eq:Displacement} in to \eqref{eq:Wave Equation} yields two independent wave equations, one for $\phi$ and one for $\vec{\psi}$, which describe P-waves and S-waves respectively. P-waves are compressional with displacements occurring parallel to the wave vector, whereas S-waves are transverse with displacements occurring perpendicular to the wave vector. These wave equations take the form
 \begin{equation}
 	\frac{\partial^{2} \phi}{\partial t^{2}} = c^{2} \left ( \vec{x} \right ) \nabla^{2} \phi
 \end{equation}
-
-Because the outer core is liquid with $\mu \approx 0$ and thus does not transmit S-waves, it is P-waves that are used to sample the inner core.
+where $c(\vec{x})$ is the local wave velocity that depends on position. A velocity model is a full specification of $c(\vec{x})$ in the region of interest.
 
 \subsection{Sampling the Inner Core}
-The velocity structure of the inner core is measured using arrival times for PKIKP and PKiKP phases. Figure PUT FIGURE HERE shows the ray path for each phase; they travel almost identical paths through the Crust, Mantle and upper Outer Core, after which PKIKP reflects off the Inner Core boundary, whereas PKiKP travels just underneath the boundary in the Inner Core CHECK ME. This means that any difference in arrival times of the two phases depends only on the upper Inner Core velocity structure, which is what we seek to measure here.
+Because the outer core is liquid with $\mu \approx 0$ and thus does not transmit S-waves, it is P-waves that are used to sample the inner core. Figure PUT FIGURE HERE shows the ray path for the PKiKP and PKIKP phase; they travel almost identical paths through the Crust, Mantle and upper Outer Core, after which PKiKP reflects off the Inner Core boundary, whereas PKIKP travels just underneath the boundary in the Inner Core.
 
 All measurements are compared to the radially symmetric AK135 global velocity model (\cite{Kennett1995b}), from which we seek to measure perturbations about. The residual travel time CHECK ME is defined after \cite{Waszek2011a} as
 \begin{equation}
@@ -78,8 +75,6 @@ This equation can be reformulated as an integral along the ray paths
 		\label{eq:deltat}
 \end{equation}
 where the path to be integrated along is indicated by the subscript outside the brackets, and in general the velocities vary as a function of position.
-
-As the outer core has a low viscosity it is unable to support any large scale lateral heterogeneities (\cite{Zhang2000}, \cite{Dai2013}). We therefore expect the velocity structure of the outer core to only depend on depth, and assume that the AK135 radial symmetric model is correct for the outer core. The first integral in equation \eqref{eq:deltat} then vanishes.
 
 Taking $v_{obs} = v_{model} + \delta v$ gives
 \begin{equation}

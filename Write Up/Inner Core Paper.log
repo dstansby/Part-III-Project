@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2015.1.14)  14 FEB 2015 22:30
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2015.1.14)  14 FEB 2015 23:05
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -325,102 +325,100 @@ nisotropy, though
  []
 
 [2] [3]
-Overfull \hbox (1.22629pt too wide) in paragraph at lines 98--99
+Overfull \hbox (1.22629pt too wide) in paragraph at lines 93--94
 \OT1/cmr/m/n/10.95 We present re-gional ve-loc-ity mod-els, de-rived from IN-SE
 RT NUM-BER HERE
  []
 
-[4] [5] <figures/celebessea_real.pdf, id=156, 597.15038pt x 620.57162pt>
+[4] <figures/celebessea_real.pdf, id=136, 597.15038pt x 620.57162pt>
 File: figures/celebessea_real.pdf Graphic file (type pdf)
 
 <use figures/celebessea_real.pdf>
-Package pdftex.def Info: figures/celebessea_real.pdf used on input line 118.
+Package pdftex.def Info: figures/celebessea_real.pdf used on input line 113.
 (pdftex.def)             Requested size: 360.0pt x 374.12604pt.
 
-<figures/celebessea_synthetic_both.pdf, id=157, 597.23125pt x 625.69157pt>
+<figures/celebessea_synthetic_both.pdf, id=137, 597.23125pt x 625.69157pt>
 File: figures/celebessea_synthetic_both.pdf Graphic file (type pdf)
 
 <use figures/celebessea_synthetic_both.pdf>
 Package pdftex.def Info: figures/celebessea_synthetic_both.pdf used on input li
-ne 124.
+ne 119.
 (pdftex.def)             Requested size: 360.0pt x 377.15544pt.
 
-<figures/celebessea_KIK_aligned.pdf, id=161, 597.23125pt x 613.42554pt>
+<figures/celebessea_KIK_aligned.pdf, id=141, 597.23125pt x 613.42554pt>
 File: figures/celebessea_KIK_aligned.pdf Graphic file (type pdf)
 
 <use figures/celebessea_KIK_aligned.pdf>
 Package pdftex.def Info: figures/celebessea_KIK_aligned.pdf used on input line 
-134.
+129.
 (pdftex.def)             Requested size: 176.40198pt x 181.1836pt.
 
-<figures/celebessea_pkikp_aligned.pdf, id=162, 597.23125pt x 604.51689pt>
+<figures/celebessea_pkikp_aligned.pdf, id=142, 597.23125pt x 604.51689pt>
 File: figures/celebessea_pkikp_aligned.pdf Graphic file (type pdf)
 
 <use figures/celebessea_pkikp_aligned.pdf>
 Package pdftex.def Info: figures/celebessea_pkikp_aligned.pdf used on input lin
-e 135.
+e 130.
 (pdftex.def)             Requested size: 176.40198pt x 178.5523pt.
 
-<figures/celebessea_both_aligned.pdf, id=163, 597.23125pt x 607.48012pt>
+<figures/celebessea_both_aligned.pdf, id=143, 597.23125pt x 607.48012pt>
 File: figures/celebessea_both_aligned.pdf Graphic file (type pdf)
 
 <use figures/celebessea_both_aligned.pdf>
 Package pdftex.def Info: figures/celebessea_both_aligned.pdf used on input line
- 136.
+ 131.
 (pdftex.def)             Requested size: 176.40198pt x 179.42754pt.
-
-<figures/min_distance.pdf, id=165, 814.04124pt x 614.295pt>
+ [5] [6 <./figures/celebessea_real.pdf>] [7 <./figures/celebessea_synthetic_bot
+h.pdf>]
+<figures/min_distance.pdf, id=193, 814.04124pt x 614.295pt>
 File: figures/min_distance.pdf Graphic file (type pdf)
 
 <use figures/min_distance.pdf>
-Package pdftex.def Info: figures/min_distance.pdf used on input line 145.
+Package pdftex.def Info: figures/min_distance.pdf used on input line 140.
 (pdftex.def)             Requested size: 360.0pt x 271.65913pt.
 
-Overfull \hbox (29.53532pt too wide) in paragraph at lines 156--161
+Overfull \hbox (29.53532pt too wide) in paragraph at lines 151--156
 [] 
  []
 
-(./Inner Core Paper.bbl [6] [7 <./figures/celebessea_real.pdf>] [8 <./figures/c
-elebessea_synthetic_both.pdf>] [9 <./figures/celebessea_KIK_aligned.pdf> <./fig
-ures/celebessea_pkikp_aligned.pdf> <./figures/celebessea_both_aligned.pdf>]
+(./Inner Core Paper.bbl [8] [9 <./figures/celebessea_KIK_aligned.pdf> <./figure
+s/celebessea_pkikp_aligned.pdf> <./figures/celebessea_both_aligned.pdf>]
 [10 <./figures/min_distance.pdf>])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 166.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 161.
  [11]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 166.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 161.
  (./Inner Core Paper.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 166.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 166.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 161.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 161.
 Package rerunfilecheck Info: File `"Inner Core Paper".out' has not changed.
 (rerunfilecheck)             Checksum: 0595E6EC828B9C0D9268890573354980;534.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 166.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 161.
  ) 
 Here is how much of TeX's memory you used:
- 6213 strings out of 493109
- 90040 string characters out of 6135004
- 180869 words of memory out of 5000000
- 9575 multiletter control sequences out of 15000+600000
+ 6217 strings out of 493109
+ 90114 string characters out of 6135004
+ 180940 words of memory out of 5000000
+ 9579 multiletter control sequences out of 15000+600000
  11381 words of font info for 41 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 29i,8n,28p,939b,443s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 29i,8n,28p,939b,455s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 ></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
 </usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><
 /usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></
 usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></us
-r/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/
-local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/lo
-cal/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/loca
-l/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/
-texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/tex
-live/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texliv
-e/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2
-014/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/20
-14/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2014
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb>
-Output written on "Inner Core Paper.pdf" (11 pages, 1705877 bytes).
+r/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/
+local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/lo
+cal/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/loca
+l/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/t
+exlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texl
+ive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive
+/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/
+2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
+Output written on "Inner Core Paper.pdf" (11 pages, 1688586 bytes).
 PDF statistics:
- 371 PDF objects out of 1000 (max. 8388607)
- 313 compressed objects within 4 object streams
+ 361 PDF objects out of 1000 (max. 8388607)
+ 305 compressed objects within 4 object streams
  50 named destinations out of 1000 (max. 500000)
  103 words of extra memory for PDF output out of 10000 (max. 10000000)
 
