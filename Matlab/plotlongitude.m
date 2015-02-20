@@ -1,6 +1,6 @@
 clear
 folder = 'celebessea';
-addpath('Library');g
+addpath('Library');
 %close all
 load('redblue.mat');
 
