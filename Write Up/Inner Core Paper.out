@@ -3,9 +3,8 @@
 \BOOKMARK [2][-]{subsection.2.1}{Body Wave Theory}{section.2}% 3
 \BOOKMARK [2][-]{subsection.2.2}{Sampling the Inner Core}{section.2}% 4
 \BOOKMARK [1][-]{section.3}{Data Selection}{}% 5
-\BOOKMARK [1][-]{section.4}{Waveform Analysis}{}% 6
-\BOOKMARK [2][-]{subsection.4.1}{Quantifying minimum resolvable depth}{section.4}% 7
-\BOOKMARK [1][-]{section.5}{Updated velocity models}{}% 8
-\BOOKMARK [1][-]{appendix.A}{Event Listing}{}% 9
-\BOOKMARK [1][-]{appendix.B}{Aligned Sesimograms}{}% 10
-\BOOKMARK [1][-]{appendix.C}{Residual Plots}{}% 11
+\BOOKMARK [1][-]{section.4}{Data Analysis}{}% 6
+\BOOKMARK [2][-]{subsection.4.1}{Waveform analysis}{section.4}% 7
+\BOOKMARK [2][-]{subsection.4.2}{Quantifying minimum resolvable difference}{section.4}% 8
+\BOOKMARK [2][-]{subsection.4.3}{Residual travel time analysis}{section.4}% 9
+\BOOKMARK [1][-]{appendix.A}{Ray paths}{}% 10

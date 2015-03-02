@@ -1,11 +1,10 @@
 \contentsline {section}{\numberline {1}Introduction}{2}{section.1}
-\contentsline {section}{\numberline {2}Theoretical Background}{3}{section.2}
-\contentsline {subsection}{\numberline {2.1}Body Wave Theory}{3}{subsection.2.1}
+\contentsline {section}{\numberline {2}Theoretical Background}{2}{section.2}
+\contentsline {subsection}{\numberline {2.1}Body Wave Theory}{2}{subsection.2.1}
 \contentsline {subsection}{\numberline {2.2}Sampling the Inner Core}{3}{subsection.2.2}
 \contentsline {section}{\numberline {3}Data Selection}{4}{section.3}
-\contentsline {section}{\numberline {4}Waveform Analysis}{5}{section.4}
-\contentsline {subsection}{\numberline {4.1}Quantifying minimum resolvable depth}{5}{subsection.4.1}
-\contentsline {section}{\numberline {5}Updated velocity models}{10}{section.5}
-\contentsline {section}{\numberline {A}Event Listing}{10}{appendix.A}
-\contentsline {section}{\numberline {B}Aligned Sesimograms}{10}{appendix.B}
-\contentsline {section}{\numberline {C}Residual Plots}{10}{appendix.C}
+\contentsline {section}{\numberline {4}Data Analysis}{4}{section.4}
+\contentsline {subsection}{\numberline {4.1}Waveform analysis}{4}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}Quantifying minimum resolvable difference}{5}{subsection.4.2}
+\contentsline {subsection}{\numberline {4.3}Residual travel time analysis}{7}{subsection.4.3}
+\contentsline {section}{\numberline {A}Ray paths}{7}{appendix.A}
