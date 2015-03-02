@@ -1,14 +1,15 @@
 clear
+folder = 'celebessea';
 
-file = fopen('both_differences.txt');
-bothdata = fscanf(file,' %f %f', [2 inf]);
+file = fopen([folder '/both_differences.txt']);
+bothdata = fscanf(file,'%*s %f %f', [2 inf]);
 fclose(file);
 
-file = fopen('pkikp_differences.txt');
+file = fopen([folder '/pkikp_differences.txt']);
 idata = fscanf(file,' %f %f', [2 inf]);
 fclose(file);
 
-file = fopen('KIKP_differences.txt');
+file = fopen([folder '/KIKP_differences.txt']);
 Idata = fscanf(file,' %f %f', [2 inf]);
 fclose(file);
 
@@ -27,6 +28,7 @@ errI = 0.01*ones([size(Idata,1) 1]);
 % icol = [1 0 0];
 % Icol = [0 1 0];
 
+%% Plot figure
 figure;
 hold on;
 scatter(bothdata(:,2),bothdata(:,1),'+');
@@ -42,9 +44,9 @@ leg = legend('Combined', 'PKIKP', 'PKiKP');
 leg.FontSize = 12;
 ax.YDir = 'reverse';
 ax.XAxisLocation = 'top';
-% ax.XLim = [0.6 0.8];
-% ax.YLim = [126 135];
-ax.FontSize = 14;
+ax.XLim = [0.4 1.2];
+ax.YLim = [120 130];
+ax.FontSize = 16;
 grid on;
 xlabel('Peak to peak difference /s')
-ylabel('Epicentral distance /degrees')
+ylabel('Epicentral distance /^{\circ}')
