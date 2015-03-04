@@ -3,7 +3,6 @@ clear
 folder = 'celebessea';
 addpath('Library');
 %% Import data
-file = fopen([folder '/both_differences.txt']);
 file = fopen(['data/' folder '/both_differences.txt']);
 synthData = fscanf(file,'%*s %f %f', [2 inf]);
 fclose(file);
@@ -65,7 +64,7 @@ end
 
 %% Plot residuals
 figure;
-%subplot(1,2,1);
+subplot(1,2,2);
 hold on;
 scatter(resid(:,2),stationdetails(:,13),'+');
 
@@ -76,10 +75,10 @@ vline(0);
 % Plot formatting
 ax1.YDir = 'reverse';
 ax1.XAxisLocation = 'top';
-xlabel('\delta t /s');
+xlabel('Residual /s');
 ylabel('Depth below ICB /km');
 ax1.FontSize = 14;
-title('Celebes Sea Residuals');
+title(folder);
 
 % subplot(1,2,2);
 % scatter(means(:,2),stationdetails(:,1),'o');
@@ -99,7 +98,8 @@ title('Celebes Sea Residuals');
 % vline(0);
 
 %% Plot synthetic and real data separatley
-figure;
+%figure;
+subplot(1,2,1)
 hold on;
 scatter(synthData(:,2),stationdetails(:,13),'+');
 scatter(realData(:,2),stationdetails(:,13),'+');
@@ -113,7 +113,7 @@ legend('Synthetic', 'Real')
 title(folder);
 xlabel('Peak to peak distance /s');
 ylabel('Depth below ICB /km');
-ax.YLim = [0 40];
+%ax.YLim = [0 40];
 ax.XAxisLocation = 'top';
 ax.YDir = 'reverse';
 ax.FontSize = 14;
