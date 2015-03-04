@@ -61,9 +61,14 @@ ax.FontSize = 14;
 %ax.ZDir = 'reverse';
 
 %% Plot 2D
+%% Plot 2D Longitude vs. depth
 figure;
 colormap(col);
-scatter(stationdetails(indexes,12),stationdetails(indexes,13),100,resid(:,2),'filled');
+scatter(stationdetails(indexes,12),stationdetails(indexes,14),150,resid(:,2),'filled');
+
+% Add lines to compare with Waszek 2011
+%hline(15);
+%hline(30);
 
 % Plot formatting
 title(folder);
