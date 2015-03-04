@@ -86,3 +86,17 @@ ax.XAxisLocation = 'top';
 ax.YDir = 'reverse';
 xlabel('Turning Longitude');
 ylabel('Depth below ICB /km');
+
+%vline(180);
+
+%% Plot Longitude vs residual
+% figure
+% scatter(stationdetails(indexes,12),resid(:,2));
+% hline(0);
+% 
+% ax = gca;
+% ax.FontSize = 14;
+% ax.YLim = [-0.8 0.8];
+% title(folder);
+% xlabel('Turning Longitude');
+% ylabel('Residual /s');
