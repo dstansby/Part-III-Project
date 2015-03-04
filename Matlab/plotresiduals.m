@@ -5,18 +5,17 @@ addpath('Library');
 %% Import data
 realData = readfile(['data/' folder '/real_differences.txt'],'%*s %f %f',2);
 synthData = readfile(['data/' folder '/both_differences.txt'],'%*s %f %f',2);
-stationdeatils = readfile(['data/' folder '/stationdetails.txt'], '%f %*s %f %f %f %f %f %f %f %f %f %f %f %f',13);
+stationDeatils = readfile(['data/' folder '/stationdetails.txt'], '%f %*s %f %f %f %f %f %f %f %f %f %f %f %f',13);
 
 % Make lattitude span 0 --> 360 deg
-stationdetails(stationdetails(:,12) < 0,12) = stationdetails(stationdetails(:,12) < 0,12) + 360;
+stationDetails(stationDetails(:,12) < 0,12) = stationDetails(stationDetails(:,12) < 0,12) + 360;
 % Change depth into depth below ICB
-stationdetails(:,13) = stationdetails(:,13) - 5153;
+stationDetails(:,13) = stationDetails(:,13) - 5153;
 
-% Calculate residuals
+%% Calculate residuals and errors
 resid(:,1) = realData(:,1);
 resid(:,2) = realData(:,2) - synthData(:,2);
 
-% Calculate errors
 realErr = 0.02*ones(size(realData(:,1)));
 synthErr = 0.02*ones(size(synthData(:,1)));
 residErr = 0.04*ones(size(resid(:,1)));
@@ -31,6 +30,7 @@ for i = 1:size(means);
 	% Find points in 2 degree range
 	toaverage = (resid(:,1) < x+2.5) & (resid(:,1) >= x-2.5);
 	toaverage = resid(toaverage,:);
+	
 	% If we have too few points to fit a line to
 	if size(toaverage,1) <= 2
 		continue;
@@ -48,10 +48,10 @@ end
 figure;
 subplot(1,2,2);
 hold on;
-scatter(resid(:,2),stationdetails(:,13),'+');
+scatter(resid(:,2),stationDetails(:,13),'+');
 
 ax1 = gca;
-herrorbar(resid(:,2),stationdetails(:,13),residErr,ax1.ColorOrder(1,:));
+herrorbar(resid(:,2),stationDetails(:,13),residErr,ax1.ColorOrder(1,:));
 vline(0);
 
 % Plot formatting
@@ -83,12 +83,12 @@ title(folder);
 %figure;
 subplot(1,2,1)
 hold on;
-scatter(synthData(:,2),stationdetails(:,13),'+');
-scatter(realData(:,2),stationdetails(:,13),'+');
+scatter(synthData(:,2),stationDetails(:,13),'+');
+scatter(realData(:,2),stationDetails(:,13),'+');
 ax = gca;
 
-herrorbar(synthData(:,2),stationdetails(:,13),synthErr,ax.ColorOrder(1,:));
-herrorbar(realData(:,2),stationdetails(:,13),realErr,ax.ColorOrder(2,:));
+herrorbar(synthData(:,2),stationDetails(:,13),synthErr,ax.ColorOrder(1,:));
+herrorbar(realData(:,2),stationDetails(:,13),realErr,ax.ColorOrder(2,:));
 
 % Plot formatting
 legend('Synthetic', 'Real')
