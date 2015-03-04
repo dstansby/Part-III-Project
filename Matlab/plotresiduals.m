@@ -3,27 +3,9 @@ clear
 folder = 'celebessea';
 addpath('Library');
 %% Import data
-file = fopen(['data/' folder '/both_differences.txt']);
-synthData = fscanf(file,'%*s %f %f', [2 inf]);
-fclose(file);
-
-file = fopen(['data/' folder '/real_differences.txt']);
-realData = fscanf(file,'%*s %f %f', [2 inf]);
-fclose(file);
-clear file;
-
-file = fopen(['data/' folder '/stationdetails.txt']);
-stationdetails = fscanf(file,'%f %*s %f %f %f %f %f %f %f %f %f %f %f %f', [13 inf]);
-fclose(file);
-clear file;
-
-synthData = synthData';
-realData = realData';
-stationdetails = stationdetails';
-
-synthData = sortrows(synthData);
-realData = sortrows(realData);
-stationdetails = sortrows(stationdetails);
+realData = readfile(['data/' folder '/real_differences.txt'],'%*s %f %f',2);
+synthData = readfile(['data/' folder '/both_differences.txt'],'%*s %f %f',2);
+stationdeatils = readfile(['data/' folder '/stationdetails.txt'], '%f %*s %f %f %f %f %f %f %f %f %f %f %f %f',13);
 
 % Make lattitude span 0 --> 360 deg
 stationdetails(stationdetails(:,12) < 0,12) = stationdetails(stationdetails(:,12) < 0,12) + 360;

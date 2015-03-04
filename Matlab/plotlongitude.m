@@ -17,6 +17,8 @@ stationdetails(:,14) = stationdetails(:,13) - 5153;
 %% Calculate residuals
 resid(:,1) = realData(:,1);
 resid(:,2) = realData(:,2) - synthData(:,2);
+
+% Sort the residuals
 [resid,indexes]= sortrows(resid,2);
 
 %% Plot 3D
