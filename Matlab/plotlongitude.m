@@ -5,17 +5,17 @@ addpath('Library');
 load('redblue.mat');
 
 %% Import data
-file = fopen([folder '/real_differences.txt']);
+file = fopen(['data/' folder '/real_differences.txt']);
 realData = fscanf(file,'%*s %f %f', [2 inf]);
 fclose(file);
 clear file;
 
-file = fopen([folder '/stationdetails.txt']);
+file = fopen(['data/' folder '/stationdetails.txt']);
 stationdetails = fscanf(file,'%f %*s %f %f %f %f %f %f %f %f %f %f %f %f', [13 inf]);
 fclose(file);
 clear file;
 
-file = fopen([folder '/both_differences.txt']);
+file = fopen(['data/' folder '/both_differences.txt']);
 synthData = fscanf(file,'%*s %f %f', [2 inf]);
 fclose(file);
 
