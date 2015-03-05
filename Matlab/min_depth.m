@@ -1,15 +1,15 @@
 clear
 folder = 'celebessea';
 
-file = fopen([folder '/both_differences.txt']);
+file = fopen(['data/' folder '/both_differences.txt']);
 bothdata = fscanf(file,'%*s %f %f', [2 inf]);
 fclose(file);
 
-file = fopen([folder '/pkikp_differences.txt']);
+file = fopen(['data/' folder '/pkikp_differences.txt']);
 idata = fscanf(file,' %f %f', [2 inf]);
 fclose(file);
 
-file = fopen([folder '/KIKP_differences.txt']);
+file = fopen(['data/' folder '/KIKP_differences.txt']);
 Idata = fscanf(file,' %f %f', [2 inf]);
 fclose(file);
 
