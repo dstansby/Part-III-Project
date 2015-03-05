@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2015.1.14)  5 MAR 2015 17:12
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2015.1.14)  5 MAR 2015 17:14
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -353,46 +353,45 @@ Package pdftex.def Info: figures/celebessea/celebessea_synthetic_both.pdf used
 on input line 138.
 (pdftex.def)             Requested size: 271.7835pt x 284.73784pt.
 
-<figures/celebessea/celebessea_real_aligned.pdf, id=166, 597.23125pt x 845.1575
-pt>
-File: figures/celebessea/celebessea_real_aligned.pdf Graphic file (type pdf)
- <use figures/celebessea/celebessea_real_aligned.pdf>
-Package pdftex.def Info: figures/celebessea/celebessea_real_aligned.pdf used on
- input line 147.
-(pdftex.def)             Requested size: 271.7835pt x 384.61174pt.
- [5 <./figures/celebessea/celebessea_real.pdf>] [6 <./figures/celebessea/celebe
-ssea_synthetic_both.pdf>] [7 <./figures/celebessea/celebessea_real_aligned.pdf>
-]
-<figures/celebessea/celebessea_KIK_aligned.pdf, id=228, 597.23125pt x 613.42554
+<figures/celebessea/celebessea_KIK_aligned.pdf, id=165, 597.23125pt x 613.42554
 pt>
 File: figures/celebessea/celebessea_KIK_aligned.pdf Graphic file (type pdf)
  <use figures/celebessea/celebessea_KIK_aligned.pdf>
 Package pdftex.def Info: figures/celebessea/celebessea_KIK_aligned.pdf used on 
-input line 157.
+input line 150.
 (pdftex.def)             Requested size: 181.18439pt x 186.09766pt.
 
-<figures/celebessea/celebessea_pkikp_aligned.pdf, id=229, 597.23125pt x 604.516
+<figures/celebessea/celebessea_pkikp_aligned.pdf, id=166, 597.23125pt x 604.516
 89pt>
 File: figures/celebessea/celebessea_pkikp_aligned.pdf Graphic file (type pdf)
  <use figures/celebessea/celebessea_pkikp_aligned.pdf>
 Package pdftex.def Info: figures/celebessea/celebessea_pkikp_aligned.pdf used o
-n input line 158.
+n input line 151.
 (pdftex.def)             Requested size: 181.18439pt x 183.395pt.
 
-<figures/celebessea/celebessea_both_aligned.pdf, id=230, 597.23125pt x 607.4801
+<figures/celebessea/celebessea_both_aligned.pdf, id=167, 597.23125pt x 607.4801
 2pt>
 File: figures/celebessea/celebessea_both_aligned.pdf Graphic file (type pdf)
  <use figures/celebessea/celebessea_both_aligned.pdf>
 Package pdftex.def Info: figures/celebessea/celebessea_both_aligned.pdf used on
- input line 159.
+ input line 152.
 (pdftex.def)             Requested size: 181.18439pt x 184.29398pt.
-
-<figures/min_distance.pdf, id=232, 702.625pt x 520.94624pt>
+ [5 <./figures/celebessea/celebessea_real.pdf>] [6 <./figures/celebessea/celebe
+ssea_synthetic_both.pdf>] <figures/min_distance.pdf, id=205, 702.625pt x 520.94
+624pt>
 File: figures/min_distance.pdf Graphic file (type pdf)
 
 <use figures/min_distance.pdf>
-Package pdftex.def Info: figures/min_distance.pdf used on input line 170.
+Package pdftex.def Info: figures/min_distance.pdf used on input line 163.
 (pdftex.def)             Requested size: 271.7835pt x 201.51483pt.
+
+<figures/celebessea/celebessea_real_aligned.pdf, id=207, 597.23125pt x 845.1575
+pt>
+File: figures/celebessea/celebessea_real_aligned.pdf Graphic file (type pdf)
+ <use figures/celebessea/celebessea_real_aligned.pdf>
+Package pdftex.def Info: figures/celebessea/celebessea_real_aligned.pdf used on
+ input line 173.
+(pdftex.def)             Requested size: 271.7835pt x 384.61174pt.
 Package epstopdf Info: Source file: <figures/mindanao/mindanao_longitude.eps>
 (epstopdf)                    date: 2015-03-03 23:19:09
 (epstopdf)                    size: 615102 bytes
@@ -405,7 +404,7 @@ longitude-eps-converted-to.pdf figures/mindanao/mindanao_longitude.eps>
 (epstopdf)             \includegraphics on input line 181.
 Package epstopdf Info: Output file is already uptodate.
 
-<figures/mindanao/mindanao_longitude-eps-converted-to.pdf, id=233, 1686.3pt x 9
+<figures/mindanao/mindanao_longitude-eps-converted-to.pdf, id=208, 1686.3pt x 9
 53.5625pt>
 File: figures/mindanao/mindanao_longitude-eps-converted-to.pdf Graphic file (ty
 pe pdf)
@@ -414,15 +413,16 @@ Package pdftex.def Info: figures/mindanao/mindanao_longitude-eps-converted-to.p
 df used on input line 181.
 (pdftex.def)             Requested size: 271.7835pt x 153.67892pt.
 
-[8 <./figures/celebessea/celebessea_KIK_aligned.pdf> <./figures/celebessea/cele
+[7 <./figures/celebessea/celebessea_KIK_aligned.pdf> <./figures/celebessea/cele
 bessea_pkikp_aligned.pdf> <./figures/celebessea/celebessea_both_aligned.pdf>]
-[9 <./figures/min_distance.pdf> <./figures/mindanao/mindanao_longitude-eps-conv
-erted-to.pdf>] [10] (./Inner Core Paper.bbl
+[8 <./figures/min_distance.pdf>] [9 <./figures/celebessea/celebessea_real_align
+ed.pdf> <./figures/mindanao/mindanao_longitude-eps-converted-to.pdf>]
+(./Inner Core Paper.bbl
 Missing character: There is no Å in font cmr10!
 Missing character: There is no „ in font cmr10!
 )
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 193.
- [11]
+ [10]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 193.
  (./Inner Core Paper.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 193.
@@ -436,13 +436,13 @@ LaTeX Warning: There were undefined references.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 193.
  ) 
 Here is how much of TeX's memory you used:
- 6270 strings out of 493109
- 91460 string characters out of 6135004
+ 6269 strings out of 493109
+ 91453 string characters out of 6135004
  181035 words of memory out of 5000000
  9607 multiletter control sequences out of 15000+600000
  11381 words of font info for 41 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 29i,8n,28p,1004b,351s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 29i,8n,28p,1004b,357s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 ></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
 </usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><
@@ -456,10 +456,10 @@ exlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texl
 ive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive
 /2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/
 2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on "Inner Core Paper.pdf" (11 pages, 1864382 bytes).
+Output written on "Inner Core Paper.pdf" (10 pages, 1864425 bytes).
 PDF statistics:
- 403 PDF objects out of 1000 (max. 8388607)
- 338 compressed objects within 4 object streams
- 55 named destinations out of 1000 (max. 500000)
+ 398 PDF objects out of 1000 (max. 8388607)
+ 334 compressed objects within 4 object streams
+ 54 named destinations out of 1000 (max. 500000)
  121 words of extra memory for PDF output out of 10000 (max. 10000000)
 
