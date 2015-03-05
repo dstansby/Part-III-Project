@@ -154,16 +154,26 @@ At smaller epicentral distances PKIKP gets weaker and PKiKP develops a large ups
 	\label{fig:Synth aligned}
 \end{figure}
 
-Small differences in the real and model velocity structures are expected only to affect the difference in arrival times between the two phases. We can therefore derive a minimum value for $ \left ( t_{PKiKP} - t_{PKIKP} \right )_{real}$, below which we should not trust measurements.
+Small differences in the real and model velocity structures are expected only to affect the difference in arrival times between the two phases. We can therefore derive a minimum value ($t_{0}$) for $ \left ( t_{PKiKP} - t_{PKIKP} \right )_{observed}$, at and below which we should not trust measurements.
 
-Figure \ref{fig:Min distance} shows measurements of peak to peak differences for PKiKP, PKIKP and combined synthetic waveforms computed for the Celebes Sea event. In each case the upswings furthest to the left and right are measured, and the difference taken between these two peaks. It can be clearly seen that below 0.72 s PKiKP and combined measurements coincide, thus setting 0.72 s as the maximum peak to peak difference at which the two phases can be distinguished for this event.
+Figure \ref{fig:Min distance} shows measurements of peak to peak differences for PKiKP, PKIKP and combined synthetic waveforms computed for the Celebes Sea event. In each case the upswings furthest to the left and right are measured, and the difference taken between these two peaks. The three lines of best fit, fitted in the range $0.67s < t < 0.75s$, meet at $ t_{0} = 0.68s$. Below this difference the PKiKP and combined measurements coincide as expected, and it is impossible to measure a reliable difference on a combined seismogram.
 
 \begin{figure}
 	\centering
-	\includegraphics[width=0.6\textwidth]{figures/min_distance}
-	\caption{Peak to peak travel times recorded from synthetic data generated for the Celebes Sea earthquake. Differences are measured between the leftmost and rightmost large upswing. Data is shown for combined (blue), PKIKP (red) and PKiKP (yellow) seismograms.}
+	\includegraphics[width=0.8\textwidth]{figures/min_distance}
+	\caption{Peak to peak travel times recorded from synthetic data shown in figure \ref{fig:Synth aligned}. Differences are measured between the leftmost and rightmost upswings. Data is shown for combined (blue), PKIKP (red) and PKiKP (yellow) seismograms. Lines of best fit are fitted using those values in the range $0.67s < t < 0.75s$.}
 	\label{fig:Min distance}
 \end{figure}
+
+As a consequence all real data measurements must conform to
+\begin{equation}
+	\left ( t_{PKiKP} - t_{PKIKP} \right )_{observed} > t_{0}
+\end{equation}
+This in conjunction with equation \eqref{eq:Residual definition} gives an inequality that each individual residual must satisfy for it to be a reliable measurement
+\begin{equation}
+	\delta t > t_{0} -  \left ( t_{PKiKP} - t_{PKIKP} \right )_{model} 
+\end{equation}
+At deeper depths where $ \left ( t_{PKiKP} - t_{PKIKP} \right )_{model} $ is high we can therefore measure a large range of negative $\delta t$, whereas at shallower depths we are restricted to only being able to measure positive values of $\delta t$, and thus positive velocity anomalies.
 
 \subsection{Residual travel time analysis}
 Figure \ref{fig:Real aligned} shows algined real world data. The PKIKP (leftmost phase) is not moving in as epicentral distance increases here, immediately showing that large positive residuals are expected at low epicentral distances (and hence depths).
