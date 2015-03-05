@@ -37,18 +37,24 @@ end
 figure;
 hold on;
 ax = gca;
+
+% Scatter plot data
 for i=1:numel(data)
 	scatter(data{i}(:,2), data{i}(:,1),'filled','MarkerFaceColor',ax.ColorOrder(i,:));
-	s = plot(bestFit{i}(:,2), bestFit{i}(:,1),'Color',ax.ColorOrder(i,:));
+end
+legend('Combined', 'PKIKP', 'PKiKP');
+
+% Plot lines of best fit
+for i=1:numel(data)
+	plot(bestFit{i}(:,2), bestFit{i}(:,1),'Color',ax.ColorOrder(i,:));
 end
 
-leg = legend('Combined', 'PKIKP', 'PKiKP');
-leg.FontSize = 12;
+% Plot formatting
 ax.YDir = 'reverse';
 ax.XAxisLocation = 'top';
 ax.XLim = [0.5 0.9];
 ax.YLim = [121 127];
-ax.FontSize = 16;
+ax.FontSize = 14;
 grid on;
 xlabel('Peak to peak difference /s')
 ylabel('Epicentral distance /^{\circ}')
