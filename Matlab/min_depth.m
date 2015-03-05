@@ -26,7 +26,12 @@ for i=1:numel(data)
 end
 
 %% Find best fit lines
-
+bestFit = cell(1,3);
+for i=1:numel(data)
+		p = polyfit(data{i}(:,1),data{i}(:,2),1);
+		bestFit{i}(:,1) = 121:0.2:127;
+		bestFit{i}(:,2) = polyval(p,bestFit{i}(:,1));
+end
 
 %% Plot figure
 figure;
