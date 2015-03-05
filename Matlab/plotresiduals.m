@@ -9,6 +9,7 @@ stationDeatils = readfile(['data/' folder '/stationdetails.txt'], '%f %*s %f %f 
 
 % Make lattitude span 0 --> 360 deg
 stationDetails(stationDetails(:,12) < 0,12) = stationDetails(stationDetails(:,12) < 0,12) + 360;
+
 % Change depth into depth below ICB
 stationDetails(:,13) = stationDetails(:,13) - 5153;
 

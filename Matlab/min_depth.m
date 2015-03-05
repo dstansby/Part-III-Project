@@ -1,17 +1,9 @@
 clear
 folder = 'celebessea';
-file = fopen(['data/' folder '/synth_differences.txt']);
-bothdata = fscanf(file,'%*s %f %f', [2 inf]);
-fclose(file);
-
-file = fopen(['data/' folder '/pkikp_differences.txt']);
-idata = fscanf(file,' %f %f', [2 inf]);
-fclose(file);
-
-file = fopen(['data/' folder '/KIKP_differences.txt']);
-Idata = fscanf(file,' %f %f', [2 inf]);
-fclose(file);
-clear file folder;
+addpath('Library');
+bothdata = readfile(['data/' folder '/synth_differences.txt'],'%*s %f %f',2);
+idata = readfile(['data/' folder '/pkikp_differences.txt'],'%*s %f %f',2);
+Idata = readfile(['data/' folder '/KIKP_differences.txt'],'%*s %f %f',2);
 
 % Put all data in a single variable
 data = cell(1,3);
@@ -20,9 +12,8 @@ data{2} = idata;
 data{3} = Idata;
 clear bothdata idata Idata;
 
-% Transpose and filter data
+% Filter data
 for i=1:numel(data)
-	data{i} = data{i}';
 	data{i} = data{i}((121 < data{i}(:,1)),:);
 	data{i} = data{i}((data{i}(:,1) < 130),:);
 end
