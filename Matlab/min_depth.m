@@ -31,10 +31,11 @@ end
 %% Plot figure
 figure;
 hold on;
-for i=1:numel(data)
-	scatter(data{i}(:,2), data{i}(:,1),'+');
-end
 ax = gca;
+for i=1:numel(data)
+	scatter(data{i}(:,2), data{i}(:,1),'filled','MarkerFaceColor',ax.ColorOrder(i,:));
+	s = plot(bestFit{i}(:,2), bestFit{i}(:,1),'Color',ax.ColorOrder(i,:));
+end
 
 leg = legend('Combined', 'PKIKP', 'PKiKP');
 leg.FontSize = 12;
