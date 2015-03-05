@@ -17,6 +17,10 @@ bothdata = bothdata';
 idata = idata';
 Idata = Idata';
 
+bothdata = bothdata((121 < bothdata(:,1) < 127),:);
+idata = idata((121 < idata(:,1) < 127),:);
+Idata = Idata((121 < Idata(:,1) < 127),:);
+
 %% Plot figure
 figure;
 hold on;
@@ -29,8 +33,8 @@ leg = legend('Combined', 'PKIKP', 'PKiKP');
 leg.FontSize = 12;
 ax.YDir = 'reverse';
 ax.XAxisLocation = 'top';
-ax.XLim = [0.4 1.2];
-ax.YLim = [120 130];
+ax.XLim = [0.5 0.9];
+ax.YLim = [121 127];
 ax.FontSize = 16;
 grid on;
 xlabel('Peak to peak difference /s')
