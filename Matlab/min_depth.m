@@ -1,7 +1,6 @@
 clear
 folder = 'celebessea';
-
-file = fopen(['data/' folder '/both_differences.txt']);
+file = fopen(['data/' folder '/synth_differences.txt']);
 bothdata = fscanf(file,'%*s %f %f', [2 inf]);
 fclose(file);
 
@@ -25,17 +24,18 @@ clear bothdata idata Idata;
 for i=1:numel(data)
 	data{i} = data{i}';
 	data{i} = data{i}((121 < data{i}(:,1)),:);
-	data{i} = data{i}((data{i}(:,1) < 127),:);
+	data{i} = data{i}((data{i}(:,1) < 130),:);
 end
 
 %% Find best fit lines
 bestFit = cell(1,3);
 for i=1:numel(data)
-		p = polyfit(data{i}(:,1),data{i}(:,2),1);
-		bestFit{i}(:,1) = 121:0.2:127;
+		tofit = data{i}((data{i}(:,2) < 0.75) & (data{i}(:,2) > 0.67),:);
+		p = polyfit(tofit(:,1),tofit(:,2),1);
+		bestFit{i}(:,1) = 120:0.1:130;
 		bestFit{i}(:,2) = polyval(p,bestFit{i}(:,1));
 end
-
+clear tofit
 %% Plot figure
 figure;
 hold on;
@@ -55,8 +55,8 @@ end
 % Plot formatting
 ax.YDir = 'reverse';
 ax.XAxisLocation = 'top';
-ax.XLim = [0.5 0.9];
-ax.YLim = [121 127];
+ax.XLim = [0.6 0.9];
+ax.YLim = [121 130];
 ax.FontSize = 14;
 grid on;
 xlabel('Peak to peak difference /s')
