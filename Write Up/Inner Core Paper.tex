@@ -143,7 +143,7 @@ Synthetic waveforms are computed using the WKBJ ray tracing program (\cite{Chapm
 In order to more easily visualise the two phases we plot individual PKiKP, PKIKP and both combined synthetic seismograms. Each of these is shifted by such that the final PKiKP upswing occurs at zero time. This is shown in figure \ref{fig:Synth aligned}. It is now clear to see the PKiKP phase merging with the PKIKP phase at low epicentral distances.
 
 \subsection{Quantifying minimum resolvable difference}
-At smaller epicentral distances PKIKP gets weaker and PKiKP develops a large upswing to the left. Both of these features mean that when measuring the peak to peak difference at low distances on the combined seismogram (or equivalently the real data) we are measuring two features of PKiKP and not one feature from each phase. criteria will be met either when PKIKP peak to peak differences are large or equal than combined differences, or when PKiKP and combined differences coincide.
+At smaller epicentral distances PKIKP gets weaker and PKiKP develops a large upswing to the left (see figure \ref{fig:Synth aligned}). In addition, the only two features that are measurable at all distances in the combined seismogram are the initial upswing and the final upswing. When making measurements of real data we want to be sure that we are measuring a PKIKP (initial upswing) and PKiKP (final upswing) feature, and not two PKiKP features. The latter case would cause a systematic overestimate of the true difference between the two phases. We also note that this is not a problem for synthetic data, where we can take measurements of the two phases individually.
 
 \begin{figure}
 	\centering
@@ -154,9 +154,9 @@ At smaller epicentral distances PKIKP gets weaker and PKiKP develops a large ups
 	\label{fig:Synth aligned}
 \end{figure}
 
-Figure \ref{fig:Min distance} shows measurements of peak to peak differences for PKiKP, PKIKP and combined synthetic waveforms. In each case the upswings furthest to the left and right are measured, and the difference taken between these two peaks. It can be clearly seen that below 0.72 s PKiKP and combined measurements coincide, thus setting 0.72 s as the maximum peak to peak difference at which the two phases can be distinguished for this event.
+Small differences in the real and model velocity structures are expected only to affect the difference in arrival times between the two phases. We can therefore derive a minimum value for $ \left ( t_{PKiKP} - t_{PKIKP} \right )_{real}$, below which we should not trust measurements.
 
-For other events we complete similar analysis and only present measurements which we know to be greater than the minimum separation.
+Figure \ref{fig:Min distance} shows measurements of peak to peak differences for PKiKP, PKIKP and combined synthetic waveforms computed for the Celebes Sea event. In each case the upswings furthest to the left and right are measured, and the difference taken between these two peaks. It can be clearly seen that below 0.72 s PKiKP and combined measurements coincide, thus setting 0.72 s as the maximum peak to peak difference at which the two phases can be distinguished for this event.
 
 \begin{figure}
 	\centering
