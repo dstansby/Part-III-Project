@@ -13,20 +13,27 @@ file = fopen(['data/' folder '/KIKP_differences.txt']);
 Idata = fscanf(file,' %f %f', [2 inf]);
 fclose(file);
 
-bothdata = bothdata';
-idata = idata';
-Idata = Idata';
+% Put all data in a single variable
+data = cell(1,3);
+data{1} = bothdata;
+data{2} = idata;
+data{3} = Idata;
 
-bothdata = bothdata((121 < bothdata(:,1) < 127),:);
-idata = idata((121 < idata(:,1) < 127),:);
-Idata = Idata((121 < Idata(:,1) < 127),:);
+for i=1:numel(data)
+	data{i} = data{i}';
+	data{i} = data{i}((121 < data{i}(:,1)),:);
+	data{i} = data{i}((data{i}(:,1) < 127),:);
+end
+
+%% Find best fit lines
+
 
 %% Plot figure
 figure;
 hold on;
-scatter(bothdata(:,2),bothdata(:,1),'+');
-scatter(idata(:,2),idata(:,1),'+');
-scatter(Idata(:,2),Idata(:,1),'+');
+for i=1:numel(data)
+	scatter(data{i}(:,2), data{i}(:,1),'+');
+end
 ax = gca;
 
 leg = legend('Combined', 'PKIKP', 'PKiKP');
