@@ -5,7 +5,7 @@ addpath('Library');
 %% Import data
 realData = readfile(['data/' folder '/real_differences.txt'],'%*s %f %f',2);
 synthData = readfile(['data/' folder '/both_differences.txt'],'%*s %f %f',2);
-stationDeatils = readfile(['data/' folder '/stationdetails.txt'], '%f %*s %f %f %f %f %f %f %f %f %f %f %f %f',13);
+stationDetails = readfile(['data/' folder '/stationdetails.txt'], '%f %*s %f %f %f %f %f %f %f %f %f %f %f %f',13);
 
 % Make lattitude span 0 --> 360 deg
 stationDetails(stationDetails(:,12) < 0,12) = stationDetails(stationDetails(:,12) < 0,12) + 360;
@@ -62,23 +62,6 @@ xlabel('Residual /s');
 ylabel('Depth below ICB /km');
 ax1.FontSize = 14;
 title(folder);
-
-% subplot(1,2,2);
-% scatter(means(:,2),stationdetails(:,1),'o');
-% ax2 = gca;
-% % This is wrong
-% %herrorbar(means(:,2),means(:,1),means(:,3),ax2.ColorOrder(1,:));
-% 
-% % Plot formatting
-% ax2.YDir = 'reverse';
-% ax2.XAxisLocation = 'top';
-% xlabel('\delta t /s');
-% ylabel('Epicentral distance /^{\circ}');
-% ax2.YLim = ax1.YLim;
-% ax2.XLim = ax1.XLim;
-% ax2.FontSize = 14;
-% title(folder);
-% vline(0);
 
 %% Plot synthetic and real data separatley
 %figure;
