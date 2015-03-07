@@ -5,7 +5,7 @@ addpath('Library');
 %% Import data
 realData = readfile(['data/' folder '/real_differences.txt'],'%*s %f %f',2);
 synthData = readfile(['data/' folder '/both_differences.txt'],'%*s %f %f',2);
-stationDetails = readfile(['data/' folder '/stationdetails.txt'], '%f %*s %f %f %f %f %f %f %f %f %f %f %f %f',13);
+stationDetails = readfile(['data/' folder '/stationdetails.txt'], '%f %*s %f %f %f %f %f %f %f %f %f %f %f %f %f %f',15);
 
 % Make lattitude span 0 --> 360 deg
 stationDetails(stationDetails(:,12) < 0,12) = stationDetails(stationDetails(:,12) < 0,12) + 360;
@@ -20,6 +20,12 @@ resid(:,2) = realData(:,2) - synthData(:,2);
 realErr = 0.02*ones(size(realData(:,1)));
 synthErr = 0.02*ones(size(synthData(:,1)));
 residErr = 0.04*ones(size(resid(:,1)));
+
+%% Calculate velocity perturbations
+innerCoreTimes = stationDetails(:,15) - stationDetails(:,14);
+
+deltaV(:,1) = resid(:,1);
+deltaV(:,2) = resid(:,2)./innerCoreTimes;
 
 %% Find local gradients, and hence local means
 
