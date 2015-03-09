@@ -1,5 +1,5 @@
 clear
-folder = 'celebessea';
+folder = 'tanzania';
 addpath('Library');
 %close all
 load('redblue.mat');
