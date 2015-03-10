@@ -11,6 +11,7 @@ stationDetails = readfile(['data/' folder '/stationdetails.txt'], '%f %*s %f %f 
 
 % Make longitude span 0 --> 360 deg
 % stationdetails(stationdetails(:,12) < 0,12) = stationdetails(stationdetails(:,12) < 0,12) + 360;
+
 % Calculate depth below ICB
 depths = stationDetails(:,13) - 5153;
 
@@ -39,8 +40,6 @@ ylabel('Turning Lattitude');
 zlabel('Depth below ICB /km');
 ax.FontSize = 14;
 %ax.ZLim = [0 40];
-%ax.XDir = 'reverse';
-%ax.ZDir = 'reverse';
 
 %% Plot 2D Longitude vs. depth
 figure;
