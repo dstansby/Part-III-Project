@@ -59,7 +59,7 @@ points = scatter(stationDetails(indexes,12),depths(indexes),150,resid(:,2),'fill
 title(folder);
 
 cbar = colorbar;
-clim = 0.6;
+clim = 1.2;
 caxis([-clim clim]);
 cbar.Label.String = 'Residual /s';
 
