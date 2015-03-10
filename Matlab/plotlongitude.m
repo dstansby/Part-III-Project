@@ -15,7 +15,7 @@ if min(realData(:,2)) < 0 || min(synthData(:,2)) < 0
 end
 
 % Make longitude span 0 --> 360 deg
-% stationdetails(stationdetails(:,12) < 0,12) = stationdetails(stationdetails(:,12) < 0,12) + 360;
+% stationDetails(stationDetails(:,12) < 0,12) = stationDetails(stationDetails(:,12) < 0,12) + 360;
 
 % Calculate depth below ICB
 depths = stationDetails(:,13) - 5153;
