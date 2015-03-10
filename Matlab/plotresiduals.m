@@ -1,6 +1,6 @@
 clear
 %close all
-folder = 'celebessea';
+folder = 'tanzania';
 addpath('Library');
 %% Import data
 realData = readfile(['data/' folder '/real_differences.txt'],'%*s %f %f',2);
@@ -26,30 +26,6 @@ innerCoreTimes = stationDetails(:,15) - stationDetails(:,14);
 
 deltaV(:,1) = resid(:,1);
 deltaV(:,2) = resid(:,2)./innerCoreTimes;
-
-%% Find local gradients, and hence local means
-
-% Means stores Distance;Residual;Error in residual
-means(:,1) = [127.5 ; 132.5];
-means(:,2:3) = zeros([size(means,1) 2]);
-for i = 1:size(means);
-	x = means(i,1);
-	% Find points in 2 degree range
-	toaverage = (resid(:,1) < x+2.5) & (resid(:,1) >= x-2.5);
-	toaverage = resid(toaverage,:);
-	
-	% If we have too few points to fit a line to
-	if size(toaverage,1) <= 2
-		continue;
-	end
-	% Fit straight line to points
-	[p,S] = polyfit(toaverage(:,1),toaverage(:,2),1);
-	means(i,2) = p(1)*x + p(2);
-	[y,delta] = polyval(p,x,S);
-	% This is wrong
-	means(i,3) = delta;
-	clear y delta p S
-end
 
 %% Plot residuals
 figure;
