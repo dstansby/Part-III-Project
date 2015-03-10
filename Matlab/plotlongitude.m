@@ -45,7 +45,7 @@ ax.FontSize = 14;
 %% Plot 2D Longitude vs. depth
 figure;
 colormap(col);
-scatter(stationDetails(indexes,12),depths(indexes),150,resid(:,2),'filled');
+points = scatter(stationDetails(indexes,12),depths(indexes),150,resid(:,2),'filled');
 
 % Add lines to compare with Waszek 2011
 %hline(15);
@@ -53,14 +53,14 @@ scatter(stationDetails(indexes,12),depths(indexes),150,resid(:,2),'filled');
 
 % Plot formatting
 title(folder);
+
 cbar = colorbar;
-% if abs(min(resid(:,2))) > max(resid(:,2))
-% 	caxis([min(resid(:,2)) abs(min(resid(:,2)))]);
-% else
-% 	caxis([-max(resid(:,2)) max(resid(:,2))])
-% end
-caxis([-1.2 1.2]);
+clim = 0.6;
+caxis([-clim clim]);
 cbar.Label.String = 'Residual /s';
+
+points.MarkerEdgeColor = 'k';
+points.LineWidth = 0.1;
 
 ax = gca;
 ax.FontSize = 14;
