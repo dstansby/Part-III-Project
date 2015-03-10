@@ -17,6 +17,11 @@ for i = 1:3
 	stationDetails = readfile(['data/' folder '/stationdetails.txt'], '%f %*s %f %f %f %f %f %f %f %f %f %f %f %f %f %f',15);
 	stationDetails(:,13) = stationDetails(:,13) - 5153;
 	
+	% Sanity check peak to peak distances
+	if min(realData(:,2)) < 0 || min(synthData(:,2)) < 0
+		error('At least one peak to peak distance is negative');
+	end
+	
 	resid = realData(:,2) - synthData(:,2);
 	
 	% Store longitude, depth, residual
