@@ -5,12 +5,12 @@ addpath('Library');
 toplot = [];
 %% Loop through each folder
 folders = dir('data');
-for i = 1:3
-	% Skip . and ..
-	if (i == 1) || (i == 2)
+for i = 1:size(folders,1)
+	% Skip ., .., and .DS_Store
+	folder = folders(i).name;
+	if strcmp(folder,'..') || strcmp(folder,'.') || strcmp(folder,'.DS_Store')
 		continue;
 	end
-	folder = folders(i).name;
 	
 	realData = readfile(['data/' folder '/real_differences.txt'],'%*s %f %f',2);
 	synthData = readfile(['data/' folder '/both_differences.txt'],'%*s %f %f',2);
