@@ -7,11 +7,14 @@ t0 = 0.68;	% Minimum resolvable difference
 %% Import data
 data = readfile(['data/' folder '/both_differences.txt'],'%*s %f %f',2);
 stationDetails = readfile(['data/' folder '/stationdetails.txt'], '%f %*s %f %f %f %f %f %f %f %f %f %f %f %f %f %f',15);
+stationDetails(:,13) = stationDetails(:,13) - 5153;	% Calculate depth below ICB
+
+data(:,1) = stationDetails(:,13);
 data(:,2) = t0 - data(:,2);
 data(:,2) = data(:,2)./(stationDetails(:,15)-stationDetails(:,14));
 
 %% Find line of best fit
-p = polyfit(data(:,2),data(:,1),3);
+p = polyfit(data(:,2),data(:,1),1);
 
 min = min(data(:,2));
 max = max(data(:,2));
@@ -26,11 +29,11 @@ clear min max step;
 figure;
 hold on;
 scatter(data(:,2),data(:,1),'filled');
-plot(line(:,1),line(:,2));
+%plot(line(:,1),line(:,2));
 
 ax = gca;
 ax.FontSize = 14;
 xlabel('\delta v / v');
-ylabel('Epicentral distance /\circ')
+ylabel('Depth below ICB /km')
 ax.XAxisLocation = 'top';
 ax.YDir = 'reverse';
