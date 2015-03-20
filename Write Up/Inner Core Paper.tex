@@ -87,6 +87,7 @@ Taking perturbations about the model of the form $v_{obs} = v_{model} + \delta v
 For depths below the Inner Core boundary of less than 50km $v_{model}$ is constant for AK135, and we assume $\delta v$ is also a constant such that we are measuring only the average velocity perturbation along the ray path. We are thus left with the equation (to first order in $\delta t$) that will allow us to compute $\delta v$
 \begin{equation}
 	\delta v = \frac{\delta t}{t} v_{model}
+	\label{eq:Delta v}
 \end{equation}
 where $t$ is the time PKIKP spends in the inner core. A positive residual implies a positive velocity perturbation and vice versa, as expected from equation \eqref{eq:Residual definition}.
 
@@ -110,7 +111,7 @@ Individual earthquakes meeting this criteria typically contain 100 to 600 indivi
 \section{Data Analysis}
 \subsection{Waveform analysis}
 \label{sec:Waveforms}
-The same analysis was performed on each individual event, allowing construction of a detailed velocity model for several CHANGE ME regions. Each event is listed in table \ref{tab:Events}.
+The same analysis was performed on each individual event. Each event is listed in table \ref{tab:Events}.
 \begin{table}
 \centering
 \begin{tabular}{| l | l | l | l | l | l | l |}
@@ -122,10 +123,11 @@ The same analysis was performed on each individual event, allowing construction 
 \caption{Event details. Information is taken directly from the Centroid Moment Tensor catalogue (\cite{Dziewonski1981}, \cite{Ekstrom2012}).}
 \label{tab:Events}
 \end{table}
-Here we describe the analysis performed using the specific example of the Celebes Sea earthquake.
+Here we describe the analysis using data from the Celebes Sea event.
 
-Synthetic waveforms are computed using the WKBJ ray tracing program (\cite{Chapman1976}) combined with rupture mechanisms from the global Centroid Moment Tensor (CMT) catalogue (\cite{Dziewonski1981}, \cite{Ekstrom2012}). Predicted ray paths and individual ray travel times are computed using the TauP toolkit (\cite{Crotwell1999}). Initial plots are shown for both real and synthetic data in figures \ref{fig:Real nonaligned} and \ref{fig:Synth nonaligned} respectively, with zero time occurring at the time of the earthquake, taken from the global CMT catalogue. Overplotted are theoretical PKIKP and PKiKP travel times computed using the AK135 model (\cite{Kennett1995b}). The predicted travel times agree well with the data in both cases.  For shorter epicentral distances the predicted arrival times become closer, suggesting that eventually there will be a phase separation below which the two distinct phases will not be individually observable.
+Synthetic waveforms are computed using the WKBJ ray tracing program (\cite{Chapman1976}) combined with rupture mechanisms from the global Centroid Moment Tensor (CMT) catalogue (\cite{Dziewonski1981}, \cite{Ekstrom2012})\footnote{See appendix \ref{app:Software} for full details of software used in our analysis.}. Predicted ray paths and individual ray travel times are computed using the TauP toolkit (\cite{Crotwell1999}). Initial plots are shown for both real and synthetic data in figures \ref{fig:Real nonaligned} and \ref{fig:Synth nonaligned} respectively, with zero time occurring at the time of the earthquake, taken from the global CMT catalogue. Overplotted are theoretical PKIKP and PKiKP travel times computed using the AK135 model (\cite{Kennett1995b}). The predicted travel times agree well with the data in both cases.  For shorter epicentral distances the predicted arrival times become closer, suggesting that eventually there will be a phase separation below which the two distinct phases will not be individually observable.
 
+CHANGE THESE FIGURES
 \begin{figure}
 	\centering
 	\includegraphics[width=0.6\textwidth]{figures/celebessea/celebessea_real.pdf}
@@ -140,10 +142,10 @@ Synthetic waveforms are computed using the WKBJ ray tracing program (\cite{Chapm
 	\label{fig:Synth nonaligned}
 \end{figure}
 
-In order to more easily visualise the two phases we plot individual PKiKP, PKIKP and both combined synthetic seismograms. Each of these is shifted by such that the final PKiKP upswing occurs at zero time. This is shown in figure \ref{fig:Synth aligned}. It is now clear to see the PKiKP phase merging with the PKIKP phase at low epicentral distances.
+In order to more easily visualise the two phases we plot individual PKiKP, PKIKP and both combined synthetic seismograms. Each of these is shifted such that the final PKiKP upswing occurs at zero time. This is shown in figure \ref{fig:Synth aligned}. It is now clear to see the PKiKP phase merging with the PKIKP phase at low epicentral distances.
 
 \subsection{Quantifying minimum resolvable difference}
-At smaller epicentral distances PKIKP gets weaker and PKiKP develops a large upswing to the left (see figure \ref{fig:Synth aligned}). In addition, the only two features that are measurable at all distances in the combined seismogram are the initial upswing and the final upswing. When making measurements of real data we want to be sure that we are measuring a PKIKP (initial upswing) and PKiKP (final upswing) feature, and not two PKiKP features. The latter case would cause a systematic overestimate of the true difference between the two phases. We also note that this is not a problem for synthetic data, where we can take measurements of the two phases individually.
+The only two features that are measurable at all distances in the combined synthetic seismograms are the initial upswing and the final upswing (see figure \ref{fig:Synth aligned}). When making measurements of real data we want to be sure that we are measuring a PKIKP (initial upswing) and PKiKP (final upswing) feature, and not two PKiKP features. Measuring two PKiKP features is more likely at lower epicentral distances due to the PKIKP phase getting weaker, and the PKiKP phase developing a large upswing to the left. Incorrectly measuring two PKiKP features would cause a systematic overestimate of the true difference between the two phases. We also note that this is not a problem for synthetic data, where we can take measurements of the two phases individually.
 
 \begin{figure}
 	\centering
@@ -156,7 +158,7 @@ At smaller epicentral distances PKIKP gets weaker and PKiKP develops a large ups
 
 Small differences in the real and model velocity structures are expected only to affect the difference in arrival times between the two phases. We can therefore derive a minimum value ($t_{0}$) for $ \left ( t_{PKiKP} - t_{PKIKP} \right )_{observed}$, at and below which we should not trust measurements.
 
-Figure \ref{fig:Min distance} shows measurements of peak to peak differences for PKiKP, PKIKP and combined synthetic waveforms computed for the Celebes Sea event. In each case the upswings furthest to the left and right are measured, and the difference taken between these two peaks. The three lines of best fit, fitted in the range $0.67s < t < 0.75s$, meet at $ t_{0} = 0.68s$. Below this difference the PKiKP and combined measurements coincide as expected, and it is impossible to measure a reliable difference on a combined seismogram.
+Figure \ref{fig:Min distance} shows measurements of peak to peak differences for PKiKP, PKIKP and combined synthetic waveforms computed for the Celebes Sea event. In each case the upswings furthest to the left and right are measured, and the difference taken between these two peaks. The three lines of best fit, fitted in the range $0.67s < t < 0.75s$, meet at $ t_{0} = 0.68s$. Below this difference the PKiKP and combined measurements coincide as expected, and it is impossible to measure an accurate difference on a combined seismogram.
 
 \begin{figure}
 	\centering
@@ -171,10 +173,19 @@ As a consequence all real data measurements must conform to
 \end{equation}
 This in conjunction with equation \eqref{eq:Residual definition} gives an inequality that each individual residual must satisfy for it to be a reliable measurement
 \begin{equation}
-	\delta t > t_{0} -  \left ( t_{PKiKP} - t_{PKIKP} \right )_{model} 
+	\delta t > t_{0} -  \left ( t_{PKiKP} - t_{PKIKP} \right )_{model}
+	\label{eq:Residual ineq}
 \end{equation}
-At deeper depths where $ \left ( t_{PKiKP} - t_{PKIKP} \right )_{model} $ is high we can therefore measure a large range of negative $\delta t$, whereas at shallower depths we are restricted to only being able to measure positive values of $\delta t$, and thus positive velocity anomalies.
+At deeper depths where $ \left ( t_{PKiKP} - t_{PKIKP} \right )_{model} $ is high we can therefore measure a large range of negative $\delta t$, whereas at shallower depths we are restricted to only being able to measure positive values of $\delta t$.
 
+The above analysis explains the limitations of our method as applied to measured data, allowing us to instantly know whether to trust the data or not. Eventually we will be interested in the range of velocity perturbations that are measurable using this method. Substituting equation \eqref{eq:Residual ineq} into equation \eqref{eq:Delta v} gives a fundamental limit on the range $\delta v$ that is measurable using this experimental methodology
+\begin{equation}
+	\delta v >  \frac{t_{0} -  \left ( t_{PKiKP} - t_{PKIKP} \right )}{t} v
+	\label{eq:Fundamental lim}
+\end{equation}
+where all quantities are those measured using the initial model.
+
+In order to help visualise equation \eqref{eq:Fundamental lim} we plot $\delta v$ as a function of depth in figure PUT LIMIT FIGURE HERE.
 \subsection{Residual travel time analysis}
 Figure \ref{fig:Real aligned} shows algined real world data. The PKIKP (leftmost phase) is not moving in as epicentral distance increases here, immediately showing that large positive residuals are expected at low epicentral distances (and hence depths).
 
