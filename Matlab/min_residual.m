@@ -2,7 +2,7 @@ clear
 folder = 'celebessea';
 addpath('Library');
 
-t0 = 0.68;
+t0 = 0.68;	% Minimum resolvable difference
 
 %% Import data
 data = readfile(['data/' folder '/both_differences.txt'],'%*s %f %f',2);
@@ -30,7 +30,7 @@ plot(line(:,1),line(:,2));
 
 ax = gca;
 ax.FontSize = 14;
-xlabel('\delta t / t');
+xlabel('\delta v / v');
 ylabel('Epicentral distance /\circ')
 ax.XAxisLocation = 'top';
 ax.YDir = 'reverse';
