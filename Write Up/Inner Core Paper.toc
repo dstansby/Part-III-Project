@@ -8,4 +8,3 @@
 \contentsline {subsection}{\numberline {4.2}Quantifying minimum resolvable difference}{5}{subsection.4.2}
 \contentsline {subsection}{\numberline {4.3}Residual travel time analysis}{8}{subsection.4.3}
 \contentsline {section}{\numberline {A}Software details}{8}{appendix.A}
-\contentsline {subsection}{\numberline {A.1}IRIS Wilber}{8}{subsection.A.1}

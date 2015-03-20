@@ -192,12 +192,23 @@ Figure
 	\caption{Caption}
 \end{figure}
 
-
+%%%%
 \appendix
 \section{Software details}
+\label{app:Software}
 The following lists the software used in this paper along with brief descriptions of what each piece of software was used for.
-\subsection{IRIS Wilber}
-Used to select events and download worldwide seismic data from each selected event.
+\begin{itemize}
+	\item IRIS Wilber
+	\begin{itemize}
+		\item Used to select events and download worldwide seismic data from each selected event.
+	\end{itemize}
+	\item Centroid Moment Tensor (CMT) Catalogue
+	\begin{itemize}
+		\item Used to set earthquake time and location, and to feed WKBJ with resolved moment tensors on an event by event basis.
+	\end{itemize}
+\end{itemize}
+
+%%%%
 \newpage
 % Bibliography
 \bibliographystyle{yahapj}
