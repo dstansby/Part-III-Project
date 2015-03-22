@@ -1,5 +1,5 @@
 clear
-folder = 'tanzania';
+folder = 'bandasea';
 addpath('Library');
 %close all
 load('redblue.mat');
@@ -14,8 +14,10 @@ if min(realData(:,2)) < 0 || min(synthData(:,2)) < 0
 	error('At least one peak to peak distance is negative');
 end
 
-% Make longitude span 0 --> 360 deg
-% stationDetails(stationDetails(:,12) < 0,12) = stationDetails(stationDetails(:,12) < 0,12) + 360;
+% Make lattitude span 0 --> 360 deg if we span both sides of 180/-180
+if min(stationDetails(:,12)) < 0 && max(stationDetails(:,12)) > 0
+	stationDetails(stationDetails(:,12) < 0,12) = stationDetails(stationDetails(:,12) < 0,12) + 360;
+end
 
 % Calculate depth below ICB
 depths = stationDetails(:,13) - 5153;
