@@ -1,7 +1,7 @@
 clear
-%close all
 folder = 'tanzania';
 addpath('Library');
+
 %% Import data
 realData = readfile(['data/' folder '/real_differences.txt'],'%*s %f %f',2);
 synthData = readfile(['data/' folder '/both_differences.txt'],'%*s %f %f',2);
@@ -17,9 +17,16 @@ stationDetails(:,13) = stationDetails(:,13) - 5153;
 resid(:,1) = realData(:,1);
 resid(:,2) = realData(:,2) - synthData(:,2);
 
-realErr = 0.02*ones(size(realData(:,1)));
-synthErr = 0.02*ones(size(synthData(:,1)));
-residErr = 0.04*ones(size(resid(:,1)));
+% Errors in each individual pick (in seconds)
+realPickErr = 0.02;
+synthPickErr = 0.01;
+residPickErr = sqrt(2*realPickErr^2 + 2*synthPickErr^2);
+
+realErr = realPickErr*ones(size(realData(:,1)));
+synthErr = synthPickErr*ones(size(synthData(:,1)));
+residErr = residPickErr*ones(size(resid(:,1)));
+
+clear realPickErr synthPickErr;
 
 %% Calculate velocity perturbations
 innerCoreTimes = stationDetails(:,15) - stationDetails(:,14);
