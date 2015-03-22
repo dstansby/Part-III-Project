@@ -1,10 +1,10 @@
 clear
-folder = 'tanzania';
+folder = 'bandasea';
 addpath('Library');
 
 %% Import data
 realData = readfile(['data/' folder '/real_differences.txt'],'%*s %f %f',2);
-synthData = readfile(['data/' folder '/both_differences.txt'],'%*s %f %f',2);
+synthData = readfile(['data/' folder '/PKiKP_differences.txt'],'%*s %f %f',2);
 stationDetails = readfile(['data/' folder '/stationdetails.txt'], '%f %*s %f %f %f %f %f %f %f %f %f %f %f %f %f %f',15);
 
 % Make lattitude span 0 --> 360 deg

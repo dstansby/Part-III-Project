@@ -6,7 +6,7 @@ load('redblue.mat');
 
 %% Import data
 realData = readfile(['data/' folder '/real_differences.txt'],'%*s %f %f',2);
-synthData = readfile(['data/' folder '/both_differences.txt'],'%*s %f %f',2);
+synthData = readfile(['data/' folder '/PKiKP_differences.txt'],'%*s %f %f',2);
 stationDetails = readfile(['data/' folder '/stationdetails.txt'], '%f %*s %f %f %f %f %f %f %f %f %f %f %f %f %f %f',15);
 
 % Sanity check peak to peak distances
@@ -25,7 +25,7 @@ resid(:,1) = realData(:,1);
 resid(:,2) = realData(:,2) - synthData(:,2);
 
 % Sort the residuals
-[resid,indexes]= sortrows(resid,2);
+[resid,indexes] = sortrows(resid,2);
 
 %% Plot 3D
 figure;

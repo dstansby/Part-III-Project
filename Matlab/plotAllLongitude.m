@@ -11,11 +11,11 @@ for i = 1:size(folders,1)
 	if strcmp(folder,'..') || strcmp(folder,'.') || strcmp(folder,'.DS_Store')
 		continue;
 	end
-	
+		
 	realData = readfile(['data/' folder '/real_differences.txt'],'%*s %f %f',2);
-	synthData = readfile(['data/' folder '/both_differences.txt'],'%*s %f %f',2);
+	synthData = readfile(['data/' folder '/PKiKP_differences.txt'],'%*s %f %f',2);
 	stationDetails = readfile(['data/' folder '/stationdetails.txt'], '%f %*s %f %f %f %f %f %f %f %f %f %f %f %f %f %f',15);
-	stationDetails(:,13) = stationDetails(:,13) - 5153;
+	stationDetails(:,13) = stationDetails(:,13) - 5153;	% Calculate depth below ICB
 	
 	% Sanity check peak to peak distances
 	if min(realData(:,2)) < 0 || min(synthData(:,2)) < 0
