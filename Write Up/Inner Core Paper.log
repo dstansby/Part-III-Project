@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2015.1.14)  20 MAR 2015 11:49
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2015.1.14)  23 MAR 2015 15:16
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -331,13 +331,8 @@ The west-ern hemi-sphere is more strongly
 
 LaTeX Warning: Reference `sec:Models' on page 2 undefined on input line 39.
 
-[2] [3]
-Overfull \hbox (57.5201pt too wide) in paragraph at lines 117--123
- [][] 
- []
-
-[4]
-<figures/celebessea/celebessea_real.pdf, id=168, 597.15038pt x 620.57162pt>
+[2] [3] [4]
+<figures/celebessea/celebessea_real.pdf, id=161, 597.15038pt x 620.57162pt>
 File: figures/celebessea/celebessea_real.pdf Graphic file (type pdf)
 
 <use figures/celebessea/celebessea_real.pdf>
@@ -345,7 +340,7 @@ Package pdftex.def Info: figures/celebessea/celebessea_real.pdf used on input l
 ine 133.
 (pdftex.def)             Requested size: 271.7835pt x 282.44574pt.
 
-<figures/celebessea/celebessea_synthetic_both.pdf, id=169, 597.23125pt x 625.69
+<figures/celebessea/celebessea_synthetic_both.pdf, id=162, 597.23125pt x 625.69
 157pt>
 File: figures/celebessea/celebessea_synthetic_both.pdf Graphic file (type pdf)
  <use figures/celebessea/celebessea_synthetic_both.pdf>
@@ -354,7 +349,7 @@ on input line 140.
 (pdftex.def)             Requested size: 271.7835pt x 284.73784pt.
  [5 <./figures/celebessea/celebessea_real.pdf>] [6 <./figures/celebessea/celebe
 ssea_synthetic_both.pdf>]
-<figures/celebessea/celebessea_KIK_aligned.pdf, id=210, 597.23125pt x 613.42554
+<figures/celebessea/celebessea_KIK_aligned.pdf, id=202, 597.23125pt x 613.42554
 pt>
 File: figures/celebessea/celebessea_KIK_aligned.pdf Graphic file (type pdf)
  <use figures/celebessea/celebessea_KIK_aligned.pdf>
@@ -362,7 +357,7 @@ Package pdftex.def Info: figures/celebessea/celebessea_KIK_aligned.pdf used on
 input line 152.
 (pdftex.def)             Requested size: 181.18439pt x 186.09766pt.
 
-<figures/celebessea/celebessea_pkikp_aligned.pdf, id=211, 597.23125pt x 604.516
+<figures/celebessea/celebessea_pkikp_aligned.pdf, id=203, 597.23125pt x 604.516
 89pt>
 File: figures/celebessea/celebessea_pkikp_aligned.pdf Graphic file (type pdf)
  <use figures/celebessea/celebessea_pkikp_aligned.pdf>
@@ -370,15 +365,13 @@ Package pdftex.def Info: figures/celebessea/celebessea_pkikp_aligned.pdf used o
 n input line 153.
 (pdftex.def)             Requested size: 181.18439pt x 183.395pt.
 
-<figures/celebessea/celebessea_both_aligned.pdf, id=212, 597.23125pt x 607.4801
+<figures/celebessea/celebessea_both_aligned.pdf, id=204, 597.23125pt x 607.4801
 2pt>
 File: figures/celebessea/celebessea_both_aligned.pdf Graphic file (type pdf)
  <use figures/celebessea/celebessea_both_aligned.pdf>
 Package pdftex.def Info: figures/celebessea/celebessea_both_aligned.pdf used on
  input line 154.
 (pdftex.def)             Requested size: 181.18439pt x 184.29398pt.
- [7 <./figures/celebessea/celebessea_KIK_aligned.pdf> <./figures/celebessea/cel
-ebessea_pkikp_aligned.pdf> <./figures/celebessea/celebessea_both_aligned.pdf>]
 Package epstopdf Info: Source file: <figures/min_distance.eps>
 (epstopdf)                    date: 2015-03-05 21:38:25
 (epstopdf)                    size: 95680 bytes
@@ -391,15 +384,17 @@ onverted-to.pdf figures/min_distance.eps>
 (epstopdf)             \includegraphics on input line 165.
 Package epstopdf Info: Output file is already uptodate.
 
-<figures/min_distance-eps-converted-to.pdf, id=277, 835.12pt x 591.20876pt>
+<figures/min_distance-eps-converted-to.pdf, id=206, 835.12pt x 591.20876pt>
 File: figures/min_distance-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figures/min_distance-eps-converted-to.pdf>
 Package pdftex.def Info: figures/min_distance-eps-converted-to.pdf used on inpu
 t line 165.
 (pdftex.def)             Requested size: 362.37569pt x 256.54225pt.
- [8 <./figures/min_distance-eps-converted-to.pdf>]
-<figures/celebessea/celebessea_real_aligned.pdf, id=301, 597.23125pt x 845.1575
+ [7 <./figures/celebessea/celebessea_KIK_aligned.pdf> <./figures/celebessea/cel
+ebessea_pkikp_aligned.pdf> <./figures/celebessea/celebessea_both_aligned.pdf>] 
+[8 <./figures/min_distance-eps-converted-to.pdf>]
+<figures/celebessea/celebessea_real_aligned.pdf, id=293, 597.23125pt x 845.1575
 pt>
 File: figures/celebessea/celebessea_real_aligned.pdf Graphic file (type pdf)
  <use figures/celebessea/celebessea_real_aligned.pdf>
@@ -429,11 +424,11 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 222.
 Here is how much of TeX's memory you used:
  6272 strings out of 493109
  91361 string characters out of 6135004
- 182352 words of memory out of 5000000
+ 182375 words of memory out of 5000000
  9607 multiletter control sequences out of 15000+600000
  11381 words of font info for 41 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 29i,8n,28p,1093b,450s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 29i,8n,28p,1017b,450s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 ></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
 </usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><
@@ -447,10 +442,10 @@ exlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texl
 ive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive
 /2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/
 2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on "Inner Core Paper.pdf" (11 pages, 1856937 bytes).
+Output written on "Inner Core Paper.pdf" (11 pages, 1858988 bytes).
 PDF statistics:
- 411 PDF objects out of 1000 (max. 8388607)
- 347 compressed objects within 4 object streams
+ 403 PDF objects out of 1000 (max. 8388607)
+ 343 compressed objects within 4 object streams
  59 named destinations out of 1000 (max. 500000)
  116 words of extra memory for PDF output out of 10000 (max. 10000000)
 
