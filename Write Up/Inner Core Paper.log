@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2015.1.14)  23 MAR 2015 15:16
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2015.1.14)  23 MAR 2015 15:24
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -337,7 +337,7 @@ File: figures/celebessea/celebessea_real.pdf Graphic file (type pdf)
 
 <use figures/celebessea/celebessea_real.pdf>
 Package pdftex.def Info: figures/celebessea/celebessea_real.pdf used on input l
-ine 133.
+ine 135.
 (pdftex.def)             Requested size: 271.7835pt x 282.44574pt.
 
 <figures/celebessea/celebessea_synthetic_both.pdf, id=162, 597.23125pt x 625.69
@@ -345,7 +345,7 @@ ine 133.
 File: figures/celebessea/celebessea_synthetic_both.pdf Graphic file (type pdf)
  <use figures/celebessea/celebessea_synthetic_both.pdf>
 Package pdftex.def Info: figures/celebessea/celebessea_synthetic_both.pdf used 
-on input line 140.
+on input line 142.
 (pdftex.def)             Requested size: 271.7835pt x 284.73784pt.
  [5 <./figures/celebessea/celebessea_real.pdf>] [6 <./figures/celebessea/celebe
 ssea_synthetic_both.pdf>]
@@ -354,7 +354,7 @@ pt>
 File: figures/celebessea/celebessea_KIK_aligned.pdf Graphic file (type pdf)
  <use figures/celebessea/celebessea_KIK_aligned.pdf>
 Package pdftex.def Info: figures/celebessea/celebessea_KIK_aligned.pdf used on 
-input line 152.
+input line 154.
 (pdftex.def)             Requested size: 181.18439pt x 186.09766pt.
 
 <figures/celebessea/celebessea_pkikp_aligned.pdf, id=203, 597.23125pt x 604.516
@@ -362,7 +362,7 @@ input line 152.
 File: figures/celebessea/celebessea_pkikp_aligned.pdf Graphic file (type pdf)
  <use figures/celebessea/celebessea_pkikp_aligned.pdf>
 Package pdftex.def Info: figures/celebessea/celebessea_pkikp_aligned.pdf used o
-n input line 153.
+n input line 155.
 (pdftex.def)             Requested size: 181.18439pt x 183.395pt.
 
 <figures/celebessea/celebessea_both_aligned.pdf, id=204, 597.23125pt x 607.4801
@@ -370,8 +370,10 @@ n input line 153.
 File: figures/celebessea/celebessea_both_aligned.pdf Graphic file (type pdf)
  <use figures/celebessea/celebessea_both_aligned.pdf>
 Package pdftex.def Info: figures/celebessea/celebessea_both_aligned.pdf used on
- input line 154.
+ input line 156.
 (pdftex.def)             Requested size: 181.18439pt x 184.29398pt.
+ [7 <./figures/celebessea/celebessea_KIK_aligned.pdf> <./figures/celebessea/cel
+ebessea_pkikp_aligned.pdf> <./figures/celebessea/celebessea_both_aligned.pdf>]
 Package epstopdf Info: Source file: <figures/min_distance.eps>
 (epstopdf)                    date: 2015-03-05 21:38:25
 (epstopdf)                    size: 95680 bytes
@@ -381,45 +383,43 @@ Package epstopdf Info: Source file: <figures/min_distance.eps>
 (epstopdf)                    size: 17250 bytes
 (epstopdf)             Command: <repstopdf --outfile=figures/min_distance-eps-c
 onverted-to.pdf figures/min_distance.eps>
-(epstopdf)             \includegraphics on input line 165.
+(epstopdf)             \includegraphics on input line 167.
 Package epstopdf Info: Output file is already uptodate.
 
-<figures/min_distance-eps-converted-to.pdf, id=206, 835.12pt x 591.20876pt>
+<figures/min_distance-eps-converted-to.pdf, id=269, 835.12pt x 591.20876pt>
 File: figures/min_distance-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figures/min_distance-eps-converted-to.pdf>
 Package pdftex.def Info: figures/min_distance-eps-converted-to.pdf used on inpu
-t line 165.
+t line 167.
 (pdftex.def)             Requested size: 362.37569pt x 256.54225pt.
- [7 <./figures/celebessea/celebessea_KIK_aligned.pdf> <./figures/celebessea/cel
-ebessea_pkikp_aligned.pdf> <./figures/celebessea/celebessea_both_aligned.pdf>] 
-[8 <./figures/min_distance-eps-converted-to.pdf>]
+ [8 <./figures/min_distance-eps-converted-to.pdf>]
 <figures/celebessea/celebessea_real_aligned.pdf, id=293, 597.23125pt x 845.1575
 pt>
 File: figures/celebessea/celebessea_real_aligned.pdf Graphic file (type pdf)
  <use figures/celebessea/celebessea_real_aligned.pdf>
 Package pdftex.def Info: figures/celebessea/celebessea_real_aligned.pdf used on
- input line 194.
+ input line 196.
 (pdftex.def)             Requested size: 271.7835pt x 384.61174pt.
  [9 <./figures/celebessea/celebessea_real_aligned.pdf>] [10] (./Inner Core Pape
 r.bbl
 Missing character: There is no Å in font cmr10!
 Missing character: There is no „ in font cmr10!
 )
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 222.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 224.
  [11]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 222.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 224.
 
 (./Inner Core Paper.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 222.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 222.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 224.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 224.
 Package rerunfilecheck Info: File `"Inner Core Paper".out' has not changed.
 (rerunfilecheck)             Checksum: D2679D5C28F53C8F566A06CBB66DE6A9;625.
 
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 222.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 224.
  ) 
 Here is how much of TeX's memory you used:
  6272 strings out of 493109
@@ -442,7 +442,7 @@ exlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texl
 ive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive
 /2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/
 2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on "Inner Core Paper.pdf" (11 pages, 1858988 bytes).
+Output written on "Inner Core Paper.pdf" (11 pages, 1859732 bytes).
 PDF statistics:
  403 PDF objects out of 1000 (max. 8388607)
  343 compressed objects within 4 object streams

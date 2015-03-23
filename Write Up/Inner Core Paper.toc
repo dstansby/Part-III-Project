@@ -5,6 +5,6 @@
 \contentsline {section}{\numberline {3}Data Selection}{4}{section.3}
 \contentsline {section}{\numberline {4}Data Analysis}{4}{section.4}
 \contentsline {subsection}{\numberline {4.1}Waveform analysis}{4}{subsection.4.1}
-\contentsline {subsection}{\numberline {4.2}Quantifying minimum resolvable difference}{5}{subsection.4.2}
+\contentsline {subsection}{\numberline {4.2}Quantifying minimum resolvable difference}{7}{subsection.4.2}
 \contentsline {subsection}{\numberline {4.3}Residual travel time analysis}{9}{subsection.4.3}
 \contentsline {section}{\numberline {A}Software details}{9}{appendix.A}
