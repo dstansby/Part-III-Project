@@ -19,8 +19,8 @@ realPickErr = 0.02;
 synthPickErr = 0.01;
 residPickErr = sqrt(2*realPickErr^2 + 2*synthPickErr^2);
 
-realErr = realPickErr*ones(size(realData(:,1)));
-synthErr = synthPickErr*ones(size(synthData(:,1)));
+realErr = sqrt(2)*realPickErr*ones(size(realData(:,1)));
+synthErr = sqrt(2)*synthPickErr*ones(size(synthData(:,1)));
 residErr = residPickErr*ones(size(resid(:,1)));
 
 clear realPickErr synthPickErr;
