@@ -161,40 +161,6 @@ The only two features that are measurable at all distances in the combined seism
 \end{figure}
 
 
-
-%%
-Small differences in the real and model velocity structures are expected only to affect the difference in arrival times between the two phases. We can therefore derive a minimum value ($t_{0}$) for $ \left ( t_{PKiKP} - t_{PKIKP} \right )_{observed}$, at and below which we should not trust measurements.
-
-Figure \ref{fig:Min distance} shows measurements of peak to peak differences for PKiKP, PKIKP and PKi+IKP synthetic waveforms computed for the Celebes Sea event. In each case the upswings furthest to the left and right are measured, and the difference taken between these two peaks. The three lines of best fit, fitted in the range $0.67s < t < 0.75s$, meet at $ t_{0} = 0.68s$. Below this difference the PKiKP and combined measurements coincide as expected, and it is impossible to measure an accurate difference on a combined seismogram.
-
-\begin{figure}
-	\centering
-	\includegraphics[width=0.8\textwidth]{figures/min_distance}
-	\caption{Peak to peak travel times recorded from synthetic data shown in figure \ref{fig:Synth aligned}. Differences are measured between the leftmost and rightmost upswings. Data is shown for combined (blue), PKIKP (red) and PKiKP (yellow) seismograms. Lines of best fit are fitted using those values in the range $0.67s < t < 0.75s$.}
-	\label{fig:Min distance}
-\end{figure}
-
-As a consequence all real data measurements must conform to
-\begin{equation}
-	\left ( t_{PKiKP} - t_{PKIKP} \right )_{observed} > t_{0}
-\end{equation}
-This in conjunction with equation \eqref{eq:Residual definition} gives an inequality that each individual residual must satisfy for it to be a reliable measurement
-\begin{equation}
-	\delta t > t_{0} -  \left ( t_{PKiKP} - t_{PKIKP} \right )_{model}
-	\label{eq:Residual ineq}
-\end{equation}
-At deeper depths where $ \left ( t_{PKiKP} - t_{PKIKP} \right )_{model} $ is high we can therefore measure a large range of negative $\delta t$, whereas at shallower depths we are restricted to only being able to measure positive values of $\delta t$.
-
-The above analysis explains the limitations of our method as applied to measured data, allowing us to instantly know whether to trust the data or not. Eventually we will be interested in the range of velocity perturbations that are measurable using this method. Substituting equation \eqref{eq:Residual ineq} into equation \eqref{eq:Delta v} gives a fundamental limit on the range $\delta v$ that is measurable using this experimental methodology
-\begin{equation}
-	\delta v >  \frac{t_{0} -  \left ( t_{PKiKP} - t_{PKIKP} \right )}{t} v
-	\label{eq:Fundamental lim}
-\end{equation}
-where all quantities are those measured using synthetic data and models.
-
-In order to help visualise equation \eqref{eq:Fundamental lim} we plot $\delta v$ as a function of depth in figure PUT LIMIT FIGURE HERE.
-%%
-
 %%%%
 \appendix
 \section{Software details}
