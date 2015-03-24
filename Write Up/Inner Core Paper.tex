@@ -144,10 +144,12 @@ CHANGE THESE FIGURES
 	\label{fig:Synth nonaligned}
 \end{figure}
 
-In order to more easily visualise the two phases we plot individual PKiKP, PKIKP and both combined synthetic seismograms. Each of these is shifted such that the final PKiKP upswing occurs at zero time. This is shown in figure \ref{fig:Synth aligned}. It is now clear to see the PKiKP phase merging with the PKIKP phase at low epicentral distances.
+In order to more easily visualise the two phases we plot seismograms with individual PKiKP and PKIKP phases. In conjunction we also plot synthetic seismograms with both phases present, called `combined' seismograms from now on. This seismogram simulates the real world where both phases are present.
+
+Each of these is shifted such that the initial PKIKP downswing occurs at zero time. This is shown in figure \ref{fig:Synth aligned}. It is now clear to see the PKiKP phase merging with the PKIKP phase at low epicentral distances in the combined seismogram.
 
 \subsection{Quantifying minimum resolvable difference}
-The only two features that are measurable at all distances in the combined synthetic seismograms are the initial upswing and the final upswing (see figure \ref{fig:Synth aligned}). When making measurements of real data we want to be sure that we are measuring a PKIKP (initial upswing) and PKiKP (final upswing) feature, and not two PKiKP features. Measuring two PKiKP features is more likely at lower epicentral distances due to the PKIKP phase getting weaker, and the PKiKP phase developing a large upswing to the left. Incorrectly measuring two PKiKP features would cause a systematic overestimate of the true difference between the two phases. We also note that this is not a problem for synthetic data, where we can take measurements of the two phases individually.
+The only two features that are measurable at all distances in the combined seismograms are the initial downswing and the final downswing (see figure \ref{fig:Synth aligned}). When making measurements of real data we want to be sure that we are measuring a PKIKP feature (initial upswing) and PKiKP feature (final upswing), and not two PKiKP features. Measuring two PKiKP phase features is more likely at lower epicentral distances due to the PKIKP phase getting weaker, and the PKiKP phase developing a large upswing to the left. Incorrectly measuring two PKiKP features would cause a systematic overestimate of the true difference between the two phases. We also note that this is not a problem for synthetic data, where we can take measurements from the individual PKIKP and PKiKP seismograms separately.
 
 \begin{figure}
 	\centering
@@ -158,9 +160,12 @@ The only two features that are measurable at all distances in the combined synth
 	\label{fig:Synth aligned}
 \end{figure}
 
+
+
+%%
 Small differences in the real and model velocity structures are expected only to affect the difference in arrival times between the two phases. We can therefore derive a minimum value ($t_{0}$) for $ \left ( t_{PKiKP} - t_{PKIKP} \right )_{observed}$, at and below which we should not trust measurements.
 
-Figure \ref{fig:Min distance} shows measurements of peak to peak differences for PKiKP, PKIKP and combined synthetic waveforms computed for the Celebes Sea event. In each case the upswings furthest to the left and right are measured, and the difference taken between these two peaks. The three lines of best fit, fitted in the range $0.67s < t < 0.75s$, meet at $ t_{0} = 0.68s$. Below this difference the PKiKP and combined measurements coincide as expected, and it is impossible to measure an accurate difference on a combined seismogram.
+Figure \ref{fig:Min distance} shows measurements of peak to peak differences for PKiKP, PKIKP and PKi+IKP synthetic waveforms computed for the Celebes Sea event. In each case the upswings furthest to the left and right are measured, and the difference taken between these two peaks. The three lines of best fit, fitted in the range $0.67s < t < 0.75s$, meet at $ t_{0} = 0.68s$. Below this difference the PKiKP and combined measurements coincide as expected, and it is impossible to measure an accurate difference on a combined seismogram.
 
 \begin{figure}
 	\centering
