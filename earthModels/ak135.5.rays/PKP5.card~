@@ -1,0 +1,28 @@
+#5a New ray?, multiplcity, nr of interfaces PKIKP
+    T         1            10
+#5b Layer nr, nr of P segments, nr of S segments
+    1         1                 0
+    2         1                 0
+    3         1                 0
+    4         1                 0
+    5         1                 0
+    6         2                 0
+    7         2                 0
+    8         2                 0
+    9         2                 0
+    10        0                 0
+#5c Interface nr, PdPu PdPd PuPd SdSu SdSd SuSd PdSu PdSd PuSu PuSd
+    1             0    0    0    0    0    0    0    0    0    0
+    2             0    1    0    0    0    0    0    0    0    0
+    3             0    1    0    0    0    0    0    0    0    0
+    4             0    1    0    0    0    0    0    0    0    0
+    5             0    1    0    0    0    0    0    0    0    0
+    6             0    1    0    0    0    0    0    0    0    0
+    7             0    2    0    0    0    0    0    0    0    0
+    8             0    2    0    0    0    0    0    0    0    0
+    9	 	  0    2    0    0    0    0    0    0    0    0
+    10	 	  1    0    0    0    0    0    0    0    0    0
+#5d Source directivity, depth (model point), Receiver directivity, depth
+    1                   17                   9                     1
+#5e # ray par, Min, Mid, Max Type & model point, Min, Mid, Max ray par
+    100        2  138 1 113 1 113                  0. 0. 0.
