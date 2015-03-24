@@ -19,17 +19,15 @@ figure;
 hold on;
 ax = gca;
 
-scatter(data(:,2),stationDetails(:,13),'+');
-scatter(ehData(:,2),stationDetails(:,13),'+');
+scatter(data(:,2),data(:,1),'+');
+scatter(ehData(:,2),ehData(:,1),'+');
 %herrorbar(data(:,2),stationDetails(:,13),errs,ax.ColorOrder(1,:));
 %herrorbar(ehData(:,2),stationDetails(:,13),errs,ax.ColorOrder(2,:));
-
-rectangle('Position',[-0.03 15 0.06 75])
 
 % Plot formatting
 ax.FontSize = 14;
 ax.XAxisLocation = 'top';
 ax.YDir = 'reverse';
 xlabel('(PKIKP downswing) - (combined downswing) /s');
-ylabel('Depth below ICB /km');
+ylabel('Epicentral distance /deg');
 vline(0);
