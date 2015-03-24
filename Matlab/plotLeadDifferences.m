@@ -19,6 +19,11 @@ figure;
 hold on;
 ax = gca;
 
+% Perform moving average to smooth data
+n = 3;
+data = movingaverage(data,n);
+ehData = movingaverage(ehData,n);
+
 scatter(data(:,2),data(:,1),'+');
 scatter(ehData(:,2),ehData(:,1),'+');
 %herrorbar(data(:,2),stationDetails(:,13),errs,ax.ColorOrder(1,:));
