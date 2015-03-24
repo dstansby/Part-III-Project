@@ -1,0 +1,31 @@
+function output = movingaverage(input, n)
+% MOVINGAVERAGE Create moving average of a data series
+%	out = movingaverage(in, n) takes m by 2 matrix 'in' and integer 'n'
+%	and outputs the moving average over 'n' points
+%
+%	David Stansby 2015
+
+if size(input,2) ~= 2
+	error('Please provide a m by 2 matrix as input')
+end
+
+m = n-1;	% 0 if we are taking a 1 point moving average (ie. doing nothing)
+
+input = sortrows(input);
+
+xin = input(:,1);
+yin = input(:,2);
+xout = zeros(size(xin,1) - m,1);
+yout = zeros(size(yin,1) - m,1);
+clear input;
+
+for i = 1:(size(xin,1)-m)
+	for j = 0:m
+		xout(i) = xout(i) + xin(i+j);
+		yout(i) = yout(i) + yin(i+j);
+	end
+	xout(i) = xout(i)/n;
+	yout(i) = yout(i)/n;
+end
+
+output = horzcat(xout,yout);
