@@ -108,8 +108,7 @@ As discussed in section \ref{sec:Sampling}, we make differential travel time mea
 Individual earthquakes meeting this criteria typically contain 100 to 600 individual seismograms. Each seismogram is filtered between 0.7Hz - 2Hz in order to focus on the expected frequency of $\sim$1Hz whilst removing unwanted noise at other frequencies. Individual seismograms are then checked by hand, and only those showing a clear PKIKP signal near the predicted arrival time are kept for further analysis. Event parameters are looked up using the Central Moment Tensor (CMT) Catalogue (\cite{Dziewonski1981}, \cite{Ekstrom2012}).
 
 %%%%
-\section{Data Analysis}
-\subsection{Waveform analysis}
+\section{Initial data analysis}
 \label{sec:Waveforms}
 The same analysis was performed on each individual event. Each event is listed in table \ref{tab:Events}.
 \begin{table}\footnotesize
@@ -148,11 +147,6 @@ In order to more easily visualise the two phases we plot seismograms with indivi
 
 Each of these is shifted such that the initial PKIKP downswing occurs at zero time. This is shown in figure \ref{fig:Synth aligned}. It is now clear to see the PKiKP phase merging with the PKIKP phase at low epicentral distances in the combined seismogram.
 
-%%%%
-\section{Quantifying minimum resolvable difference}
-
-The only two features that are measurable at all distances in the combined seismograms are the initial downswing and the final downswing (see figure \ref{fig:Synth aligned}). When making measurements of real data we want to be sure that we are measuring a PKIKP feature (initial upswing) and PKiKP feature (final upswing), and not two PKiKP features. Measuring two PKiKP phase features is more likely at lower epicentral distances due to the PKIKP phase getting weaker, and the PKiKP phase developing a large upswing to the left. Incorrectly measuring two PKiKP features would cause a systematic overestimate of the true difference between the two phases. We also note that this is not a problem for synthetic data, where we can take measurements from the individual PKIKP and PKiKP seismograms separately.
-
 \begin{figure}
 	\centering
 	\includegraphics[width=0.4\textwidth]{figures/celebessea/celebessea_KIK_aligned}
@@ -161,6 +155,19 @@ The only two features that are measurable at all distances in the combined seism
 	\caption{Separated PKIKP (top left) PKiKP (top right), and combined (bottom) synthetic seismograms for the Celebes Sea event.}
 	\label{fig:Synth aligned}
 \end{figure}
+
+%%%%
+\section{The limits of PKiKP-PKIKP travel time analysis}
+
+In this section we seek to quantitively measure the limits of PKiKP-PKIKP travel time analysis when used to measure the velocity structure of the inner core. Previous studies have only measured up to epicentral distances where PKiKP and PKIKP are clearly separate phases; in this study we will attempt to study much lower epicentral distances. As such it will be useful to know where we can make reliable PKiKP-PKIKP measurements using synthetic data which mimics real world data.
+
+\subsection{Inner core travel time variations}
+
+The end goal of this study is to calculate velocity structure perturbations using equation \eqref{eq:Delta v}. In what follows it will therefore be useful to measure how $t$, the time a PKIKP ray spends in the inner core, varies as a function of both epicentral distance from the source, and bottoming depth below the ICB.
+
+
+
+The only two features that are measurable at all distances in the combined seismograms are the initial downswing and the final downswing (see figure \ref{fig:Synth aligned}). When making measurements of real data we want to be sure that we are measuring a PKIKP feature (initial upswing) and PKiKP feature (final upswing), and not two PKiKP features. Measuring two PKiKP phase features is more likely at lower epicentral distances due to the PKIKP phase getting weaker, and the PKiKP phase developing a large upswing to the left. Incorrectly measuring two PKiKP features would cause a systematic overestimate of the true difference between the two phases. We also note that this is not a problem for synthetic data, where we can take measurements from the individual PKIKP and PKiKP seismograms separately.
 
 At low epicentral distances PKiKP is the dominant phase. This means that on the combined seismogram, the final downswing is an accurate measurement of a PKiKP feature. This is confirmed in figure PUT FIGURE HERE where we plot measurements of the initial downswing in the combined and PKiKP case at distances where PKiKP has a well defined initial downswing. The two data sets agree well to within errors, confirming our assertion that on combined seismograms the final downswing is always a PKiKP feature.
 
