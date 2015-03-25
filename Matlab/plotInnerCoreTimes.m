@@ -5,6 +5,9 @@ addpath('Library');
 %% Import data
 stationDetails = readfile(['data/' folder '/stationdetails.txt'], '%f %*s %f %f %f %f %f %f %f %f %f %f %f %f %f %f',15);
 
+% Remove data above 130 deg
+stationDetails = stationDetails(stationDetails(:,1) < 130,:);
+
 % Change depth into depth below ICB
 stationDetails(:,13) = stationDetails(:,13) - 5153;
 
