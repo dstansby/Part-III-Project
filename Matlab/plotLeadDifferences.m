@@ -25,6 +25,8 @@ data = movingaverage(data,n);
 ehData = movingaverage(ehData,n);
 pkikpData = movingaverage(pkikpData,n);
 
+errs = errs(n:end)/sqrt(n);
+
 %% Plot different velocity model data
 figure;
 hold on;
