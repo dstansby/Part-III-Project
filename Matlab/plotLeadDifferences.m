@@ -45,6 +45,7 @@ figure;
 hold on;
 ax = gca;
 
+pkikpData = pkikpData(pkikpData(:,1) < 129,:);	% Throw away distances < 129 deg
 scatter(-data(:,2),data(:,1),'+');
 scatter(-pkikpData(:,2),pkikpData(:,1),'+');
 
@@ -52,7 +53,6 @@ scatter(-pkikpData(:,2),pkikpData(:,1),'+');
 ax.FontSize = 14;
 ax.XAxisLocation = 'top';
 ax.YDir = 'reverse';
-ax.YLim = [115 128];
 xlabel('(combined/PKiKP downswing) - (PKIKP downswing) /s');
 ylabel('Epicentral distance /deg');
 l = legend('Combined', 'PKiKP');
