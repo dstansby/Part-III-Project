@@ -1,5 +1,5 @@
 clear
-folder = 'celebessea';
+folder = 'bandasea';
 addpath('Library');
 
 t0 = 0.68;	% Minimum resolvable difference

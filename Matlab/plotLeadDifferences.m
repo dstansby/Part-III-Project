@@ -52,9 +52,9 @@ figure;
 hold on;
 ax = gca;
 
-pkikpData = pkikpData(pkikpData(:,1) < 129,:);	% Throw away distances < 129 deg
+pkikpDataToPlot = pkikpData(pkikpData(:,1) < 129,:);	% Throw away distances < 129 deg
 scatter(data(:,2),data(:,1),'+');
-scatter(pkikpData(:,2),pkikpData(:,1),'+');
+scatter(pkikpDataToPlot(:,2),pkikpDataToPlot(:,1),'+');
 herrorbar(data(:,2),data(:,1),errs,ax.ColorOrder(1,:));
 
 % Plot formatting
