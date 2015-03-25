@@ -25,6 +25,7 @@ data = movingaverage(data,n);
 ehData = movingaverage(ehData,n);
 pkikpData = movingaverage(pkikpData,n);
 
+% Calculate new errors
 errs = errs(n:end)/sqrt(n);
 
 %% Plot different velocity model data
@@ -53,9 +54,13 @@ hold on;
 ax = gca;
 
 pkikpDataToPlot = pkikpData(pkikpData(:,1) < 129,:);	% Throw away distances < 129 deg
+
 scatter(data(:,2),data(:,1),'+');
 scatter(pkikpDataToPlot(:,2),pkikpDataToPlot(:,1),'+');
+
 herrorbar(data(:,2),data(:,1),errs,ax.ColorOrder(1,:));
+pkikpErrs = errs(1:size(pkikpDataToPlot,1));
+herrorbar(pkikpDataToPlot(:,2),pkikpDataToPlot(:,1),pkikpErrs,ax.ColorOrder(2,:));
 
 % Plot formatting
 ax.FontSize = 14;
