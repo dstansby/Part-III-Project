@@ -163,8 +163,20 @@ In this section we seek to quantitively measure the limits of PKiKP-PKIKP travel
 
 \subsection{Inner core travel time variations}
 
-The end goal of this study is to calculate velocity structure perturbations using equation \eqref{eq:Delta v}. In what follows it will therefore be useful to measure how $t$, the time a PKIKP ray spends in the inner core, varies as a function of both epicentral distance from the source, and bottoming depth below the ICB.
+The end goal of this study is to calculate velocity structure perturbations using equation \eqref{eq:Delta v}. In what follows it will therefore be useful to know how $t$, the time a PKIKP ray spends in the inner core, varies as a function and bottoming depth below the ICB. For shallow depths this is shown in figure \ref{fig:Time in core}. Although only data for an source depth of $\sim$100km is shown, we have plotted similar data for source depths in the range 30km - 575km to confirm that the data is not a function of source depth.
 
+\begin{figure}
+	\centering
+	\includegraphics[width=0.7\textwidth]{figures/time_in_core}
+	\caption{The time PKIKP spends in the inner core as a function of bottoming depth of the ray.}
+	\label{fig:Time in core}
+\end{figure}
+
+The error in an individual velocity perturbation calculated using equation \eqref{eq:Delta v} is
+\begin{equation}
+	\Delta \delta v = \frac{v_{model}}{t} \left ( \Delta \delta t - \Delta t \frac{\delta t}{t} \right )
+\end{equation}
+where we have taken into account possible error in the inner core travel time, $\Delta t$.
 
 
 The only two features that are measurable at all distances in the combined seismograms are the initial downswing and the final downswing (see figure \ref{fig:Synth aligned}). When making measurements of real data we want to be sure that we are measuring a PKIKP feature (initial upswing) and PKiKP feature (final upswing), and not two PKiKP features. Measuring two PKiKP phase features is more likely at lower epicentral distances due to the PKIKP phase getting weaker, and the PKiKP phase developing a large upswing to the left. Incorrectly measuring two PKiKP features would cause a systematic overestimate of the true difference between the two phases. We also note that this is not a problem for synthetic data, where we can take measurements from the individual PKIKP and PKiKP seismograms separately.
