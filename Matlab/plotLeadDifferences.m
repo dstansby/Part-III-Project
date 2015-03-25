@@ -35,8 +35,8 @@ ax = gca;
 
 scatter(data(:,2),data(:,1),'+');
 scatter(ehData(:,2),ehData(:,1),'+');
-%herrorbar(data(:,2),stationDetails(:,13),errs,ax.ColorOrder(1,:));
-%herrorbar(ehData(:,2),stationDetails(:,13),errs,ax.ColorOrder(2,:));
+herrorbar(data(:,2),data(:,1),errs,ax.ColorOrder(1,:));
+herrorbar(ehData(:,2),ehData(:,1),errs,ax.ColorOrder(2,:));
 
 % Plot formatting
 ax.FontSize = 14;
@@ -53,11 +53,14 @@ figure;
 hold on;
 ax = gca;
 
-pkikpDataToPlot = pkikpData(pkikpData(:,1) < 129,:);	% Throw away distances < 129 deg
+% Throw away distances < 129 deg for pkikp data
+pkikpDataToPlot = pkikpData(pkikpData(:,1) < 129,:);
 
+% Plot data
 scatter(data(:,2),data(:,1),'+');
 scatter(pkikpDataToPlot(:,2),pkikpDataToPlot(:,1),'+');
 
+% Plot error bars
 herrorbar(data(:,2),data(:,1),errs,ax.ColorOrder(1,:));
 pkikpErrs = errs(1:size(pkikpDataToPlot,1));
 herrorbar(pkikpDataToPlot(:,2),pkikpDataToPlot(:,1),pkikpErrs,ax.ColorOrder(2,:));
