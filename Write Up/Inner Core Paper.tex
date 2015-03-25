@@ -148,7 +148,8 @@ In order to more easily visualise the two phases we plot seismograms with indivi
 
 Each of these is shifted such that the initial PKIKP downswing occurs at zero time. This is shown in figure \ref{fig:Synth aligned}. It is now clear to see the PKiKP phase merging with the PKIKP phase at low epicentral distances in the combined seismogram.
 
-\subsection{Quantifying minimum resolvable difference}
+%%%%
+\section{Quantifying minimum resolvable difference}
 The only two features that are measurable at all distances in the combined seismograms are the initial downswing and the final downswing (see figure \ref{fig:Synth aligned}). When making measurements of real data we want to be sure that we are measuring a PKIKP feature (initial upswing) and PKiKP feature (final upswing), and not two PKiKP features. Measuring two PKiKP phase features is more likely at lower epicentral distances due to the PKIKP phase getting weaker, and the PKiKP phase developing a large upswing to the left. Incorrectly measuring two PKiKP features would cause a systematic overestimate of the true difference between the two phases. We also note that this is not a problem for synthetic data, where we can take measurements from the individual PKIKP and PKiKP seismograms separately.
 
 \begin{figure}
@@ -159,6 +160,18 @@ The only two features that are measurable at all distances in the combined seism
 	\caption{Separated PKIKP (top left) PKiKP (top right), and combined (bottom) synthetic seismograms for the Celebes Sea event.}
 	\label{fig:Synth aligned}
 \end{figure}
+
+At low epicentral distances PKiKP is the dominant phase. This means that on the combined seismogram, the final downswing is an accurate measurement of a PKiKP feature. This is confirmed in figure PUT FIGURE HERE where we plot measurements of the initial downswing in the combined and PKiKP case at distances where PKiKP has a well defined initial downswing. The two data sets agree well to within errors, confirming our assertion that on combined seismograms the final downswing is always a PKiKP feature.
+
+In contrast, the left downswing may not be an accurate measurement of a PKIKP feature at low epicentral distances. To quantify where measurements on the combined seismogram become inaccurate, we plot the difference between PKIKP initial downswings (see top left, figure \ref{fig:Synth aligned}) and combined initial downswing (see bottom, figure \ref{fig:Synth aligned}). On the same figure we also plot the difference between PKiKP initial downswings and PKIKP initial downswings. This data is shown in figure \ref{fig:Downswing differences}. A three point moving average is applied in order to smooth the data; this does not significantly change the distribution of data. At epicentral distances $< 127^{\circ}$ PKiKP and combined measurements coincide. We should therefore not trust measurements below $127^{\circ}$.
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.7\textwidth]{figures/downswing_differences}
+	\caption{Initial downswing measurements for PKiKP and combined synthetic seismograms. Measurements are taken relative to initial PKIKP downswings.}
+	\label{fig:Downswing differences}
+\end{figure}
+
 
 
 %%%%
