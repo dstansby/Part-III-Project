@@ -16,9 +16,10 @@ synthPickErr = 0.01;
 errs = sqrt(2)*synthPickErr*ones(size(data(:,1)));
 
 %% Perform moving average to smooth data
-n = 1;
+n = 3;
 data = movingaverage(data,n);
 ehData = movingaverage(ehData,n);
+pkikpData = movingaverage(pkikpData,n);
 
 %% Plot different velocity model data
 figure;
