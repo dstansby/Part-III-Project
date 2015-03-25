@@ -43,15 +43,15 @@ ax.YDir = 'reverse';
 xlabel('Time spent in inner core /s');
 ylabel('Epicentral distance /deg');
 
-%% Plot depth vs. epicentral distance
+%% Plot time vs. depth
 figure;
 ax = gca;
 
-scatter(innerCoreTimes,stationDetails(:,13));
+scatter(innerCoreTimes,stationDetails(:,13),'+');
 
 % Plot formatting
 ax.FontSize = 14;
 ax.XAxisLocation = 'top';
 ax.YDir = 'reverse';
 xlabel('Time spent in inner core /s');
-ylabel('Depth /km');
+ylabel('Depth below ICB /km');
