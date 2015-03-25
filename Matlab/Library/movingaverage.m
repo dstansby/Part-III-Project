@@ -12,20 +12,11 @@ end
 m = n-1;	% 0 if we are taking a 1 point moving average (ie. doing nothing)
 
 input = sortrows(input);
-
-xin = input(:,1);
-yin = input(:,2);
-xout = zeros(size(xin,1) - m,1);
-yout = zeros(size(yin,1) - m,1);
-clear input;
+output = zeros(size(input,1)-m, size(input,2));
 
 for i = 1:(size(xin,1)-m)
 	for j = 0:m
-		xout(i) = xout(i) + xin(i+j);
-		yout(i) = yout(i) + yin(i+j);
+		output(i,:) = output(i,:) + input(i+j,:);
 	end
-	xout(i) = xout(i)/n;
-	yout(i) = yout(i)/n;
 end
-
-output = horzcat(xout,yout);
+output = output./n;
