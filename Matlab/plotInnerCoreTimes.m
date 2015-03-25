@@ -16,6 +16,22 @@ innerCoreTimes = stationDetails(:,15) - stationDetails(:,14);
 
 %% Plot depth vs. epicentral distance
 figure;
+hold on;
+ax = gca;
+
+scatter(stationDetails(:,13),stationDetails(:,1));
+
+% Plot formatting
+ax.FontSize = 14;
+ax.XAxisLocation = 'top';
+ax.YDir = 'reverse';
+xlabel('Depth below ICB /km');
+ylabel('Epicentral distance /deg');
+
+
+%% Plot time vs. epicentral distance
+figure;
+hold on;
 ax = gca;
 
 scatter(innerCoreTimes,stationDetails(:,1));
