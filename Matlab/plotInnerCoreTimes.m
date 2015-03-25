@@ -45,6 +45,7 @@ ylabel('Epicentral distance /deg');
 
 %% Plot time vs. depth
 figure;
+hold on;
 ax = gca;
 
 scatter(innerCoreTimes,stationDetails(:,13),'+');
