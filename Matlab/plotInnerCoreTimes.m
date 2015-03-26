@@ -3,23 +3,35 @@ folder = 'bandasea';
 addpath('Library');
 
 %% Import data
-stationDetails = readfile(['data/' folder '/stationdetails.txt'], '%f %*s %f %f %f %f %f %f %f %f %f %f %f %f %f %f',15);
+ak135stationDetails = readfile(['data/' folder '/stationdetails.txt'], '%f %*s %f %f %f %f %f %f %f %f %f %f %f %f %f %f',15);
+ehstationDetails = readfile(['data/' folder '/stationdetails_eh.txt'], '%f %*s %f %f %f %f %f %f %f %f %f %f %f %f %f %f',15);
 
 % Remove data above 130 deg
-stationDetails = stationDetails(stationDetails(:,1) < 130,:);
+ak135stationDetails = ak135stationDetails(ak135stationDetails(:,1) < 130,:);
+ehstationDetails = ehstationDetails(ehstationDetails(:,1) < 130,:);
+
+% Sort data
+ak135stationDetails = sortrows(ak135stationDetails);
+ehstationDetails = sortrows(ehstationDetails);
 
 % Change depth into depth below ICB
-stationDetails(:,13) = stationDetails(:,13) - 5153;
+ak135stationDetails(:,13) = ak135stationDetails(:,13) - 5153;
+ehstationDetails(:,13) = ehstationDetails(:,13) - 5153;
 
 % Calculate time spend in inner core
-innerCoreTimes = stationDetails(:,15) - stationDetails(:,14);
+ak135innerCoreTimes = ak135stationDetails(:,15) - ak135stationDetails(:,14);
+ehinnerCoreTimes = ehstationDetails(:,15) - ehstationDetails(:,14);
+
 
 %% Plot depth vs. epicentral distance
 figure;
 hold on;
 ax = gca;
 
-scatter(stationDetails(:,13),stationDetails(:,1));
+plot(ak135stationDetails(:,13),ak135stationDetails(:,1));
+plot(ehstationDetails(:,13),ehstationDetails(:,1));
+
+legend('AK135', 'AK135 with vp = 11km/s layer at top of ICB');
 
 % Plot formatting
 ax.FontSize = 14;
@@ -34,7 +46,9 @@ figure;
 hold on;
 ax = gca;
 
-scatter(innerCoreTimes,stationDetails(:,1));
+plot(ak135innerCoreTimes,ak135stationDetails(:,1));
+plot(ehinnerCoreTimes,ehstationDetails(:,1));
+legend('AK135', 'AK135 with vp = 11km/s layer at top of ICB');
 
 % Plot formatting
 ax.FontSize = 14;
@@ -48,7 +62,9 @@ figure;
 hold on;
 ax = gca;
 
-scatter(innerCoreTimes,stationDetails(:,13),'+');
+plot(ak135innerCoreTimes,ak135stationDetails(:,13));
+plot(ehinnerCoreTimes,ehstationDetails(:,13));
+legend('AK135', 'AK135 with vp = 11km/s layer at top of ICB');
 
 % Plot formatting
 ax.FontSize = 14;
