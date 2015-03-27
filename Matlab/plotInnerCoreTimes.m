@@ -77,7 +77,8 @@ plot(ak135innerCoreTimes,ak135stationDetails(:,13));
 plot(ehinnerCoreTimes,ehstationDetails(:,13));
 plot(whinnerCoreTimes,whstationDetails(:,13));
 
-legend('AK135', 'AK135 with vp = 11.1km/s layer below ICB', 'AK135 with vp = 11.0km/s layer below ICB');
+l = legend('AK135', 'AK135 with vp = 11.1km/s layer below ICB', 'AK135 with vp = 11.0km/s layer below ICB');
+l.Location = 'southwest';
 
 % Plot formatting
 ax.FontSize = 14;
