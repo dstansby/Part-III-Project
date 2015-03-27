@@ -1,13 +1,14 @@
 clear
 folder = 'bandasea';
 addpath('Library');
+load('ICBdepth.mat');
 
 t0 = 0.68;	% Minimum resolvable difference
 
 %% Import data
 data = readfile(['data/' folder '/PKiKP_differences.txt'],'%*s %f %f',2);
 stationDetails = readfile(['data/' folder '/stationdetails.txt'], '%f %*s %f %f %f %f %f %f %f %f %f %f %f %f %f %f',15);
-stationDetails(:,13) = stationDetails(:,13) - 5153;	% Calculate depth below ICB
+stationDetails(:,13) = stationDetails(:,13) - ICBdepth;	% Calculate depth below ICB
 
 data(:,1) = stationDetails(:,13);
 data(:,2) = t0 - data(:,2);

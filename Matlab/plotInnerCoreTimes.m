@@ -1,6 +1,7 @@
 clear
 folder = 'bandasea';
 addpath('Library');
+load('ICBdepth.mat');
 
 %% Import data
 ak135stationDetails = readfile(['data/' folder '/stationdetails.txt'], '%f %*s %f %f %f %f %f %f %f %f %f %f %f %f %f %f',15);
@@ -21,9 +22,9 @@ ehstationDetails = sortrows(ehstationDetails);
 whstationDetails = sortrows(whstationDetails);
 
 % Change depth into depth below ICB
-ak135stationDetails(:,13) = ak135stationDetails(:,13) - 5153;
-ehstationDetails(:,13) = ehstationDetails(:,13) - 5153;
-whstationDetails(:,13) = whstationDetails(:,13) - 5153;
+ak135stationDetails(:,13) = ak135stationDetails(:,13) - ICBdepth;
+ehstationDetails(:,13) = ehstationDetails(:,13) - ICBdepth;
+whstationDetails(:,13) = whstationDetails(:,13) - ICBdepth;
 
 % Calculate time spend in inner core
 ak135innerCoreTimes = ak135stationDetails(:,15) - ak135stationDetails(:,14);
