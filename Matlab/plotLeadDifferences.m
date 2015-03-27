@@ -15,6 +15,10 @@ pkikpData(:,2) = -pkikpData(:,2);
 % Change depth into depth below ICB
 stationDetails(:,13) = stationDetails(:,13) - 5153;
 
+data(:,1) = stationDetails(:,13);
+ehData(:,1) = stationDetails(:,13);
+pkikpData(:,1) = stationDetails(:,13);
+
 %% Calculate errors
 synthPickErr = 0.01;
 errs = sqrt(2)*synthPickErr*ones(size(data(:,1)));
@@ -43,7 +47,7 @@ ax.FontSize = 14;
 ax.XAxisLocation = 'top';
 ax.YDir = 'reverse';
 xlabel('(combined downswing) - (PKIKP downswing) /s');
-ylabel('Epicentral distance /deg');
+ylabel('Depth below ICB /km');
 l = legend('AK135', 'AK135, top layer of inner core at Vp = 11.1km/s');
 l.Location = 'southeast';
 vline(0);
@@ -53,17 +57,17 @@ figure;
 hold on;
 ax = gca;
 
-% Throw away distances < 129 deg for pkikp data
-pkikpDataToPlot = pkikpData(pkikpData(:,1) < 129,:);
+% Throw away depths > 14 km for pkikp data
+pkikpData(pkikpData(:,1) > 14,:) = NaN;
 
 % Plot data
 scatter(data(:,2),data(:,1),'+');
-scatter(pkikpDataToPlot(:,2),pkikpDataToPlot(:,1),'+');
+scatter(pkikpData(:,2),pkikpData(:,1),'+');
 
 % Plot error bars
 herrorbar(data(:,2),data(:,1),errs,ax.ColorOrder(1,:));
-pkikpErrs = errs(1:size(pkikpDataToPlot,1));
-herrorbar(pkikpDataToPlot(:,2),pkikpDataToPlot(:,1),pkikpErrs,ax.ColorOrder(2,:));
+pkikpErrs = errs(1:size(pkikpData,1));
+herrorbar(pkikpData(:,2),pkikpData(:,1),pkikpErrs,ax.ColorOrder(2,:));
 
 % Plot formatting
 ax.FontSize = 14;
@@ -72,7 +76,7 @@ ax.YDir = 'reverse';
 ax.XMinorTick = 'on';
 ax.YMinorTick = 'on';
 xlabel('Difference from PKIKP downswing /s');
-ylabel('Epicentral distance /deg');
+ylabel('Depth below ICB /km');
 l = legend('Combined', 'PKiKP');
 l.Location = 'southeast';
 vline(0);
