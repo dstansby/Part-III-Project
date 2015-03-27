@@ -31,14 +31,15 @@ WH = WH';
 figure;
 ax = gca;
 hold on;
-plot(AK135(:,2),AK135(:,1));
 plot(EH(:,2),EH(:,1));
 plot(WH(:,2),WH(:,1));
-legend('AK135','EH', 'WH');
+plot(AK135(:,2),AK135(:,1));
+l = legend('EH', 'WH', 'AK135');
+l.Location = 'southwest';
 
 % Plot formatting
-ax.XLim = [10.2 11.2];
-ax.YLim = [5100 5250];
+ax.XLim = [10.8 11.2];
+ax.YLim = [5150 5220];
 
 xlabel('P wave velocity / km/s');
 ylabel('Depth /km');
