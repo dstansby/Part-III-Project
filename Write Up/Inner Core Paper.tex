@@ -36,7 +36,7 @@ So far only large scale velocity structures have been measured, with the most re
 
 We do so by taking individual earthquakes that travel to multiple seismic stations and identifying the arrival of distant seismic phases in seismograms. We constrain our analysis to the uppermost inner core as far as is possible, and area not yet investigated in published literature.
 
-Section \ref{sec:Theory} gives an brief theoretical background, with section \ref{sec:Data} describing our data collection and pre-processing. Waveform analysis is discussed in section \ref{sec:Waveforms} leading to regional velocity model results presented in section \ref{sec:Models}.
+Section \ref{sec:Theory} gives an brief theoretical background, with section \ref{sec:Data} describing our data collection and pre-processing. We then turn to initial analysis of the collected data in \ref{sec:Initial analysis}, after which we take a short detour to examine the limits of our methodology in section \ref{sec:Limits}.
 
 %%%
 \section{Theoretical Background}
@@ -109,7 +109,7 @@ Individual earthquakes meeting this criteria typically contain 100 to 600 indivi
 
 %%%%
 \section{Initial data analysis}
-\label{sec:Waveforms}
+\label{sec:Initial analysis}
 The same analysis was performed on each individual event. Each event is listed in table \ref{tab:Events}.
 \begin{table}\footnotesize
 \centering
@@ -145,7 +145,7 @@ CHANGE THESE FIGURES
 
 In order to more easily visualise the two phases we plot seismograms with individual PKiKP and PKIKP phases. In conjunction we also plot synthetic seismograms with both phases present, called `combined' seismograms from now on. This seismogram simulates the real world where both phases are present.
 
-Each of these is shifted such that the initial PKIKP downswing occurs at zero time. This is shown in figure \ref{fig:Synth aligned}. It is now clear to see the PKiKP phase merging with the PKIKP phase at low epicentral distances in the combined seismogram.
+Each of these is shifted such that the initial PKIKP downswing occurs at zero time. This is shown in figure \ref{fig:Synth aligned}. It is now clear to see the PKiKP phase merging with the PKIKP phase at low epicentral distances in the combined seismogram. We are now in a position to take residual measurements. Before we do this, we first examine the limits of PKIKP-PKiKP travel time analysis.
 
 \begin{figure}
 	\centering
@@ -158,12 +158,13 @@ Each of these is shifted such that the initial PKIKP downswing occurs at zero ti
 
 %%%%
 \section{The limits of PKiKP-PKIKP travel time analysis}
+\label{sec:Limits}
 
 In this section we seek to quantitively measure the limits of PKiKP-PKIKP travel time analysis when used to measure the velocity structure of the inner core. Previous studies have only measured up to epicentral distances where PKiKP and PKIKP are clearly separate phases; in this study we will attempt to study much lower epicentral distances. As such it will be useful to know where we can make reliable PKiKP-PKIKP measurements using synthetic data which mimics real world data.
 
 \subsection{Inner core travel time variations}
 
-Because we do not know a-priori the actual velocity structure being measured, we perform analysis on three distinct velocity models. These are shown in figure \ref{fig:Velocity models}. In each case we vary the velocity jump at the ICB to realistic figures based on \cite{Waszek2011a}.
+Because we do not know a-priori the actual velocity structure being measured, we perform analysis on the three distinct velocity models shown in figure \ref{fig:Velocity models}. Our two new models represent realistic East Hemisphere (EH) and West Hemisphere (WH) isotropic velocity models based on \cite{Waszek2011a}. In each case the velocity jump at the ICB is modified from the AK135 value of 11.0427 km/s to 11.0 km/s (EH) and 11.1 km/s (WH) respectively.
 
 \begin{figure}
 	\centering
@@ -172,37 +173,35 @@ Because we do not know a-priori the actual velocity structure being measured, we
 	\label{fig:Velocity models}
 \end{figure}
 
-The end goal of this study is to calculate velocity structure perturbations using equation \eqref{eq:Delta v}. In what follows it will therefore be useful to know how $t$, the time a PKIKP ray spends in the inner core, varies as a function and bottoming depth below the ICB. For shallow depths this is shown in figure \ref{fig:Time in core}. Although only data for an earthquake source depth of $\sim$100km is shown, we have plotted similar data for source depths in the range 30km - 575km and confirm that the data does not change with a varying source depth.
-
-\begin{figure}
-	\centering
-	\includegraphics[width=0.7\textwidth]{figures/time_in_core}
-	\caption{The time PKIKP spends in the inner core as a function of bottoming depth of the ray.}
-	\label{fig:Time in core}
-\end{figure}
-
-The error in an individual velocity perturbation calculated using equation \eqref{eq:Delta v} is
+The end goal of this study is to calculate velocity structure perturbations using equation \eqref{eq:Delta v}. The error in an individual velocity perturbation calculated using equation \eqref{eq:Delta v} is
 \begin{equation}
 	\Delta \delta v = \frac{v_{model}}{t} \left ( \Delta \delta t - \Delta t \frac{\delta t}{t} \right )
 \end{equation}
 where we have taken into account possible error in the inner core travel time, $\Delta t$.
 
+To estimate $t$ and $\Delta t$ we investigate how $t$ varies as a function and bottoming depth below the ICB, and how this variation depends on the velocity structure. For shallow depths this is shown in figure \ref{fig:Time in core}.\footnote{Although only data for an earthquake source depth of $\sim$100km is shown, we have plotted similar data for source depths in the range 30km - 575km and confirm that the data does not change with a varying source depth.}. As a check of our modelling, we see that as bottoming depth $\rightarrow 0$, $t \rightarrow 0$, and at shallower depths the travel times for different models converge.
 
-The only two features that are measurable at all distances in the combined seismograms are the initial downswing and the final downswing (see figure \ref{fig:Synth aligned}). When making measurements of real data we want to be sure that we are measuring a PKIKP feature (initial upswing) and PKiKP feature (final upswing), and not two PKiKP features. Measuring two PKiKP phase features is more likely at lower epicentral distances due to the PKIKP phase getting weaker, and the PKiKP phase developing a large upswing to the left. Incorrectly measuring two PKiKP features would cause a systematic overestimate of the true difference between the two phases. We also note that this is not a problem for synthetic data, where we can take measurements from the individual PKIKP and PKiKP seismograms separately.
+\begin{figure}
+	\centering
+	\includegraphics[width=0.5\textwidth]{figures/time_in_core}
+	\caption{Time PKIKP spends in the inner core as a function of bottoming depth of the ray.}
+	\label{fig:Time in core}
+\end{figure}
 
-At low epicentral distances PKiKP is the dominant phase. This means that on the combined seismogram, the final downswing is an accurate measurement of a PKiKP feature. This is confirmed in figure PUT FIGURE HERE where we plot measurements of the initial downswing in the combined and PKiKP case at distances where PKiKP has a well defined initial downswing. The two data sets agree well to within errors, confirming our assertion that on combined seismograms the final downswing is always a PKiKP feature.
+To estimate $\Delta \delta t$ we take into account two possible sources of error. The first is the error in taking measurements from seismograms that lead to a $\delta t$ measurement. To measure $\delta t$ two picks are made each on real (synthetic) seismograms which have a sample every 0.2s (0.1s). We attribute an error of 0.2s (0.1s) to one measurement, and hence an error of $\sqrt{2}\sqrt{0.2^{2} + 0.1^{2}}s = 0.32s$ to a $\delta t$ measurement. This is a random error which could in theory be reduced to arbitrarily small values with repeated measurements on the same seismogram.
 
-In contrast, the left downswing may not be an accurate measurement of a PKIKP feature at low epicentral distances. To quantify where measurements on the combined seismogram become inaccurate, we plot the difference between PKIKP initial downswings (see top left, figure \ref{fig:Synth aligned}) and combined initial downswing (see bottom, figure \ref{fig:Synth aligned}). On the same figure we also plot the difference between PKiKP initial downswings and PKIKP initial downswings. This data is shown in figure \ref{fig:Downswing differences}. A three point moving average is applied in order to smooth the data; this does not significantly change the distribution of data. At epicentral distances $< 127^{\circ}$ PKiKP and combined measurements coincide. We should therefore not trust measurements below $127^{\circ}$.
+The second error is based on whether the features we pick on real seismograms accurately correspond PKiKP and PKIKP features. The only two features that are measurable at all distances in combined seismograms are the initial downswing and the final downswing (see figure \ref{fig:Synth aligned} bottom). When making measurements of real data we want to be sure that we are measuring a PKIKP feature (initial upswing) and PKiKP feature (final upswing), and not two PKiKP features. Measuring two PKiKP phase features is more likely at lower epicentral distances due to the PKIKP phase getting weaker, and the PKiKP phase developing a large upswing to the left. We note that this is not a problem for synthetic data, where we can take measurements from the individual PKIKP and PKiKP seismograms separately.
+
+At low epicentral distances PKiKP is the dominant phase. This means that on the combined seismogram the final downswing is an accurate measurement of a PKiKP feature. In contrast, the left downswing may not be an accurate measurement of a PKIKP feature at low epicentral distances. To quantify where measurements on the combined seismogram become inaccurate, we plot the difference between PKIKP initial downswings (see top left, figure \ref{fig:Synth aligned}) and combined initial downswing (see bottom, figure \ref{fig:Synth aligned}). On the same figure we also plot the difference between PKiKP initial downswings and PKIKP initial downswings. This data is shown in figure \ref{fig:Downswing differences}. A three point moving average is applied in order to smooth the data; this does not significantly change the distribution of data. A depths below 10km PKiKP and combined measurements coincide, showing that in these cases the final downswing is actually a PKiKP feature, not a PKIKP as we want.
+
+In figure PUT DIFFERENT VELOCITY STRUCTURE MEASUREMENTS FIGURE HERE we show the same at the combined measurements in figure \ref{fig:Downswing differences} for each velocity model.\footnote{AK135, EH and WH}
 
 \begin{figure}
 	\centering
 	\includegraphics[width=0.7\textwidth]{figures/downswing_differences}
-	\caption{Initial downswing measurements for PKiKP and combined synthetic seismograms. Measurements are taken relative to initial PKIKP downswings.}
+	\caption{Initial downswing measurements for PKiKP and combined synthetic seismograms computed from AK135. Measurements are taken relative to initial PKIKP downswings.}
 	\label{fig:Downswing differences}
 \end{figure}
-
-\subsection{Effect of different velocity models}
-Analysis in this section so far has used the spherically symmetric AK135 model to generate data. In the real world, however, deviations from this model of the order PUT VALUE AND REFERENCES HERE have been measured (\cite{Waszek2011a}, \cite{Yee2014}). We therefore carry out similar analysis using two different velocity models which are shown in figure PUT VELOCITY MODEL FIGURE HERE. In each case we perturb the P wave velocity at the ICB and keep all other parameters as in AK135. These models correspond to realistic eastern hemisphere and western hemisphere isotropic models, taken from \cite{Waszek2011a} and averaged over the top 60km of the inner core.
 
 %%%%
 \appendix
