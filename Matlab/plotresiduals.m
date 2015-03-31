@@ -1,6 +1,7 @@
 clear
 folder = 'bandasea';
 addpath('Library');
+load('ICBdepth');
 
 %% Import data
 realData = readfile(['data/' folder '/real_differences.txt'],'%*s %f %f',2);
@@ -8,7 +9,7 @@ synthData = readfile(['data/' folder '/PKiKP_differences.txt'],'%*s %f %f',2);
 stationDetails = readfile(['data/' folder '/stationdetails.txt'], '%f %*s %f %f %f %f %f %f %f %f %f %f %f %f %f %f',15);
 
 % Change depth into depth below ICB
-stationDetails(:,13) = stationDetails(:,13) - 5153;
+stationDetails(:,13) = stationDetails(:,13) - ICBdepth;
 
 %% Calculate residuals and errors
 resid(:,1) = realData(:,1);
