@@ -1,5 +1,5 @@
 clear
-folder = 'bandasea';
+folder = 'mozambique';
 addpath('Library');
 load('ICBdepth');
 

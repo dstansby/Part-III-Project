@@ -1,5 +1,5 @@
 clear
-folder = 'bandasea';
+folder = 'mozambique';
 addpath('Library');
 %close all
 load('redblue.mat');
@@ -15,7 +15,7 @@ if min(realData(:,2)) < 0 || min(synthData(:,2)) < 0
 end
 
 % Make lattitude span 0 --> 360 deg if we span both sides of 180/-180
-if min(stationDetails(:,12)) < 0 && max(stationDetails(:,12)) > 0
+if min(stationDetails(:,12)) < 90 && max(stationDetails(:,12)) > 90
 	stationDetails(stationDetails(:,12) < 0,12) = stationDetails(stationDetails(:,12) < 0,12) + 360;
 end
 
@@ -61,7 +61,7 @@ points = scatter(stationDetails(indexes,12),depths(indexes),150,resid(:,2),'fill
 title(folder);
 
 cbar = colorbar;
-clim = 1.2;
+clim = 0.6;
 caxis([-clim clim]);
 cbar.Label.String = 'Residual /s';
 
