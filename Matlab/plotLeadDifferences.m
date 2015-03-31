@@ -5,11 +5,13 @@ addpath('Library');
 %% Import data
 data = readfile(['data/' folder '/both_lead_differences.txt'],'%*s %f %f',2);
 ehData = readfile(['data/' folder '/eh.txt'],'%*s %f %f',2);
+whData = readfile(['data/' folder '/wh.txt'],'%*s %f %f',2);
 pkikpData = readfile(['data/' folder '/PKiKP_lead_differences.txt'],'%*s %f %f',2);
 stationDetails = readfile(['data/' folder '/stationdetails.txt'], '%f %*s %f %f %f %f %f %f %f %f %f %f %f %f %f %f',15);
 
 data(:,2) = -data(:,2);
 ehData(:,2) = -ehData(:,2);
+whData(:,2) = -whData(:,2);
 pkikpData(:,2) = -pkikpData(:,2);
 
 % Change depth into depth below ICB
@@ -17,16 +19,18 @@ stationDetails(:,13) = stationDetails(:,13) - 5153;
 
 data(:,1) = stationDetails(:,13);
 ehData(:,1) = stationDetails(:,13);
+whData(:,1) = stationDetails(:,13);
 pkikpData(:,1) = stationDetails(:,13);
 
 %% Calculate errors
-synthPickErr = 0.01;
+synthPickErr = 0.005;
 errs = sqrt(2)*synthPickErr*ones(size(data(:,1)));
 
 %% Perform moving average to smooth data
-n = 3;
+n = 1;
 data = movingaverage(data,n);
 ehData = movingaverage(ehData,n);
+whData = movingaverage(whData,n);
 pkikpData = movingaverage(pkikpData,n);
 
 % Calculate new errors
@@ -39,8 +43,10 @@ ax = gca;
 
 scatter(data(:,2),data(:,1),'+');
 scatter(ehData(:,2),ehData(:,1),'+');
+scatter(whData(:,2),whData(:,1),'+');
 herrorbar(data(:,2),data(:,1),errs,ax.ColorOrder(1,:));
 herrorbar(ehData(:,2),ehData(:,1),errs,ax.ColorOrder(2,:));
+herrorbar(whData(:,2),whData(:,1),errs,ax.ColorOrder(3,:));
 
 % Plot formatting
 ax.FontSize = 14;
@@ -48,7 +54,7 @@ ax.XAxisLocation = 'top';
 ax.YDir = 'reverse';
 xlabel('(combined downswing) - (PKIKP downswing) /s');
 ylabel('Depth below ICB /km');
-l = legend('AK135', 'AK135, top layer of inner core at Vp = 11.1km/s');
+l = legend('AK135', 'AK135, top layer of inner core at Vp = 11.1km/s (EH)', 'AK135, top layer of inner core at Vp = 11.0km/s (WH)');
 l.Location = 'southeast';
 vline(0);
 
