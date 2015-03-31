@@ -40,7 +40,7 @@ disp(['Plotting ' num2str(nopoints) ' points']);
 %% Plot data
 figure;
 colormap(col);
-points = scatter(toplot(:,1),toplot(:,2),150,toplot(:,3),'filled');
+points = scatter(toplot(:,1),toplot(:,2),100,toplot(:,3),'filled');
 
 % Add lines to compare with Waszek 2011
 hline(10);
