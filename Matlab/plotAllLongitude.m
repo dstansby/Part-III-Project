@@ -23,12 +23,19 @@ for i = 1:size(folders,1)
 		error('At least one peak to peak distance is negative');
 	end
 	
-	resid = realData(:,2) - synthData(:,2);
+	resid(:,3) = realData(:,2) - synthData(:,2);
+	resid(:,1) = stationDetails(:,12);
+	resid(:,2) = stationDetails(:,13);
+	
+	% Remove shallower than 10km
+	resid = resid(resid(:,2) > 10,:);
 	
 	% Store longitude, depth, residual
-	toplot = vertcat(toplot,horzcat(stationDetails(:,12),stationDetails(:,13),resid));
+	toplot = vertcat(toplot,horzcat(resid(:,1),resid(:,2),resid(:,3)));
 	clear resid realData synthData stationDetails
 end
+nopoints = size(toplot,1);
+disp(['Plotting ' num2str(nopoints) ' points']);
 
 %% Plot data
 figure;
@@ -36,12 +43,13 @@ colormap(col);
 points = scatter(toplot(:,1),toplot(:,2),150,toplot(:,3),'filled');
 
 % Add lines to compare with Waszek 2011
+hline(10);
 hline(15);
 hline(30);
 
 % Plot formatting
 cbar = colorbar;
-clim = 1.2;
+clim = 1;
 caxis([-clim clim]);
 cbar.Label.String = 'Residual /s';
 
@@ -52,6 +60,7 @@ ax = gca;
 ax.FontSize = 14;
 ax.XAxisLocation = 'top';
 ax.XLim = [-180 180];
+ax.YLim = [0 90];
 ax.YDir = 'reverse';
 xlabel('Turning Longitude');
 ylabel('Depth below ICB /km');
