@@ -12,7 +12,9 @@ for i = 1:size(folders,1)
 	if strcmp(folder,'..') || strcmp(folder,'.') || strcmp(folder,'.DS_Store')
 		continue;
 	end
-		
+	
+	display(['Processing ' folder]);
+
 	realData = readfile(['data/' folder '/real_differences.txt'],'%*s %f %f',2);
 	synthData = readfile(['data/' folder '/PKiKP_differences.txt'],'%*s %f %f',2);
 	stationDetails = readfile(['data/' folder '/stationdetails.txt'], '%f %*s %f %f %f %f %f %f %f %f %f %f %f %f %f %f',15);
@@ -40,7 +42,7 @@ disp(['Plotting ' num2str(nopoints) ' points']);
 %% Plot data
 figure;
 colormap(col);
-points = scatter(toplot(:,1),toplot(:,2),100,toplot(:,3),'filled');
+points = scatter(toplot(:,1),toplot(:,2),75,toplot(:,3),'filled');
 
 % Add lines to compare with Waszek 2011
 hline(10);
@@ -49,7 +51,7 @@ hline(30);
 
 % Plot formatting
 cbar = colorbar;
-clim = 1;
+clim = 0.8;
 caxis([-clim clim]);
 cbar.Label.String = 'Residual /s';
 
