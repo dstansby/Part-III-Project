@@ -1,5 +1,5 @@
 clear
-folder = 'mozambique';
+folder = 'sandwich5';
 addpath('Library');
 load('ICBdepth');
 
@@ -28,10 +28,7 @@ clear realPickErr synthPickErr;
 
 %% Calculate velocity perturbations
 innerCoreTimes = stationDetails(:,15) - stationDetails(:,14);
-
-deltaV(:,1) = resid(:,1);
-deltaV(:,2) = resid(:,2)./innerCoreTimes;
-deltaVErr = residErr./innerCoreTimes;
+[newVel, velErr] = calcvelmodel(resid(:,2),innerCoreTimes,11.05);
 
 %% Plot residuals
 figure;
