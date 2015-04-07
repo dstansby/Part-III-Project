@@ -45,9 +45,13 @@ colormap(col);
 points = scatter(toplot(:,1),toplot(:,2),75,toplot(:,3),'filled');
 
 % Add lines to compare with Waszek 2011
-hline(10);
-hline(15);
-hline(30);
+hline([10 15 30]);
+
+% Add lines to split up data
+vline([150 -170]);	% Celebes sea etc.
+vline([-90 -75]);		% South Sandwich Islands
+vline([-30 0]);
+vline([0 60]);
 
 % Plot formatting
 cbar = colorbar;
