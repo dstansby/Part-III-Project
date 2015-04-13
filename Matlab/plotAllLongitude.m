@@ -1,7 +1,8 @@
+function plotAllLongitude
 clear
 addpath('Library');
-load('redblue.mat');
-load('ICBdepth.mat');
+load('redblue.mat','col');
+load('ICBdepth.mat','ICBdepth');
 
 toplot = [];
 %% Loop through each folder
@@ -39,7 +40,7 @@ end
 nopoints = size(toplot,1);
 disp(['Plotting ' num2str(nopoints) ' points']);
 
-%% Plot data
+%% Plot longitude/depth data
 figure;
 colormap(col);
 points = scatter(toplot(:,1),toplot(:,2),75,toplot(:,3),'filled');
@@ -70,3 +71,40 @@ ax.YLim = [0 90];
 ax.YDir = 'reverse';
 xlabel('Turning Longitude');
 ylabel('Depth below ICB /km');
+%% Plot residual vs. longitude, with depth control
+longToPlot = toplot(:,1);
+depthToPlot = toplot(:,3);
+
+close all;
+fig = figure;
+points = scatter(longToPlot, depthToPlot,'+');
+hline(0);
+
+% Plot formatting
+ax = gca;
+ax.FontSize = 14;
+ax.XLim = [-180 180];
+ax.YLim = [-2 2];
+xlabel('Longitude /deg');
+ylabel('Residual /s');
+
+% Make slider to change depth being plotted
+slider = uicontrol('Style', 'slider');
+slider.Callback = @updatePlot;
+slider.Value = 10;
+slider.Max = 90;
+slider.Min = 10;
+
+	function updatePlot(source, callbackdata)
+		minDepth = slider.Value;
+		indexesToPlot = toplot(:,2) > minDepth;
+		longToPlot = toplot(indexesToPlot,1);
+		depthToPlot = toplot(indexesToPlot,3);
+		
+		delete(points);
+		points = scatter(longToPlot, depthToPlot,'+');
+		hline(0);
+		ax.XLim = [-180 180];
+		ax.YLim = [-2 2];
+	end
+end
