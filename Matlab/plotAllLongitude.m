@@ -3,6 +3,7 @@ clear
 addpath('Library');
 load('redblue.mat','col');
 load('ICBdepth.mat','ICBdepth');
+AK135vel = 11.0427;
 
 toplot = [];
 %% Loop through each folder
@@ -26,27 +27,27 @@ for i = 1:size(folders,1)
 		error('At least one peak to peak distance is negative');
 	end
 	
-	resid(:,3) = realData(:,2) - synthData(:,2);
-	resid(:,1) = stationDetails(:,12);
-	resid(:,2) = stationDetails(:,13);
-	
 	% Remove shallower than 10km
-	resid = resid(resid(:,2) > 10,:);
+	toKeep = stationDetails(:,13) > 10;
+	stationDetails = stationDetails(toKeep,:);
+	
+	% Calculate residuals
+	resid = realData(toKeep,2) - synthData(toKeep,2);	% Residuals
 	
 	% Store longitude, depth, residual
-	toplot = vertcat(toplot,horzcat(resid(:,1),resid(:,2),resid(:,3)));
+	toplot = vertcat(toplot,horzcat(stationDetails(:,12),stationDetails(:,13),resid));
 	clear resid realData synthData stationDetails;
 end
-nopoints = size(toplot,1);
-disp(['Plotting ' num2str(nopoints) ' points']);
+noPoints = size(toplot,1);
+disp(['Plotting ' num2str(noPoints) ' points']);
 
-%% Plot longitude/depth data
+%% Plot longitude/deptgh data
 figure;
 colormap(col);
 points = scatter(toplot(:,1),toplot(:,2),75,toplot(:,3),'filled');
 
 % Add lines to compare with Waszek 2011
-hline([10 15 30]);
+hline([10 15]);
 
 % Add lines to split up data
 vline([150 -170]);	% Celebes sea etc.
@@ -71,6 +72,9 @@ ax.YLim = [0 90];
 ax.YDir = 'reverse';
 xlabel('Turning Longitude');
 ylabel('Depth below ICB /km');
+
+%% Calculate and plot individual velocity models
+
 %% Plot residual vs. longitude, with depth control
 longToPlot = toplot(:,1);
 depthToPlot = toplot(:,3);
