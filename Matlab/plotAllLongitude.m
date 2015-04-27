@@ -5,7 +5,8 @@ load('redblue.mat','col');
 load('ICBdepth.mat','ICBdepth');
 AK135vel = 11.0427;
 
-toplot = [];
+data = [];
+
 %% Loop through each folder
 folders = dir('data');
 for i = 1:size(folders,1)
@@ -31,29 +32,31 @@ for i = 1:size(folders,1)
 	toKeep = stationDetails(:,13) > 10;
 	stationDetails = stationDetails(toKeep,:);
 	
-	% Calculate residuals
-	resid = realData(toKeep,2) - synthData(toKeep,2);	% Residuals
+	% Calculate residuals and travel times
+	resid = realData(toKeep,2) - synthData(toKeep,2);
+	travelTimes = stationDetails(:,15) - stationDetails(:,14);
 	
-	% Store longitude, depth, residual
-	toplot = vertcat(toplot,horzcat(stationDetails(:,12),stationDetails(:,13),resid));
-	clear resid realData synthData stationDetails;
+	% Store longitude, depth, residual, inner core travel times
+	data = vertcat(data,horzcat(stationDetails(:,12),stationDetails(:,13),resid, travelTimes));
+	
+	clear resid realData synthData stationDetails travelTimes;
 end
-noPoints = size(toplot,1);
+noPoints = size(data,1);
 disp(['Plotting ' num2str(noPoints) ' points']);
 
 %% Plot longitude/deptgh data
 figure;
 colormap(col);
-points = scatter(toplot(:,1),toplot(:,2),75,toplot(:,3),'filled');
+points = scatter(data(:,1),data(:,2),75,data(:,3),'filled');
 
 % Add lines to compare with Waszek 2011
 hline([10 15]);
 
 % Add lines to split up data
-vline([150 -170]);	% Celebes sea etc.
-vline([-90 -75]);		% South Sandwich Islands
-vline([-30 0]);
-vline([0 60]);
+longSplit = [[-170 150],[-90 75], [-30 0], [0 60]];
+for i = 1:8
+	vline(longSplit(i));
+end
 
 % Plot formatting
 cbar = colorbar;
@@ -74,10 +77,18 @@ xlabel('Turning Longitude');
 ylabel('Depth below ICB /km');
 
 %% Calculate and plot individual velocity models
+for i = 1:4
+	longMin = longSplit(2*i - 1) + 180;
+	longMax = longSplit(2*i) + 180;
+	toplot = data((data(:,1) + 180) < longMax,:);
+	toplot = toplot((toplot(:,1) + 180) > longMin,:);
+	[newVel, velErr] = calcvelmodel(toplot(:,3),toplot(:,4),AK135vel);
+	display([num2str(newVel) ', ' num2str(velErr)]);
+end
 
 %% Plot residual vs. longitude, with depth control
-longToPlot = toplot(:,1);
-depthToPlot = toplot(:,3);
+longToPlot = data(:,1);
+depthToPlot = data(:,3);
 
 figure;
 points = scatter(longToPlot, depthToPlot,'+');
@@ -101,9 +112,9 @@ slider.Min = 10;
 
 	function updatePlot(~, ~)
 		minDepth = slider.Value;
-		indexesToPlot = toplot(:,2) < minDepth;
-		longToPlot = toplot(indexesToPlot,1);
-		depthToPlot = toplot(indexesToPlot,3);
+		indexesToPlot = data(:,2) < minDepth;
+		longToPlot = data(indexesToPlot,1);
+		depthToPlot = data(indexesToPlot,3);
 		
 		delete(points);
 		hold on;
