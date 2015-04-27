@@ -216,6 +216,7 @@ To estimate $t$ and $\Delta t$ we investigate how $t$ varies as a function and b
 Table \ref{tab:Error values} gives estimates for the values present in equation \eqref{eq:Velocity error} at a depth of 10km. Estimates for $t$ and $\Delta t$ are taken from figure \ref{fig:Time in core}. These values are inherent in our a-priori ignorance of the real velocity structure, and and cannot be made arbitrarily small. $\delta t$ is a worst case estimate based on previous work (\cite{Waszek2011a}). A study perturbing about AK135 could not reduce this value, whereas a study perturbing about a more accurate model could. Finally, measure $\delta t$ two picks are made each on real (synthetic) seismograms which have a sample every 0.2s (0.1s). We attribute an error of 0.1s (0.05s) to one measurement, and hence $\Delta \delta t = 0.16s$. This is a random error which could in theory be reduced to arbitrarily small values by increasing both the synthetic and real sampling rates. It is also reduced by including multiple measurements in a single velocity perturbation calculation.
 
 A value for the worst case error in this study is $\Delta v_{obs} = 0.10 km/s$. In an ideal world where the error in taking measurements from seismograms is zero, we find that the error in the velocity model is directly proportional to the measured residual. Thus by taking a series of more accurate velocity models, it is in theory possible to beat the error in observed velocity down to zero.
+
 \begin{table}
 \centering
 \begin{tabular}{| c | c |}
@@ -265,6 +266,21 @@ Figure PUT FIGURE HERE shows all measurements as a function of longitude and dep
 %%%
 \subsection{Velocity models}
 
+\begin{table}
+\centering
+\begin{tabular}{| c | c |}
+	\hline
+	Longitude Range			& $v_{obs}$ / km/s	\\ \hline \hline
+	$150^{\circ}$ - $-170^{\circ}$	& 11.0935			\\ \hline
+	$-90^{\circ}$ - $-75^{\circ}$	& 11.0681			\\ \hline
+	$-30^{\circ}$ - $0^{\circ}$		& 11.0821			\\ \hline
+	$0^{\circ}$ - $60^{\circ}$		& 11.0923			\\
+	\hline
+\end{tabular}
+\caption{Calculated velocity perturbations for a 10km - 15km depth layer below the ICB. Longitude ranges are indicated on figure \ref{fig:All longitude}. Each range has $v_{model} = 11.0427 km/s$.}
+\label{tab:Velocity models}
+\end{table}
+	
 
 %%%%
 \appendix
