@@ -35,7 +35,7 @@ for i = 1:size(folders,1)
 	
 	% Store longitude, depth, residual
 	toplot = vertcat(toplot,horzcat(resid(:,1),resid(:,2),resid(:,3)));
-	clear resid realData synthData stationDetails
+	clear resid realData synthData stationDetails;
 end
 nopoints = size(toplot,1);
 disp(['Plotting ' num2str(nopoints) ' points']);
@@ -75,8 +75,7 @@ ylabel('Depth below ICB /km');
 longToPlot = toplot(:,1);
 depthToPlot = toplot(:,3);
 
-close all;
-fig = figure;
+figure;
 points = scatter(longToPlot, depthToPlot,'+');
 hline(0);
 
@@ -85,24 +84,27 @@ ax = gca;
 ax.FontSize = 14;
 ax.XLim = [-180 180];
 ax.YLim = [-2 2];
+color = ax.ColorOrder(1,:);
 xlabel('Longitude /deg');
 ylabel('Residual /s');
 
 % Make slider to change depth being plotted
 slider = uicontrol('Style', 'slider');
 slider.Callback = @updatePlot;
-slider.Value = 10;
+slider.Value = 90;
 slider.Max = 90;
 slider.Min = 10;
 
-	function updatePlot(source, callbackdata)
+	function updatePlot(~, ~)
 		minDepth = slider.Value;
-		indexesToPlot = toplot(:,2) > minDepth;
+		indexesToPlot = toplot(:,2) < minDepth;
 		longToPlot = toplot(indexesToPlot,1);
 		depthToPlot = toplot(indexesToPlot,3);
 		
 		delete(points);
+		hold on;
 		points = scatter(longToPlot, depthToPlot,'+');
+		points.MarkerEdgeColor = color;
 		hline(0);
 		ax.XLim = [-180 180];
 		ax.YLim = [-2 2];
