@@ -66,32 +66,30 @@ where $c(\vec{x})$ is the local wave velocity that depends on position. A veloci
 \label{sec:Sampling}
 Because the outer core is liquid with $\mu \approx 0$ and thus does not transmit S-waves, it is P-waves that are used to sample the inner core. Figure PUT FIGURE HERE shows the ray path for the PKiKP and PKIKP phase; they travel almost identical paths through the Crust, Mantle and upper Outer Core, after which PKiKP reflects off the Inner Core boundary, whereas PKIKP travels just underneath the boundary in the Inner Core.
 
-All measurements are compared to the radially symmetric global velocity model from \cite{Kennett1995b} (hereafter called AK135), from which we seek to measure perturbations about. The residual travel time CHECK ME is defined after \cite{Waszek2011a} as
+All measurements are compared to the radially symmetric global velocity model from \cite{Kennett1995b} (hereafter called AK135), from which we seek to measure perturbations about. The residual travel time is defined as
 \begin{equation}
 	\delta t = \left ( t_{PKiKP} - t_{PKIKP} \right )_{observed} -  \left ( t_{PKiKP} - t_{PKIKP} \right )_{model}
 	\label{eq:Residual definition}
 \end{equation}
-This equation can be reformulated as an integral along the ray paths
+If we assume that the ray paths of both the model ray and the real ray are identical, this equation can be reformulated as an integral along the ray paths
 \begin{equation}
 		\delta t = \left (  \int \frac{1}{v_{obs}} - \frac{1}{v_{model}} ds  \right )_{PKiKP} - \left (  \int \frac{1}{v_{obs}} - \frac{1}{v_{model}} ds \right )_{PKIKP}
 		\label{eq:deltat}
 \end{equation}
 where the path to be integrated along is indicated by the subscript outside the brackets, and in general the velocities vary as a function of position.
 
-As the inner core has a very low viscosity (eg. \cite{Wijs1998}, \cite{Zhang2000}) we assume that it is unable to sustain any long term non-radial variations in velocity structure. Under this assumption $v_{jobs} = v_{model}$ for the outer core, setting the first integral in \eqref{eq:deltat} to zero.
+As the inner core has a very low viscosity (eg. \cite{Wijs1998}, \cite{Zhang2000}) we assume that it is unable to sustain any long term non-radial variations in velocity structure. Under this assumption, for the outer core $v_{obs} = v_{model}$, setting the first integral in equation \eqref{eq:deltat} to zero.
 
 Taking perturbations about the model of the form $v_{obs} = v_{model} + \delta v$ gives
 \begin{equation}
 	\delta t =\left ( \int \frac{\delta v}{v_{model} + \delta v }\frac{1}{v_{model}} ds \right )_{PKIKP}
 \end{equation}
-For depths below the Inner Core boundary of less than 50km $v_{model}$ is constant for AK135, and we assume $\delta v$ is also a constant such that we are measuring only the average velocity perturbation along the ray path. We are thus left with the equation (to first order in $\delta t$) that will allow us to compute $\delta v$
+For depths below the Inner Core boundary of less than 50km $v_{model}$ is constant for AK135, and we assume $\delta v$ is also a constant such that we are measuring only the average velocity perturbation along the ray path. Integrating along the model ray path, we are thus left with the equation that will allow us to compute $\delta v$
 \begin{equation}
-	\delta v = \frac{\delta t}{t} v_{model}
+	\delta v = \frac{\delta t}{t - \delta t} v_{model}
 	\label{eq:Delta v}
 \end{equation}
 where $t$ is the time PKIKP spends in the inner core. A positive residual implies a positive velocity perturbation and vice versa, as expected from equation \eqref{eq:Residual definition}.
-
-If instead we wish to construct a layered model, we simply apply the above results to the uppermost layer, and then take the effect of the new layer into account when calculating the properties of subsequent lower layers.
 
 %%%
 \section{Data Selection}
