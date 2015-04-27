@@ -3,7 +3,7 @@ function [newVel, stDev] = calcvelmodel(residuals, innerCoreTimes, oldVel)
 %	[newVel, stDev] = calcvelmodel(resid, times, oldVel)
 %
 %	David Stansby 2015
-newVels = oldVel*((residuals./innerCoreTimes) + 1);
+newVels = oldVel*((residuals./(innerCoreTimes - residuals)) + 1);
 
 newVel = mean(newVels);
 stDev = std(newVels);
