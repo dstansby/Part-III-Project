@@ -165,21 +165,21 @@ Each of these is shifted such that the initial PKIKP downswing occurs at zero ti
 \section{The limits of PKiKP-PKIKP travel time analysis}
 \label{sec:Limits}
 
-In this section we seek to quantitively measure the limits of PKiKP-PKIKP travel time analysis when used to measure the velocity structure of the inner core. Previous studies have only measured up to epicentral distances where PKiKP and PKIKP are clearly separate phases; in this study we will attempt to study much lower epicentral distances. As such it will be useful to know where we can make reliable PKiKP-PKIKP measurements using synthetic data which mimics real world data.
+In this section we seek to quantitively measure the limits of PKiKP-PKIKP travel time analysis when used to measure the velocity structure at the top of the inner core. Previous studies have only measured up to epicentral distances where PKiKP and PKIKP are distinct phases; in this study we attempt to study much lower epicentral distances. As such it will be useful to know at what distances we can make reliable PKiKP-PKIKP measurements using synthetic data which mimics real world data.
 
-Because we do not know a-priori the actual velocity structure being measured, we perform analysis on the three distinct velocity models shown in figure \ref{fig:Velocity models}. Our two new models represent realistic East Hemisphere (EH) and West Hemisphere (WH) isotropic velocity models based on \cite{Waszek2011a}. In each case the velocity jump at the ICB is modified from the AK135 value of 11.0427 km/s to 11.0 km/s (EH) and 11.1 km/s (WH).
+Because we do not know a-priori the actual velocity structure being measured, we perform analysis on the three distinct velocity models shown in figure \ref{fig:Velocity models}. Our two new models represent realistic East Hemisphere (EH) and West Hemisphere (WH) isotropic velocity models based on \cite{Waszek2011a}. In each case models are identical to AK135, with the velocity jump at the ICB is modified from 11.0427 km/s to 11.0 km/s (EH) and 11.1 km/s (WH).
 
 \begin{figure}
 	\centering
 	\includegraphics[width=0.5\textwidth]{figures/velocity_models}
-	\caption{Velocity models modified from AK135 (Yellow line). Velocity at the ICB is varied at 11.1 km/s for a Western Hemisphere (WH) model (red line) and at 11.0 km/s for an Eastern Hemisphere (EH) model (blue line).}
+	\caption{Velocity models modified from AK135 (yellow line). Velocity at the ICB is varied at 11.1 km/s for a Western Hemisphere (WH) model (red line) and at 11.0 km/s for an Eastern Hemisphere (EH) model (blue line). The models outside the plotted region are identical to AK135.}
 	\label{fig:Velocity models}
 \end{figure}
 
 \subsection{Minimum resolvable depth}
-The only two features that are measurable at all distances in combined seismograms are the initial downswing and the final downswing (see figure \ref{fig:Synth aligned} bottom). When making measurements of real data we want to be sure that we are measuring a PKIKP feature (initial upswing) and PKiKP feature (final upswing), and not two PKiKP features. Measuring two PKiKP phase features is more likely at lower epicentral distances due to the PKIKP phase getting weaker, and the PKiKP phase developing a large upswing to the left. We note that this is not a problem for synthetic data, where we can take measurements from the individual PKIKP and PKiKP seismograms separately.
+The only two features that are measurable at all distances in combined seismograms are the initial downswing and the final downswing (see figure \ref{fig:Synth aligned} bottom). When making measurements of real data we want to be sure that we are measuring a PKIKP feature (initial upswing) and PKiKP feature (final upswing), and not two PKiKP features. Measuring two PKiKP features is more likely at lower epicentral distances due to the PKIKP amplitude decreasing, and PKiKP developing a large upswing to the left. We note that distinguishing the two is not a problem for synthetic data, where we can take measurements from individual PKIKP and PKiKP seismograms separately.
 
-At low epicentral distances PKiKP is the dominant phase. This means that on the combined seismogram the final downswing is an accurate measurement of a PKiKP feature. In contrast, the left downswing may not be an accurate measurement of a PKIKP feature at low epicentral distances. To quantify where measurements on the combined seismogram become inaccurate, we plot the difference between PKIKP initial tdownswings (see top left, figure \ref{fig:Synth aligned}) and combined initial downswing (see bottom, figure \ref{fig:Synth aligned}). On the same figure we also plot the difference between PKiKP initial downswings and PKIKP initial downswings. This data is shown in figure \ref{fig:Downswing differences}. A three point moving average is applied in order to smooth the data; this does not significantly change the distribution of data. A depths below 8km PKiKP and combined measurements coincide, showing that in these cases the final downswing is actually a PKiKP feature, not a PKIKP as we want.
+To quantify where measurements on the combined seismogram become inaccurate, we plot the difference between PKIKP initial downswings (top left, figure \ref{fig:Synth aligned}) and combined initial downswing (bottom, figure \ref{fig:Synth aligned}). On the same figure we also plot the difference between PKiKP initial downswings and PKIKP initial downswings. This data is shown in figure \ref{fig:Downswing differences}. A three point moving average is applied in order to smooth the data; this does not significantly change the distribution of data. A depths below 8km PKiKP and combined measurements coincide, showing that in these cases the final downswing is actually a PKiKP feature, not a PKIKP as we want.
 
 \begin{figure}
 	\centering
@@ -208,7 +208,7 @@ where we have taken into account possible error in the inner core travel time, $
 
 To estimate $t$ and $\Delta t$ we investigate how $t$ varies as a function and bottoming depth below the ICB, and how this variation depends on the velocity structure. This is shown in figure \ref{fig:Time in core}, with data taken from the Banda Sea event.\footnote{Although only data for an earthquake source depth of $\sim$100km is shown, we have plotted similar data for source depths in the range 30km - 575km and confirm that the data does not change with a varying source depth.} As a check of our modelling, we see that as bottoming depth $\rightarrow 0$, $t \rightarrow 0$, and at shallower depths the travel times for different models converge. 
 
-Reading directly from figure \ref{fig:Time in core} at a depth of 10km, estimates are $t = 27.5s$ and $\Delta t = 2.5s$. A worst case residual is taken as $\delta t = 1.2s$. This allows us to estimate the worst-case magnitude of the second term in equation \eqref{eq:Velocity error} as $\sim 0.004$.
+Reading directly from figure \ref{fig:Time in core} at a depth of 10km, estimates are $t = 27.5s$ and $\Delta t = 2.5s$. A worst case residual is taken as $\delta t = 1.2s$. This allows us to estimate the worst-case magnitude of the second term in equation \eqref{eq:Velocity error} as $\sim 0.004$. This error is systematic and inherent in the methodology being used.
 
 \begin{figure}
 	\centering
@@ -217,19 +217,17 @@ Reading directly from figure \ref{fig:Time in core} at a depth of 10km, estimate
 	\label{fig:Time in core}
 \end{figure}
 
-To estimate $\Delta \delta t$ we take into account two possible sources of error. The first is the error in taking measurements from seismograms that lead to a $\delta t$ measurement. To measure $\delta t$ two picks are made each on real (synthetic) seismograms which have a sample every 0.2s (0.1s). We attribute an error of 0.1s (0.05s) to one measurement, and hence an error of 0.16s to a $\delta t$ measurement. This is a random error which could in theory be reduced to arbitrarily small values in further studies with repeated measurements on the same seismogram.
+To estimate the first timer of equation \eqref{eq:Velocity error} we take into account two possible sources of error. The first is the error in taking measurements from both real and synthetic seismograms that lead to a $\delta t$ measurement. To measure $\delta t$ two picks are made each on real (synthetic) seismograms which have a sample every 0.2s (0.1s). We attribute an error of 0.1s (0.05s) to one measurement, and hence an error of 0.16s to a $\delta t$ measurement. This corresponds to $\Delta \delta t = 0.0061$ This is a random error which could in theory be reduced to arbitrarily small values by increasing both the synthetic and real sampling rates.
 
-The second source of error is the systematic mis-measurement of the PKIKP phase on a combined seismogram, shown in figure \ref{fig:Downswing differences}. Above the depths which we have excluded for analysis in the previous section, systematic errors are typically of the order $\sim 0.05s$. Although this is much smaller than random error in this study, this error is inherit in the methodology and cannot be reduced or systematically eliminated.
-
-Taking only the first source of error, we estimate the first term in \eqref{eq:Velocity error} as $\sim 0.006$.
+The second source of error is the systematic mis-measurement of the PKIKP phase on a combined seismogram, shown in figure \ref{fig:Downswing differences}. Above the depths which we have excluded for analysis in the previous section, systematic errors are typically of the order $\sim 0.05s$ giving $\Delta \delta t = 0.0018$ Although this is much smaller than random error in this study, this error is again inherit in the methodology.
 
 \begin{table}
 \centering
 \begin{tabular}{| c | c | c |}
 	\hline
 	 		& $\frac{\Delta \delta t}{t}$	& $\Delta t \frac{\delta t}{t^{2}}$	\\ \hline
-	Our Study	& 					&		 				\\\hline
-	Best case	&					&						\\
+	Our Study	& 0.0064				& 0.004	 				\\\hline
+	Best case	& 0.0018				& 0.004					\\
 	\hline
 \end{tabular}
 \caption{Event details taken directly from the CMT Catalogue. Dates are formatted as year/month/day format and times as hour:minute:second}
@@ -238,14 +236,21 @@ Taking only the first source of error, we estimate the first term in \eqref{eq:V
 %%%%
 \section{Residual Measurements}
 
-In light of the analysis in the previous section, we now resume where we left off in section \ref{sec:Initial analysis} by making residual measurements. As before we proceed using the Banda Sea earthquake as an example,\footnote{See table \ref{tab:Events} for a full event listing and details} and present results for all earthquakes at the end.
+In light of the analysis in the previous section, we now resume where we left off in section \ref{sec:Initial analysis} by making residual measurements. As before we proceed using the Banda Sea earthquake as an example, and present results for all earthquakes at the end.\footnote{See table \ref{tab:Events} for a full event listing and details}
 
-Real seismograms aligned using the same method used when aligning synthetics (see figure \ref{fig:Synth aligned}) are shown in PUT REAL DATA HERE. Peak to peak measurements taken on both the real and synthetic data are shown in figure \ref{fig:Bandasea residuals}. Here we plot residual measurements below 10km to illustrate how the real data tapers off, confirming our earlier analysis of the minimum resolvable depth. From now on we only present measurements taken at depths greater than 10km.
+Real seismograms aligned using the same method used for aligning synthetics (see figure \ref{fig:Synth aligned}) are shown in figure \ref{fig:Bandasea real aligned}. Peak to peak measurements taken on both the real and synthetic data are shown in figure \ref{fig:Bandasea residuals}. In this figure we plot residual measurements below 10km to illustrate how the real data tapers off, as in our previous analysis on synthetic data. From now on we only present data take at depths greater than 10km.
 
 \begin{figure}
 	\centering
-	\includegraphics[width=\textwidth]{figures/bandasea/bandasea_resid}
-	\caption{Left hand figure shows individual peak to peak measurements taken for both real and synthetic data. Right hand figure shows residuals calculated from the peak to peak measurements.}
+	\includegraphics[width=0.6\textwidth]{figures/bandasea/bandasea_real_aligned}
+	\caption{Aligned real measurements for the Banda Sea event.}
+	\label{fig:Bandasea real aligned}
+\end{figure}
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.9\textwidth]{figures/bandasea/bandasea_resid}
+	\caption{Left hand figure shows individual peak to peak measurements taken for both real data (orange crosses) and synthetic data (blue crosses). Right hand figure shows residuals calculated from the peak to peak measurements.}
 	\label{fig:Bandasea residuals}
 \end{figure}
 
@@ -264,6 +269,9 @@ The following lists the software used in this paper along with brief description
 		\item Used to set earthquake time and location, and to feed WKBJ with resolved moment tensors on an event by event basis.
 	\end{itemize}
 	\item Matlab 2015a (8.5.0.197613, maci64)
+	\begin{itemize}
+		\item Used to plot data.
+	\end{itemize}
 \end{itemize}
 
 %%%%
