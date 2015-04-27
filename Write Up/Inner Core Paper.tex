@@ -197,16 +197,14 @@ In figure \ref{fig:Downswing models} we show the same as the combined measuremen
 
 %%%
 \subsection{Velocity perturbation calculation errors}
-The end goal of this study is to calculate velocity structure perturbations using equation \eqref{eq:Delta v}. The error in an individual velocity perturbation calculated using equation \eqref{eq:Delta v} is
+The end goal of this study is to calculate velocity structure perturbations using equation \eqref{eq:Delta v}. The error in an individually measured observed velocity is
 \begin{equation}
-	\Delta \delta v = v_{model} \left ( \frac{\Delta \delta t}{t} - \Delta t \frac{\delta t}{t^{2}} \right )
+	\Delta v_{obs} = \Delta \delta v = \frac{v_{model}}{\left( t - \delta t\right )^{2}} \left ( t\Delta \delta t - \Delta t \delta t \right )
 	\label{eq:Velocity error}
 \end{equation}
 where we have taken into account possible error in the inner core travel time, $\Delta t$.
 
-To estimate $t$ and $\Delta t$ we investigate how $t$ varies as a function and bottoming depth below the ICB, and how this variation depends on the velocity structure. This is shown in figure \ref{fig:Time in core}, with data taken from the Banda Sea event.\footnote{Although only data for an earthquake source depth of $\sim$100km is shown, we have plotted similar data for source depths in the range 30km - 575km and confirm that the data does not change with a varying source depth.} As a check of our modelling, we see that as bottoming depth $\rightarrow 0$, $t \rightarrow 0$, and at shallower depths the travel times for different models converge. 
-
-Reading directly from figure \ref{fig:Time in core} at a depth of 10km, estimates are $t = 27.5s$ and $\Delta t = 2.5s$. A worst case residual is taken as $\delta t = 1.2s$. This allows us to estimate the worst-case magnitude of the second term in equation \eqref{eq:Velocity error} as $\sim 0.004$. This error is systematic and inherent in the methodology being used.
+To estimate $t$ and $\Delta t$ we investigate how $t$ varies as a function and bottoming depth below the ICB, and how this variation depends on the velocity structure. This is shown in figure \ref{fig:Time in core}, with data taken from the Banda Sea event.\footnote{Although only data for an earthquake source depth of $\sim$100km is shown, we have plotted similar data for source depths in the range 30km - 575km and confirm that the data does not change with a varying source depth.} As a check of our modelling, we see that as bottoming depth $\rightarrow 0$, $t \rightarrow 0$, and at shallower depths the travel times for different models converge.
 
 \begin{figure}
 	\centering
@@ -215,20 +213,23 @@ Reading directly from figure \ref{fig:Time in core} at a depth of 10km, estimate
 	\label{fig:Time in core}
 \end{figure}
 
-To estimate the first timer of equation \eqref{eq:Velocity error} we take into account two possible sources of error. The first is the error in taking measurements from both real and synthetic seismograms that lead to a $\delta t$ measurement. To measure $\delta t$ two picks are made each on real (synthetic) seismograms which have a sample every 0.2s (0.1s). We attribute an error of 0.1s (0.05s) to one measurement, and hence an error of 0.16s to a $\delta t$ measurement. This corresponds to $\Delta \delta t = 0.0061$ This is a random error which could in theory be reduced to arbitrarily small values by increasing both the synthetic and real sampling rates.
+Table \ref{tab:Error values} gives estimates for the values present in equation \eqref{eq:Velocity error} at a depth of 10km. Estimates for $t$ and $\Delta t$ are taken from figure \ref{fig:Time in core}. These values are inherent in our a-priori ignorance of the real velocity structure, and and cannot be made arbitrarily small. $\delta t$ is a worst case estimate based on previous work (\cite{Waszek2011a}). A study perturbing about AK135 could not reduce this value, whereas a study perturbing about a more accurate model could. Finally, measure $\delta t$ two picks are made each on real (synthetic) seismograms which have a sample every 0.2s (0.1s). We attribute an error of 0.1s (0.05s) to one measurement, and hence $\Delta \delta t = 0.16s$. This is a random error which could in theory be reduced to arbitrarily small values by increasing both the synthetic and real sampling rates. It is also reduced by including multiple measurements in a single velocity perturbation calculation.
 
-The second source of error is the systematic mis-measurement of the PKIKP phase on a combined seismogram, shown in figure \ref{fig:Downswing differences}. Above the depths which we have excluded for analysis in the previous section, systematic errors are typically of the order $\sim 0.05s$ giving $\Delta \delta t = 0.0018$ Although this is much smaller than random error in this study, this error is again inherit in the methodology.
-
+A value for the worst case error in this study is $\Delta v_{obs} = 0.10 km/s$. In an ideal world where the error in taking measurements from seismograms is zero, we find that the error in the velocity model is directly proportional to the measured residual. Thus by taking a series of more accurate velocity models, it is in theory possible to beat the error in observed velocity down to zero.
 \begin{table}
 \centering
-\begin{tabular}{| c | c | c |}
+\begin{tabular}{| c | c |}
 	\hline
-	 		& $\frac{\Delta \delta t}{t}$	& $\Delta t \frac{\delta t}{t^{2}}$	\\ \hline
-	Our Study	& 0.0064				& 0.004	 				\\\hline
-	Best case	& 0.0018				& 0.004					\\
+	Parameter		& Estimated value at 10km depth	\\ \hline \hline
+	$v_{model}$	& 11.0427 km/s					\\ \hline
+	t			& 27.5s						\\ \hline
+	$\delta t$		& -1.2s						\\ \hline
+	$\Delta t$		& 2.5s						\\ \hline
+	$\Delta \delta t$	& 0.16s						\\				
 	\hline
 \end{tabular}
-\caption{Event details taken directly from the CMT Catalogue. Dates are formatted as year/month/day format and times as hour:minute:second}
+\caption{Values used in velocity perturbation error estimation. All values are taken at 10km depth. $\delta t$ is given as a worst case estimate, in order to calculate a worst case error.}
+\label{tab:Error values}
 \end{table}
 
 %%%%
