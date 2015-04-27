@@ -53,7 +53,7 @@ points = scatter(data(:,1),data(:,2),75,data(:,3),'filled');
 hline([10 15]);
 
 % Add lines to split up data
-longSplit = [[-170 150],[-90 75], [-30 0], [0 60]];
+longSplit = [[150 -170],[-90 -75], [-30 0], [0 60]];
 for i = 1:8
 	vline(longSplit(i));
 end
@@ -78,12 +78,21 @@ ylabel('Depth below ICB /km');
 
 %% Calculate and plot individual velocity models
 for i = 1:4
-	longMin = longSplit(2*i - 1) + 180;
-	longMax = longSplit(2*i) + 180;
-	toplot = data((data(:,1) + 180) < longMax,:);
-	toplot = toplot((toplot(:,1) + 180) > longMin,:);
+	longMin = longSplit(2*i - 1);
+	longMax = longSplit(2*i);
+	
+	if longMax > longMin
+		toplot = data(data(:,1) < longMax,:);
+		toplot = toplot(toplot(:,1) > longMin,:);
+	else
+		keep = (data(:,1) < longMax | data(:,1) > longMin);
+		toplot = data(keep,:);
+		clear keep
+	end
+	
 	[newVel, velErr] = calcvelmodel(toplot(:,3),toplot(:,4),AK135vel);
 	display([num2str(newVel) ', ' num2str(velErr)]);
+	clear longMin longMax toplot
 end
 
 %% Plot residual vs. longitude, with depth control
