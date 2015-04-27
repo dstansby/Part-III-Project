@@ -32,16 +32,16 @@ Of particular interest is the velocity and attenuation structure, which can be u
 
 The upper inner core is of particular interest, as material from the outer core is currently freezing onto it at a rate of around 1mm/year (\cite{Labrosse2001}). Modelling performed by \cite{Deguen2009a} shows that the velocity structure of the upper inner core should reflect recent processes in the lower upper core. Thus measuring the structure of the upper inner core could in turn give insights into areas such as how the outer core generates the Earth's magnetic field. 
 
-So far only large scale velocity structures have been measured, with the most recent velocity models BEING VERY COARSE GRAINED. In addition the extent to which the methodology used here and elsewhere is not well understood. In this paper we tackle both of these problems.
+So far only large scale velocity structures have been measured, with the most recent velocity models FIND REFERENCES FOR THIS. In addition the extent to which the methodology used here and elsewhere can be applied to the top of the inner core is not well understood. In this paper we tackle both of these problems.
 
-We do so by taking individual earthquakes that travel to multiple seismic stations and identifying the arrival of distant seismic phases in seismograms. We constrain our analysis to the uppermost inner core as far as is possible, and area not yet investigated in published literature.
+We do so by taking individual earthquakes that travel to multiple seismic stations and identifying the arrival of distinct seismic phases in seismograms. We constrain our analysis to the uppermost inner core as far as is possible, and area not yet investigated in published literature.
 
-Section \ref{sec:Theory} gives an brief theoretical background, with section \ref{sec:Data} describing our data collection and pre-processing. We then turn to initial analysis of the collected data in \ref{sec:Initial analysis}, after which we take a short detour to examine the limits of our methodology in section \ref{sec:Limits}.
+Section \ref{sec:Theory} gives an brief theoretical background in seismic body wave theory and inner core sampling, with section \ref{sec:Data} describing our data collection and pre-processing. We then turn to initial analysis of the collected data in \ref{sec:Initial analysis}, after which we take a detour to examine the inherent errors and limits of our methodology in section \ref{sec:Limits}. In the light of section \ref{sec:Limits}, section \ref{sec:Resid measurements} contains a full analysis of our data set and presents updated velocity models for the upper inner core.
 
 %%%
 \section{Theoretical Background}
 \label{sec:Theory}
-We use seismic body wave analysis in order to investigate the velocity structure of the upper inner core. These waves elastic waves, caused by earthquakes, that travel through the interior of the Earth.
+In this study we use seismic body wave analysis in order to investigate the velocity structure of the upper inner core. These waves are elastic waves, caused by large earthquakes, that travel from the earthquake source to a receiver station through the interior of the Earth.
 
 \subsection{Body Wave Theory}
 Here we summarise the main aspects of seismic body wave theory, taken from \cite{Shearer2009}.
@@ -53,48 +53,48 @@ Under the assumptions of a continuous, linearly elastic medium, infinitesimal st
 \end{equation}
 where u is the local displacement vector, $\rho$ the density of the medium and $\lambda$ and $\mu$  Lam\'{e} parameters of the medium. A general displacement vector can be decomposed into irrotational scalar and solenoidal vector potentials such that
 \begin{equation}
-	u \equiv \nabla \phi + \nabla \times \vec{\psi}
+	\vec{u} \equiv \nabla \phi + \nabla \times \vec{\psi}
 	\label{eq:Displacement}
 \end{equation}
-Substituting \eqref{eq:Displacement} in to \eqref{eq:Wave Equation} yields two independent wave equations, one for $\phi$ and one for $\vec{\psi}$, which describe P-waves and S-waves respectively. P-waves are compressional with displacements occurring parallel to the wave vector, whereas S-waves are transverse with displacements occurring perpendicular to the wave vector. These wave equations take the form
+Substituting \eqref{eq:Displacement} in to \eqref{eq:Wave Equation} yields two independent wave equations, one for $\phi$ and one for $\vec{\psi}$, which describe P-waves and S-waves respectively. P-waves are compressional with displacements occurring parallel to the wave vector, whereas S-waves are transverse with displacements occurring perpendicular to the wave vector. These wave equations take the general form
 \begin{equation}
 	\frac{\partial^{2} \phi}{\partial t^{2}} = c^{2} \left ( \vec{x} \right ) \nabla^{2} \phi
 \end{equation}
-where $c(\vec{x})$ is the local wave velocity that depends on position. A velocity model is a full specification of $c(\vec{x})$ in the region of interest.
+$c(\vec{x})$ is the local wave velocity, which depends only on position\footnote{For an anisotropic medium, the wave speed would also depend on the direction of travel of the wave; in this study we assume an isotropic velocity structure throughout.}. A complete velocity model is a full specification of $c(\vec{x})$ in the region of interest.
 
 \subsection{Sampling the Inner Core}
 \label{sec:Sampling}
-Because the outer core is liquid with $\mu \approx 0$ and thus does not transmit S-waves, it is P-waves that are used to sample the inner core. Figure PUT FIGURE HERE shows the ray path for the PKiKP and PKIKP phase; they travel almost identical paths through the Crust, Mantle and upper Outer Core, after which PKiKP reflects off the Inner Core boundary, whereas PKIKP travels just underneath the boundary in the Inner Core.
+Because the outer core is liquid with $\mu \approx 0$ and thus does not transmit S-waves, it is P-waves that are used to sample the inner core. Figure PUT FIGURE HERE shows the ray path for the PKiKP and PKIKP phase; they travel almost identical paths through the Crust, Mantle and upper Outer Core, after which PKiKP reflects off the Inner Core boundary (ICB), whereas PKIKP travels just underneath the boundary in the Inner Core.
 
 All measurements are compared to the radially symmetric global velocity model from \cite{Kennett1995b} (hereafter called AK135), from which we seek to measure perturbations about. The residual travel time is defined as
 \begin{equation}
 	\delta t = \left ( t_{PKiKP} - t_{PKIKP} \right )_{observed} -  \left ( t_{PKiKP} - t_{PKIKP} \right )_{model}
 	\label{eq:Residual definition}
 \end{equation}
-If we assume that the ray paths of both the model ray and the real ray are identical, this equation can be reformulated as an integral along the ray paths
+where $t$ is the absolute travel time for the phase indicated by the subscript. Observed residuals are those made on real seismograms. Model residuals are those measured on synthetic seismograms, calculated assuming the AK135 model. If we assume that the paths of both the model ray and the real ray are identical, this equation can be reformulated as an integral along the ray paths
 \begin{equation}
 		\delta t = \left (  \int \frac{1}{v_{obs}} - \frac{1}{v_{model}} ds  \right )_{PKiKP} - \left (  \int \frac{1}{v_{obs}} - \frac{1}{v_{model}} ds \right )_{PKIKP}
 		\label{eq:deltat}
 \end{equation}
-where the path to be integrated along is indicated by the subscript outside the brackets, and in general the velocities vary as a function of position.
+where the path to be integrated along is indicated by the subscript outside the brackets, and in general the velocities can vary as a function of position.
 
-As the inner core has a very low viscosity (eg. \cite{Wijs1998}, \cite{Zhang2000}) we assume that it is unable to sustain any long term non-radial variations in velocity structure. Under this assumption, for the outer core $v_{obs} = v_{model}$, setting the first integral in equation \eqref{eq:deltat} to zero.
+As the inner core has a very low viscosity (eg. \cite{Wijs1998}, \cite{Zhang2000}) we assume that it is unable to sustain any long term non-radial variations in velocity structure. Under this assumption a radially symmetric velocity model is a correct description, so for the outer core $v_{obs} = v_{model}$, setting the first integral in equation \eqref{eq:deltat} to zero.
 
 Taking perturbations about the model of the form $v_{obs} = v_{model} + \delta v$ gives
 \begin{equation}
 	\delta t =\left ( \int \frac{\delta v}{v_{model} + \delta v }\frac{1}{v_{model}} ds \right )_{PKIKP}
 \end{equation}
-For depths below the Inner Core boundary of less than 50km $v_{model}$ is constant for AK135, and we assume $\delta v$ is also a constant such that we are measuring only the average velocity perturbation along the ray path. Integrating along the model ray path, we are thus left with the equation that will allow us to compute $\delta v$
+For depths below the ICB of less than 50km, $v_{model}$ is constant for AK135, and we assume $\delta v$ is also a constant such that we are measuring only the average velocity perturbation along the ray path. Integrating along the model ray path and rearranging, we are thus left with the equation that will allow us to compute $\delta v$
 \begin{equation}
 	\delta v = \frac{\delta t}{t - \delta t} v_{model}
 	\label{eq:Delta v}
 \end{equation}
-where $t$ is the time PKIKP spends in the inner core. A positive residual implies a positive velocity perturbation and vice versa, as expected from equation \eqref{eq:Residual definition}.
+where $t$ is the time PKIKP spends in the inner core in the AK135 model. A positive residual implies a positive velocity perturbation and vice versa, as expected from equation \eqref{eq:Residual definition}.
 
 %%%
 \section{Data Selection}
 \label{sec:Data}
-As discussed in section \ref{sec:Sampling}, we make differential travel time measurements of PKiKP and PKIKP phases. An ideal seismogram would have a clear PKIKP arrival, little noise and no interference from surface reflection phases. As such, individual events are selected to meet the following criteria:
+As discussed in section \ref{sec:Sampling}, we make differential travel time measurements of PKiKP and PKIKP phases. In order to easily measure these phases, an ideal seismogram would have a clear PKIKP arrival, little noise and no interference from surface reflection phases. We measure as many seismograms as possible from each earthquake selected. As such, individual events are selected to meet the following criteria:
 
 \begin{itemize}
 	\item Epicentral distance of $115^{\circ}$ - $143^{\circ}$ covers the majority of North America, where there is the highest worldwide density of seismometers.
@@ -235,6 +235,7 @@ A value for the worst case error in this study is $\Delta v_{obs} = 0.10 km/s$. 
 
 %%%%
 \section{Residual Measurements}
+\label{sec:Resid measurements}
 
 In light of the analysis in the previous section, we now resume where we left off in section \ref{sec:Initial analysis} by making residual measurements. As before we proceed using the Banda Sea earthquake as an example, and present results for all earthquakes at the end.\footnote{See table \ref{tab:Events} for a full event listing and details}
 
@@ -254,7 +255,7 @@ Real seismograms aligned using the same method used for aligning synthetics (see
 	\label{fig:Bandasea residuals}
 \end{figure}
 
-Figure PUT FIGURE HERE shows all measurements as a function of longitude and depth. The vertical line at 15km represents the shallowest depth of previous measurements by \cite{Waszek2011a}.
+Figure \ref{fig:All longitude} shows all measurements as a function of longitude and depth. The vertical line at 15km represents the shallowest depth of previous measurements by \cite{Waszek2011a}.
 
 \begin{figure}
 	\centering
