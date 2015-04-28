@@ -199,21 +199,11 @@ In figure \ref{fig:Downswing models} we show the same as the combined measuremen
 \subsection{Velocity perturbation calculation errors}
 The end goal of this study is to calculate velocity structure perturbations using equation \eqref{eq:Delta v}. The error in an individually measured observed velocity is
 \begin{equation}
-	\Delta v_{obs} = \Delta \delta v = \frac{v_{model}}{\left( t - \delta t\right )^{2}} \left ( t\Delta \delta t - \Delta t \delta t \right )
+	\Delta v_{obs} = \Delta \delta v = \frac{v_{model}}{\left( t - \delta t\right )^{2}} t\Delta \delta t 
 	\label{eq:Velocity error}
 \end{equation}
-where we have taken into account possible error in the inner core travel time, $\Delta t$.
 
-To estimate $t$ and $\Delta t$ we investigate how $t$ varies as a function and bottoming depth below the ICB, and how this variation depends on the velocity structure. This is shown in figure \ref{fig:Time in core}, with data taken from the Banda Sea event.\footnote{Although only data for an earthquake source depth of $\sim$100km is shown, we have plotted similar data for source depths in the range 30km - 575km and confirm that the data does not change with a varying source depth.} As a check of our modelling, we see that as bottoming depth $\rightarrow 0$, $t \rightarrow 0$, and at shallower depths the travel times for different models converge.
-
-\begin{figure}
-	\centering
-	\includegraphics[width=0.5\textwidth]{figures/time_in_core}
-	\caption{Time PKIKP spends in the inner core as a function of bottoming depth of the ray.}
-	\label{fig:Time in core}
-\end{figure}
-
-Table \ref{tab:Error values} gives estimates for the values present in equation \eqref{eq:Velocity error} at a depth of 10km. Estimates for $t$ and $\Delta t$ are taken from figure \ref{fig:Time in core}. These values are inherent in our a-priori ignorance of the real velocity structure, and and cannot be made arbitrarily small. $\delta t$ is a worst case estimate based on previous work (\cite{Waszek2011a}). A study perturbing about AK135 could not reduce this value, whereas a study perturbing about a more accurate model could. Finally, measure $\delta t$ two picks are made each on real (synthetic) seismograms which have a sample every 0.2s (0.1s). We attribute an error of 0.1s (0.05s) to one measurement, and hence $\Delta \delta t = 0.16s$. This is a random error which could in theory be reduced to arbitrarily small values by increasing both the synthetic and real sampling rates. It is also reduced by including multiple measurements in a single velocity perturbation calculation.
+Table \ref{tab:Error values} gives estimates for the values present in equation \eqref{eq:Velocity error} at a depth of 10km. $t$ is calculated from the AK135 model. $\delta t$ is a worst case estimate based on previous work (\cite{Waszek2011a}). A study perturbing about AK135 could not reduce this value, whereas a study perturbing about a more accurate model could. Finally, measure $\delta t$ two picks are made each on real (synthetic) seismograms which have a sample every 0.2s (0.1s). We attribute an error of 0.1s (0.05s) to one measurement, and hence $\Delta \delta t = 0.16s$. This is a random error which could in theory be reduced to arbitrarily small values by increasing both the synthetic and real sampling rates. It is also reduced by including multiple measurements in a single velocity perturbation calculation.
 
 A value for the worst case error in this study is $\Delta v_{obs} = 0.10 km/s$. In an ideal world where the error in taking measurements from seismograms is zero, we find that the error in the velocity model is directly proportional to the measured residual. Thus by taking a series of more accurate velocity models, it is in theory possible to beat the error in observed velocity down to zero.
 
@@ -255,7 +245,7 @@ Real seismograms aligned using the same method used for aligning synthetics (see
 	\label{fig:Bandasea residuals}
 \end{figure}
 
-Figure \ref{fig:All longitude} shows all measurements as a function of longitude and depth. The vertical line at 15km represents the shallowest depth of previous measurements by \cite{Waszek2011a}.
+Figure \ref{fig:All longitude} shows all measurements as a function of longitude and depth. The vertical line at 15km represents the shallowest depth of previous measurements by \cite{Waszek2011a}. At depths below 15km we see largely postive residuals in the range $10^{\circ}$ to $-170^{\circ}$, and negative residuals in the range $-90^{\circ}$ to $10^{\circ}$.
 
 \begin{figure}
 	\centering
