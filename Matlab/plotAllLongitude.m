@@ -1,5 +1,5 @@
 % function plotAllLongitude
-clear
+clear;
 addpath('Library');
 load('redblue.mat','col');
 load('ICBdepth.mat','ICBdepth');
@@ -112,7 +112,7 @@ for i = 1:4
 		line([-180 longMax],[newVel newVel]);	
 	end
 	
-	clear longMin longMax toplot r
+	clear longMin longMax keep;
 end
 
 ax2 = gca;
@@ -123,23 +123,21 @@ xlabel('Longitude /deg')
 ylabel('Velocity / km/s')
 
 %% Plot residual vs. longitude, with depth control
-longToPlot = longitudes;
-residToPlot = residuals;
-
 figure;
 indexesToPlot = depths < 15 & depths > 10;
-points = scatter(longToPlot(indexesToPlot), residToPlot(indexesToPlot), '+');
+fracChange = residuals./(times - residuals);
+points = scatter(longitudes(indexesToPlot), fracChange(indexesToPlot), '+');
 hline(0);
 
 % Plot formatting
 ax = gca;
 ax.FontSize = 14;
 ax.XLim = [-180 180];
-ax.YLim = [-0.6 0.6];
+% ax.YLim = [-0.6 0.6];
 color = ax.ColorOrder(1,:);
 xlabel('Longitude /deg');
-ylabel('Residual /s');
-title('Residuals measured between 10km - 15km depth')
+ylabel('Fractional change in velocity');
+% title('Residuals measured between 10km - 15km depth')
 
 % % Make slider to change depth being plotted
 % slider = uicontrol('Style', 'slider');
