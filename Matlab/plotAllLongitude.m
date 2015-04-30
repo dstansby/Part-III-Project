@@ -4,6 +4,7 @@ addpath('Library');
 load('redblue.mat','col');
 load('ICBdepth.mat','ICBdepth');
 AK135vel = 11.0427;
+residError = 0.17;	% Error in an individual residual measurement
 
 longitudes = [];
 residuals = [];
@@ -126,7 +127,9 @@ ylabel('Velocity / km/s')
 figure;
 indexesToPlot = depths < 15 & depths > 10;
 fracChange = residuals./(times - residuals);
+fracError = (times*residError)./((times - residuals).^2);
 points = scatter(longitudes(indexesToPlot), fracChange(indexesToPlot), '+');
+verrorbar(longitudes(indexesToPlot), fracChange(indexesToPlot), fracError(indexesToPlot));
 hline(0);
 
 % Plot formatting
