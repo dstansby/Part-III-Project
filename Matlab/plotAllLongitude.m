@@ -5,7 +5,10 @@ load('redblue.mat','col');
 load('ICBdepth.mat','ICBdepth');
 AK135vel = 11.0427;
 
-data = [];
+longitudes = [];
+residuals = [];
+depths = [];
+times = [];
 
 %% Loop through each folder
 folders = dir('data');
@@ -37,17 +40,20 @@ for i = 1:size(folders,1)
 	display(['Processed ' folder ', ' num2str(size(resid,1)) ' points']);
 	
 	% Store longitude, depth, residual, inner core travel times
-	data = vertcat(data,horzcat(stationDetails(:,12),stationDetails(:,13),resid, travelTimes));
+	longitudes = vertcat(longitudes,stationDetails(:,12));
+	depths = vertcat(depths,stationDetails(:,13));
+	residuals = vertcat(residuals,resid);
+	times = vertcat(times,travelTimes);
 	
-	clear resid realData synthData stationDetails travelTimes;
+	clear resid realData synthData stationDetails travelTimes toKeep;
 end
-noPoints = size(data,1);
+noPoints = size(longitudes,1);
 disp(['Plotting ' num2str(noPoints) ' points']);
 
 %% Plot longitude/deptgh data
 figure;
 colormap(col);
-points = scatter(data(:,1),data(:,2),75,data(:,3),'filled');
+points = scatter(longitudes,depths,75,residuals,'filled');
 
 % Add lines to compare with Waszek 2011
 hline([10 15]);
@@ -87,15 +93,12 @@ for i = 1:4
 	longMax = longSplit(2*i);
 	
 	if longMax > longMin
-		toplot = data(data(:,1) < longMax,:);
-		toplot = toplot(toplot(:,1) > longMin,:);
+		keep = (longitudes < longMax & longitudes > longMin);
 	else
-		keep = (data(:,1) < longMax | data(:,1) > longMin);
-		toplot = data(keep,:);
-		clear keep
+		keep = (longitudes < longMax | longitudes > longMin);
 	end
 	
-	[newVel, velErr] = calcvelmodel(toplot(:,3),toplot(:,4),AK135vel);
+	[newVel, velErr] = calcvelmodel(residuals(keep),times(keep),AK135vel);
 	display([num2str(newVel) ', ' num2str(velErr)]);
 	
 	hold on
@@ -120,11 +123,11 @@ xlabel('Longitude /deg')
 ylabel('Velocity / km/s')
 
 %% Plot residual vs. longitude, with depth control
-longToPlot = data(:,1);
-residToPlot = data(:,3);
+longToPlot = longitudes;
+residToPlot = residuals;
 
 figure;
-indexesToPlot = data(:,2) < 15 & data(:,2) > 10;
+indexesToPlot = depths < 15 & depths > 10;
 points = scatter(longToPlot(indexesToPlot), residToPlot(indexesToPlot), '+');
 hline(0);
 
@@ -147,7 +150,7 @@ title('Residuals measured between 10km - 15km depth')
 % 
 % 	function updatePlot(~, ~)
 % 		minDepth = slider.Value;
-% 		indexesToPlot = data(:,2) < minDepth;
+% 		indexesToPlot = depths < minDepth;
 % 		longToPlot = data(indexesToPlot,1);
 % 		depthToPlot = data(indexesToPlot,3);
 % 		
