@@ -122,6 +122,8 @@ The same analysis was performed on each individual event. Each event is listed i
 	\hline Owen Fracture Zone	& 11.35	& 57.43		& 2013/10/02	& 01:06:40	& 5.8			& 19.8		\\
 	\hline Celebes Sea			& 4.55	& 122.82		& 2014/04/16	& 04:28:20	& 5.8			& 575.0  		\\ 
 	\hline South Sandwich Islands 	& -60.01	& -26.76		& 2014/12/28	& 20:30:58	& 5.2			& 124.4		\\
+	\hline N Coast of New Guinea	& -4.51	& 144.00		& 2014/12/31	& 01:37:36	& 5.8			& 133.9		\\
+	\hline Tanimbar Islands		& -6.88	& 132.45		& 2015/04/01	& 09:36:01	& 5.5			& 28.6		\\
 	\hline	
 \end{tabular}
 \caption{Event details taken directly from the CMT Catalogue. Dates are formatted as year/month/day format and times as hour:minute:second}
@@ -176,7 +178,7 @@ To quantify where measurements on the combined seismogram become inaccurate, we 
 \begin{figure}
 	\centering
 	\includegraphics[width=0.7\textwidth]{figures/downswing_differences}
-	\caption{Initial downswing measurements for PKiKP and combined synthetic seismograms computed from AK135. Measurements are taken relative to initial PKIKP downswings.}
+	\caption{First downswing measurements for PKiKP and combined synthetic seismograms computed from AK135. Measurements are relative to initial PKIKP first downswings.}
 	\label{fig:Downswing differences}
 \end{figure}
 
@@ -192,7 +194,7 @@ For this methdology to be possible the data from an individual event must travel
 \begin{figure}
 	\centering
 	\includegraphics[width=0.7\textwidth]{figures/downswing_models}
-	\caption{hello/}
+	\caption{Same as blue points in figure \ref{fig:Downswing differences}, but for the three velocity models shown in figure \ref{fig:Velocity models}; AK135 (blue crosses), EH (red crosses), WH (yellow crosses).}
 	\label{fig:Downswing models}
 \end{figure}
 
@@ -204,7 +206,7 @@ The end goal of this study is to calculate velocity structure perturbations usin
 	\label{eq:Velocity error}
 \end{equation}
 
-Table \ref{tab:Error values} gives estimates for the values present in equation \eqref{eq:Velocity error} at a depth of 10km. $t$ is calculated from the AK135 model. $\delta t$ is a worst case estimate based on previous work (\cite{Waszek2011a}). A study perturbing about AK135 could not reduce this value, whereas a study perturbing about a more accurate model could. Finally, measure $\delta t$ two picks are made each on real (synthetic) seismograms which have a sample every 0.2s (0.1s). We attribute an error of 0.1s (0.05s) to one measurement. We also have a systematic error of $0.05s$ caused by the difference in a combined PKiKP measurement and the actual location of the individual PKiKP waveform. This is illustrated at depths below 10km on figure \ref{fig:Velocity error}.
+Table \ref{tab:Error values} gives estimates for the values present in equation \eqref{eq:Velocity error} at a depth of 10km. $t$ is calculated from the AK135 model. $\delta t$ is a worst case estimate based on previous work (\cite{Waszek2011a}). A study perturbing about AK135 could not reduce this value, whereas a study perturbing about a more accurate model could. Finally, measure $\delta t$ two picks are made each on real (synthetic) seismograms which have a sample every 0.2s (0.1s). We attribute an error of 0.1s (0.05s) to one measurement. We also have a systematic error of $0.05s$ caused by the difference in a combined PKiKP measurement and the actual location of the individual PKiKP waveform. This is illustrated at depths below 10km on figure \ref{fig:Downswing models}.
 
 Taking into account these errors we get $\Delta \delta t = 0.17s$. This is a partly a random error which could in theory be reduced arbitrarily close to $0.05s$ by increasing both the synthetic and real sampling rates. It is also reduced by including multiple measurements in a single velocity perturbation calculation.
 
@@ -253,7 +255,16 @@ Figure PUT FIGURE HERE shows measured residuals in the 10km - 15km depth range. 
 
 %%%
 \subsection{Velocity models}
-To calculate regional velocity models we split our data set up into 4 longitude bins, as indicated on figures \ref{fig:All longitude} and REFERENCE FIGURE HERE and given in table \ref{tab:Velocity models}. In each bin we take individual residual measurements in the range 10km - 15km and calculate velocity perturbations using equation \eqref{eq:Delta v}. The mean of all velocity perturbations in a given bin is then taken to give an average observed velocity in each bin.
+To calculate regional velocity models we split our data set up into 4 longitude bins, as indicated on figure \ref{fig:All longitude} and given in table \ref{tab:Velocity models}. In each bin we take individual residual measurements in the range 10km - 15km and calculate velocity perturbations using equation \eqref{eq:Delta v}. In figure \ref{fig:Frac change} we show individual measurements of $v_{obs} / v_{model}$. Negative changes occur in the range [$-110^{\circ}$,$0^{\circ}$] as one would expect from previous research showing a slower western hemisphere. However, the changes are largely positive at all longitudes, indicating a fast layer in the top 10km - 15km of the inner core.
+
+\begin{figure}
+	\centering
+	\includegraphics[width=\textwidth]{figures/10-15_frac_change}
+	\caption{$v_{obs} / v_{model}$ as a function of longitude, calculated from equation \eqref{eq:Delta v}.}
+	\label{fig:Frac change}
+\end{figure}
+
+To calculate new velocity models, the mean of all the points in a given bin is taken. The error WORK OUT HOW TO WORK OUT THE ERROR
 
 Results of this process are given in table \ref{tab:Velocity models}. All observed velocities are greater than model velocities; we defer discussion on whether this is due to systematic error to PUT SECTION REFERENCE HERE. Variation in observed velocities is consistent with a slower Western Hemisphere and faster Western Hemisphere.
 
@@ -268,19 +279,36 @@ Results of this process are given in table \ref{tab:Velocity models}. All observ
 	$0^{\circ}$ - $60^{\circ}$		& 11.0923			& 0.0496					& 0.016				\\
 	\hline
 \end{tabular}
-\caption{Calculated velocity perturbations for a 10km - 15km depth layer below the ICB. Longitude ranges are indicated on figure \ref{fig:All longitude} and REFERENCE FIGURE HERE. All ranges have $v_{model} = 11.0427 km/s$.}
+\caption{Calculated velocity perturbations for a 10km - 15km depth layer below the ICB. Longitude ranges are indicated on figure \ref{fig:All longitude}. All ranges have $v_{model} = 11.0427 km/s$.}
 \label{tab:Velocity models}
 \end{table}
 
 %%%%
-\section{Discussion}
+\section{Discussion and Conclusions}
 
 %%%
 \subsection{PKIKP - PKiKP analysis limits}
+For the first time the limits of using PKIKP - PKiKP residual measurements to study the velocity structure of the upper inner core has been investigated. Assuming a maximum possible P wave velocity of $11.1 km/s$ in the upper inner core, at depths shallower than $d_{min} = 10km$ below the ICB it is impossible to identify the PKIKP phase in real data. and it is therefore impossible to make individual measurements.
 
+However, we have found that $d_{min}$ is a function of the average velocity in the upper layer of the inner core. Measuring $d_{min}$ is possible on graphs that plot peak to peak distances against depth (eg. figure \ref{fig:Bandasea residuals}). This offers a new and novel method to determine the average velocity structure of the upper inner core.
 %%%
 \subsection{New residual measurements and velocity models}
+Measuring PKIKP - PKiKP residuals in the 10km - 15km depth region was successful, allowing construction of 4 regional velocity models (table \ref{tab:Velocity models}). Each of these velocity models is larger than AK135 to within error, suggesting the presence of a fast layer. Note that this is what would be observed as a result of systematic error due to PKiKP misidentification. We rule this cause out for the following reasons:
 
+\begin{enumerate}
+	\item $10km$ has been taken as a conservative cutoff, and occurs only when the average velocity in the upper layer is no lower than $11.1 km/s$ (figure \ref{fig:Downswing models}).
+	\item If the cutoff were indeed lower, this would mean a very high velocity in the upper layer. This would change the exact velocity model, but not the fact that they are positive.
+	\item The systematic error that would be induced by this method is only of the order $0.05s$ at depths no shallower than $5km$. This is not big enough to explain the largely positive fractional velocity changes.
+\end{enumerate}
+
+CAUSE OF FAST LAYER.
+
+Variations within this fast layer still show the variation expected from a slower Western hemisphere and faster Eastern hemisphere. Despite specifically looking in areas where a sharp boundary has been found, there is no evidence for a sharp boundary in our data.
+
+\subsection{Further work}
+An obvious line of further work would be gathering more data points in the 10km - 15km depth region. In this study our dataset is comparatively sparse. More data points would be able to test our hypothesis that the 10km - 15km layer has an overall anomalously fast structure compared to AK135.
+
+Recent research, employing a similar methodology but using different seismic phases (\cite{Yee2014}) has shown a region where variations in travel times cannot be accounted for by a simple hemispherical model. A similar study could easily be carried out using the phases used here, in particular using the plethora of data available from earthquakes occurring in the Singapore and Indonesia region.
 % Bibliography
 \bibliographystyle{agu}
 \bibliography{/Users/dstansby/Physics/Papers/library}
