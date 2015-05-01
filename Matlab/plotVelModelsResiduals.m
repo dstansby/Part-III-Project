@@ -22,6 +22,11 @@ realVelChange = ak135vel*((realResid./(times - realResid)) + 1);
 ehVelChange = ak135vel*((ehResid./(times - ehResid)) + 1);
 whVelChange = ak135vel*((whResid./(times - whResid)) + 1);
 
+realVelErr = ak135vel*times*0.17./((times - realResid).^2);
+ehVelErr = ak135vel*times*0.17./((times - ehResid).^2);
+whVelErr = ak135vel*times*0.17./((times - whResid).^2);
+
+
 %% Plot residuals
 figure;
 hold on;
@@ -38,27 +43,31 @@ ax.XAxisLocation = 'top';
 xlabel('Residual /s');
 ylabel('Depth below ICB /km');
 ax.FontSize = 14;
-title(folder);
 vline(0);
 
 %% Plot fractional changes
 figure;
 hold on;
+ax = gca;
+
 scatter(realVelChange,depths,'+');
+%herrorbar(realVelChange,depths,realVelErr,ax.ColorOrder(1,:));
+
 scatter(ehVelChange,depths,'+');
+%herrorbar(ehVelChange,depths,ehVelErr,ax.ColorOrder(2,:));
+
 scatter(whVelChange,depths,'+');
+%herrorbar(whVelChange,depths,whVelErr,ax.ColorOrder(3,:));
+
 l = legend('Real', 'EH (11.1 km/s)', 'WH (11.0 km/s)');
 
-ax = gca;
 % Plot formatting
 l.Location = 'SouthEast';
 ax.YDir = 'reverse';
-ax.YLim = [1 16];
+ax.YLim = [2 16];
 ax.XAxisLocation = 'top';
 xlabel('Measured velocity / km/s');
 ylabel('Depth below ICB /km');
 ax.FontSize = 14;
-title(folder);
-vline(ak135vel);
 vline(11);
 vline(11.1);
