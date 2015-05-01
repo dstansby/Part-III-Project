@@ -1,6 +1,6 @@
 function verrorbar(x,y,e,colour)
 
-if ~exist('color', 'var')
+if ~exist('colour', 'var')
 	colour = [0.8 0.8 0.8];
 end
 

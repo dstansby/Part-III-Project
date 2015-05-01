@@ -1,5 +1,9 @@
 function herrorbar(x,y,e,colour)
 
+if ~exist('colour', 'var')
+	colour = [0.8 0.8 0.8];
+end
+
 if size(x) ~= size(y)
 	error('The size of x and y must be the same');
 end
