@@ -39,6 +39,7 @@ ax = gca;
 % Plot formatting
 l.Location = 'SouthEast';
 ax.YDir = 'reverse';
+ax.YLim = [0 60];
 ax.XAxisLocation = 'top';
 xlabel('Residual /s');
 ylabel('Depth below ICB /km');
