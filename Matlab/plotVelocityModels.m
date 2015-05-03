@@ -31,10 +31,10 @@ WH = WH';
 figure;
 ax = gca;
 hold on;
-plot(EH(:,2),EH(:,1));
-plot(WH(:,2),WH(:,1));
 plot(AK135(:,2),AK135(:,1));
-l = legend('EH', 'WH', 'AK135');
+plot(WH(:,2),WH(:,1));
+plot(EH(:,2),EH(:,1));
+l = legend('AK135', 'EH', 'WH');
 l.Location = 'southwest';
 
 % Plot formatting
