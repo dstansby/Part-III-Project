@@ -30,9 +30,9 @@ Of particular interest is the velocity and attenuation structure, which can be u
 	\item Inner core superrotation is less than $0.5^{\circ}$ /yr and may even be as small as $0.1-1^{\circ}$ /Myr.
 \end{itemize}
 
-The upper inner core is of particular interest, as material from the outer core is currently freezing onto it at a rate of around 1mm/year (\cite{Labrosse2001}). Modelling performed by \cite{Deguen2009a} shows that the velocity structure of the upper inner core should reflect recent processes in the lower upper core. Thus measuring the structure of the upper inner core could in turn give insights into areas such as how the outer core generates the Earth's magnetic field. 
+The upper inner core is of particular interest, as material from the outer core is currently freezing onto it at a rate of around 1mm/year (\cite{Labrosse2001}). Modelling performed by \cite{Deguen2009a} shows that the velocity structure of the upper inner core should reflect recent processes in the lower upper core. Thus measuring the structure of the upper inner core could in turn give insights into areas such as how the outer core generates the Earth's magnetic field and the origin of magnetic field reversals in the Earth's past.
 
-So far only large scale velocity structures have been measured, with the most recent velocity models FIND REFERENCES FOR THIS. In addition the extent to which the methodology used here and elsewhere can be applied to the top of the inner core is not well understood. In this paper we tackle both of these problems.
+For the large part, only large scale velocity structures have been measured and considered. Work by \cite{Yee2014} suggests that the velocity structure cannot be accurately captured by a simple hemispherical model. No other research has come out in support or not of these findings. In addition the extent to which the methodology used here and elsewhere can be applied to the top of the inner core is not well understood. In this paper we tackle both of these problems.
 
 We do so by taking individual earthquakes that travel to multiple seismic stations and identifying the arrival of distinct seismic phases in seismograms. We constrain our analysis to the uppermost inner core as far as is possible, and area not yet investigated in published literature.
 
@@ -60,18 +60,18 @@ Substituting \eqref{eq:Displacement} in to \eqref{eq:Wave Equation} yields two i
 \begin{equation}
 	\frac{\partial^{2} \phi}{\partial t^{2}} = c^{2} \left ( \vec{x} \right ) \nabla^{2} \phi
 \end{equation}
-$c(\vec{x})$ is the local wave velocity, which depends only on position\footnote{For an anisotropic medium, the wave speed would also depend on the direction of travel of the wave; in this study we assume an isotropic velocity structure throughout.}. A complete velocity model is a full specification of $c(\vec{x})$ in the region of interest.
+$c(\vec{x})$ is the local wave velocity, which could in general depend on position and the direction of travel of the wave for an anisotropic medium. Previous studies have measured small anisotropies in the inner core (PUT REFERENCE HERE), so to greatly simplify matters we assume isotropy throughout this study. A complete velocity model is a full specification of $c(\vec{x})$ in the region of interest.
 
 \subsection{Sampling the Inner Core}
 \label{sec:Sampling}
-Because the outer core is liquid with $\mu \approx 0$ and thus does not transmit S-waves, it is P-waves that are used to sample the inner core. Figure PUT FIGURE HERE shows the ray path for the PKiKP and PKIKP phase; they travel almost identical paths through the Crust, Mantle and upper Outer Core, after which PKiKP reflects off the Inner Core boundary (ICB), whereas PKIKP travels just underneath the boundary in the Inner Core.
+Because the outer core is liquid with $\mu \approx 0$ and thus does not transmit S-waves, it is P-waves that are used to sample the inner core. Figure PUT FIGURE HERE shows the ray path for the PKiKP and PKIKP phase; they travel almost identical paths through the Crust, Mantle and upper Outer Core, after which PKiKP reflects off the Inner Core boundary (ICB), whereas PKIKP travels just underneath the boundary in the Inner Core. The `depth' of a particular ray is defined as the maximum depth PKIKP reaches below the ICB.
 
 All measurements are compared to the radially symmetric global velocity model from \cite{Kennett1995b} (hereafter called AK135), from which we seek to measure perturbations about. The residual travel time is defined as
 \begin{equation}
 	\delta t = \left ( t_{PKiKP} - t_{PKIKP} \right )_{observed} -  \left ( t_{PKiKP} - t_{PKIKP} \right )_{model}
 	\label{eq:Residual definition}
 \end{equation}
-where $t$ is the absolute travel time for the phase indicated by the subscript. Observed residuals are those made on real seismograms. Model residuals are those measured on synthetic seismograms, calculated assuming the AK135 model. If we assume that the paths of both the model ray and the real ray are identical, this equation can be reformulated as an integral along the ray paths
+where $t$ is the absolute travel time for the phase indicated by the subscript. Observed residuals are those made on real seismograms. Model residuals are those measured on synthetic seismograms, calculated assuming the AK135 model. If we assume that the paths of both the model ray and the real ray are identical\footnote{In section PUT SECTION HERE we challenge this assumption and measure where it breaks down}, this equation can be reformulated as an integral along the ray paths
 \begin{equation}
 		\delta t = \left (  \int \frac{1}{v_{obs}} - \frac{1}{v_{model}} ds  \right )_{PKiKP} - \left (  \int \frac{1}{v_{obs}} - \frac{1}{v_{model}} ds \right )_{PKIKP}
 		\label{eq:deltat}
@@ -94,21 +94,19 @@ where $t$ is the time PKIKP spends in the inner core in the AK135 model. A posit
 %%%
 \section{Data Selection}
 \label{sec:Data}
-As discussed in section \ref{sec:Sampling}, we make differential travel time measurements of PKiKP and PKIKP phases. In order to easily measure these phases, an ideal seismogram would have a clear PKIKP arrival, little noise and no interference from surface reflection phases. We measure as many seismograms as possible from each earthquake selected. As such, individual events are selected to meet the following criteria:
+As discussed in section \ref{sec:Sampling}, we make differential travel time measurements of PKiKP and PKIKP phases. In order to easily measure these phases, an ideal seismogram would have a clear PKIKP arrival, little noise and no interference from surface reflection phases. We measure as many seismograms as possible from each earthquake selected. As such, initially individual events are selected to meet the following criteria:
 
 \begin{itemize}
 	\item Epicentral distance of $115^{\circ}$ - $143^{\circ}$ covers the majority of North America, where there is the highest worldwide density of seismometers.
-	\item  Depth greater than 15km, to minimise possible interference between PKIKP (PKiKP) and pPKIKP (pPKiKP) phases\footnote{The preceding 'p' denotes a reflection from the Earth's surface.}.
-	\item Magnitude greater than 5.2 and less than 6.3 to ensure a large enough earthquake to produce an observable signal, whilst a small enough earthquake such that the rupture is likely to be impulsive.
+	\item  Depth greater than 15km, to remove possible interference between PKIKP (PKiKP) and pPKIKP (pPKiKP) phases\footnote{The preceding `p' denotes a reflection from the Earth's surface.}.
+	\item Magnitude greater than 5.2 and less than 6.3 to ensure a large enough earthquake to produce a high signal to noise ratio, whilst a small enough earthquake such that the rupture time is likely be low, concentrating released energy in the time domain.
 	\item A fracture mechanism that is primarily dip slip\footnote{This means a large component of motion is in the vertical direction}. As the ray paths are themselves nearly vertical when they reach the seismic stations (see PUT RAYPATH FIGURE HERE), a significant amount of energy is required to be focused in the vertical direction at the site of the earthquake.
 \end{itemize}
 
-Individual earthquakes meeting this criteria typically contain 100 to 600 individual seismograms. Each seismogram is filtered between 0.7Hz - 2Hz in order to focus on the expected frequency of $\sim$1Hz whilst removing unwanted noise at other frequencies. Individual seismograms are then checked by hand, and only those showing a clear PKIKP signal near the predicted arrival time are kept for further analysis. Event parameters are looked up using the Central Moment Tensor (CMT) Catalogue (\cite{Dziewonski1981}, \cite{Ekstrom2012}).
+Individual earthquakes meeting this criteria typically contain 100 to 600 individual seismograms. Each seismogram is filtered between 0.7Hz - 2Hz in order to focus on the expected frequency of $\sim$1Hz whilst removing unwanted noise at other frequencies. Individual seismograms are then checked by hand, and only those showing a clear PKIKP signal near the predicted arrival time are kept for further analysis.
 
-%%%%
-\section{Initial data analysis}
-\label{sec:Initial analysis}
-The same analysis was performed on each individual event. Each event is listed in table \ref{tab:Events}.
+A full event listing is given in table \ref{tab:Events}. Event parameters are looked up using the Central Moment Tensor (CMT) Catalogue (\cite{Dziewonski1981}, \cite{Ekstrom2012}). Later on in the study the first criteria was tightened to study only events in the $127^{\circ}$ to $131^{\circ}$ range, corresponding broadly to the $10km$ - $15km$ depth range.
+
 \begin{table}\footnotesize
 \centering
 \begin{tabular}{| l | r | r | c | c | c | c |}
@@ -126,12 +124,15 @@ The same analysis was performed on each individual event. Each event is listed i
 	\hline Tanimbar Islands		& -6.88	& 132.45		& 2015/04/01	& 09:36:01	& 5.5			& 28.6		\\
 	\hline	
 \end{tabular}
-\caption{Event details taken directly from the CMT Catalogue. Dates are formatted as year/month/day format and times as hour:minute:second}
+\caption{Events used in this study. Details are taken directly from the CMT Catalogue. Dates are formatted as year/month/day format and times as hour:minute:second}
 \label{tab:Events}
 \end{table}
-Here we describe the analysis using data from the Celebes Sea event.
 
-Synthetic waveforms are computed using the WKBJ ray tracing program (\cite{Chapman1976}) combined with rupture mechanisms from the CMT catalogue. Predicted ray paths and individual ray travel times are computed using the TauP toolkit (\cite{Crotwell1999}). Initial plots are shown for both real and synthetic data are shown in the top and bottom of figure \ref{fig:Real nonaligned} respectively, with zero time occurring at the time of the earthquake, taken from the global CMT catalogue. Overplotted are theoretical PKIKP and PKiKP travel times computed using the AK135 model (\cite{Kennett1995b}). The predicted travel times agree well with the data in both cases.  For shorter epicentral distances the predicted arrival times become closer, showing that eventually there will be a phase separation below which the two distinct phases will not be individually observable.
+
+%%%%
+\section{Initial data analysis}
+\label{sec:Initial analysis}
+Synthetic waveforms are computed using the WKBJ ray tracing program (\cite{Chapman1976}) fed with earthquake rupture mechanisms from the CMT catalogue. Predicted ray paths and individual ray travel times are computed using the TauP toolkit (\cite{Crotwell1999}). Initial plots for the Celebes Sea event are shown for both real and synthetic data are shown in the top and bottom of figure \ref{fig:Real nonaligned} respectively, with zero time occurring at the time of the earthquake. Overplotted are theoretical PKIKP and PKiKP travel times computed using AK135. The predicted travel times agree well with the data in both cases.  For shorter epicentral distances the predicted arrival times for PKIKP and PKiKP become closer, showing that eventually there will be a distance below which the two distinct phases will not be individually observable.
 
 \begin{figure}
 	\centering
@@ -143,7 +144,7 @@ Synthetic waveforms are computed using the WKBJ ray tracing program (\cite{Chapm
 
 In order to more easily visualise the two phases we plot seismograms with individual PKiKP and PKIKP phases. In conjunction we also plot synthetic seismograms with both phases present, called `combined' seismograms from now on. This seismogram simulates the real world where both phases are present.
 
-Each synthetic and real seismogram is shifted such that the initial PKIKP downswing occurs at zero time. This is shown in figure \ref{fig:Synth aligned}. It is now clear to see the PKiKP phase merging with the PKIKP phase at low epicentral distances in the combined seismogram. We are now in a position to take residual measurements on both real and synthetic data. Before we do this, we first take a detour to examine the limits of PKIKP-PKiKP travel time analysis.
+Each synthetic and real seismogram is shifted such that the initial PKIKP downswing occurs at zero time. This is shown in figure \ref{fig:Synth aligned}. It is now clear to see the PKiKP phase merging with the PKIKP phase at low epicentral distances in the combined seismograms. We are now in a position to take residual measurements on both real and synthetic data. Before we do this, a detour is taken to examine the limits of PKIKP-PKiKP travel time analysis.
 
 \begin{figure}
 	\centering
@@ -159,58 +160,63 @@ Each synthetic and real seismogram is shifted such that the initial PKIKP downsw
 \section{The limits of PKiKP-PKIKP travel time analysis}
 \label{sec:Limits}
 
-In this section we seek to quantitively measure the limits of PKiKP-PKIKP travel time analysis when used to measure the velocity structure at the top of the inner core. Previous studies have only measured up to epicentral distances where PKiKP and PKIKP are clearly distinct phases; in this study we attempt to extend the methodology to much lower epicentral distances. As such it will be useful to know at what distances we can make reliable PKiKP-PKIKP measurements using synthetic data, which acts as a proxy for real world data.
+In this section the limits of PKiKP-PKIKP travel time analysis at the top of the inner core are quantitively assessed. This is done using synthetic data, which acts as a proxy for real world data.
 
-Because we do not know a-priori the actual velocity structure being measured in the real world, we perform synthetic analysis on the three distinct velocity models shown in figure \ref{fig:Velocity models}. Our two new models represent realistic East Hemisphere (EH) and West Hemisphere (WH) isotropic velocity models based on \cite{Waszek2011a}. In each case models are identical to AK135, with the velocity jump at the ICB is modified from 11.0427 km/s to 11.0 km/s (EH) and 11.1 km/s (WH).
+Because we do not know a-priori the actual velocity structure being measured in the real world, synthetic analysis is performed on the three distinct velocity models shown in figure \ref{fig:Velocity models}. These two new models represent realistic East Hemisphere (EH) and West Hemisphere (WH) isotropic velocity models from \cite{Waszek2011a}. In each case models are identical to AK135 with the velocity jump at the ICB modified from $11.0427 km/s$ to $11.0 km/s$ (EH) and $11.1 km/s$ (WH).
 
 \begin{figure}
 	\centering
 	\includegraphics[width=0.7\textwidth]{figures/velocity_models}
-	\caption{Velocity models modified from AK135 (yellow line). Velocity jump at the ICB is varied at 11.1 km/s for a Western Hemisphere (WH) model (red line) and at 11.0 km/s for an Eastern Hemisphere (EH) model (blue line). The models outside the plotted region are identical to AK135.}
+	\caption{Velocity models modified from AK135 (yellow line). The velocity jump at the ICB is varied to $11.1 km/s$ for a Western Hemisphere (WH) model (red line) and to $11.0 km/s$ for an Eastern Hemisphere (EH) model (blue line). Outside the plotted region all models are identical to AK135.}
 	\label{fig:Velocity models}
 \end{figure}
 
 \subsection{Minimum resolvable depth}
-The only two features that are measurable at all distances in combined synthetic seismograms are the initial downswing and the final downswing (see figure \ref{fig:Synth aligned} bottom left). When making measurements of real data we want to be sure that we are measuring a PKIKP feature (initial downswing) and PKiKP feature (final downswing), and not two PKiKP features. Because the PKiKP amplitude does not decrease with epicentral distance, the right downswing on a combined seismogram is always a PKiKP feature. At lower epicentral distances (and hence depths), due to the PKIKP amplitude decreasing (see figure \ref{fig:Synth aligned}, top left) and PKiKP developing a large downswing to the left (see figure \ref{fig:Synth aligned}, top right), we cannot nescessarily attribute the initial downswing on a combined seismogram to PKIKP. We note that distinguishing the two is not a problem when using synthetic data, where we can take measurements from seismograms that plot only one phase at a time.
+The only two features that are measurable at all distances in combined synthetic seismograms are the initial downswing and the final downswing (see figure \ref{fig:Synth aligned}, bottom left at $\sim 129^{\circ}$). When making measurements of real data we want to be sure that we are measuring a single PKIKP feature (initial downswing) and a single PKiKP feature (final downswing), and not two PKiKP features. Because the PKiKP amplitude does not significantly decrease with epicentral distance, the right downswing on a combined seismogram is always a PKiKP feature. At lower epicentral distances, due to the PKIKP amplitude decreasing (see figure \ref{fig:Synth aligned}, top left) and PKiKP developing a large downswing to the left (see figure \ref{fig:Synth aligned}, top right below $130^{\circ}$), we cannot necessarily attribute the initial downswing on a combined seismogram to PKIKP. We note that distinguishing the two is not a problem when using synthetic data, where measurements can be taken from seismograms that plot only one phase at a time.
 
-To quantify where measurements on the combined seismogram become inaccurate, we plot the difference between PKIKP initial downswings (top left, figure \ref{fig:Synth aligned}) and combined initial downswings (bottom left, figure \ref{fig:Synth aligned}). On the same figure we also plot the difference between PKiKP initial downswings and PKIKP initial downswings. This data is shown in figure \ref{fig:Downswing differences}. A three point moving average is applied in order to smooth the data; this does not significantly change the distribution of data. A depths below 8km PKiKP and combined measurements coincide, showing that in this range the final downswing is actually a PKiKP feature, not a PKIKP feature as we want.
+To quantify the depth, $d_{min}$, below which measurements on the combined seismogram become inaccurate, we plot the difference between PKIKP initial downswings (top left, figure \ref{fig:Synth aligned}) and combined initial downswings (bottom left, figure \ref{fig:Synth aligned}) in figure \ref{fig:Downswing differences}. On the same figure we also plot the difference between PKiKP initial downswings and PKIKP initial downswings. A three point moving average is applied in order to smooth the data; this does not significantly change the distribution of data. A depths below $8km$ PKiKP and combined measurements coincide. In this range, measurements on combined seismograms cannot be trusted as accurate PKIKP - PKiKP residuals.
 
 \begin{figure}
 	\centering
-	\includegraphics[width=0.7\textwidth]{figures/downswing_differences}
+	\includegraphics[width=0.6\textwidth]{figures/downswing_differences}
 	\caption{First downswing measurements for PKiKP and combined synthetic seismograms computed from AK135. Measurements are relative to initial PKIKP first downswings.}
 	\label{fig:Downswing differences}
 \end{figure}
 
-In figure \ref{fig:Downswing models} we show the same as the combined measurements in figure \ref{fig:Downswing differences}, but for each of our three  velocity models.\footnote{AK135, EH and WH} We find that each curve is similar but offset from the other curves in the depth dimension. Because we do not know the velocity structure we are measuring beforehand, we take deepest point at which the measurements start tailing off to large positive values as a cutoff for depths below which this method cannot be used. This occurs for the WH model (yellow points in figure \ref{fig:Downswing models}) at at a depth of $d_{min} = 10km$.
-
-\subsection{Measuring the average velocity of an uppermost layer}
-In the previous section, we showed that there is a certain depth, $d_{min}$, below which we cannot trust PKiKP - PKIKP travel time measurements. This is a function of the average velocity in the layer above $d_{min}$. In this study we take the simplest approach of calculating $d_{min}$ for a range of realistic models, and using the largest value of $d_{min}$ calculated.
-
-However, because the cutoff depth is a function of average velocity in the upper layer, it may be possible to measure this average velocity by measuring $d_{min}$. As we will see later the cutoff is present and measurable in real world data (see figure \ref{fig:Bandasea residuals} and section \ref{sec:Resid measurements}).
-
-For this methdology to be possible the data from an individual event must travel to numerous seismic stations and have a large coverage in the $0km$ - $20km$ depth range. Extensive modelling would also have to be carried out to determine $d_{min}$ as a function of $v_{obs}$. Although not pursued here, we believe this is an investigation that deserves further study\footnote{And could probably occupy another part III student for the best part of a year!}.
+To test the effect of different velocities on the minimum depth at which one can trust individual measurements we take the different three velocity models and produce synthetic seismograms. Residuals on combined seismograms are then measured, just like they would be on real world data, and shown on the left of figure \ref{fig:Residual models}. Finally individual velocity perturbations are calculated using equation \eqref{eq:Delta v} and shown on the right of figure \ref{fig:Residual models}. At depths deeper than $10km$ the correct velocity model is precisely recovered. We thus set $d_{min} = 10km$ for the remainder of this study.
 
 \begin{figure}
 	\centering
-	\includegraphics[width=0.7\textwidth]{figures/downswing_models}
-	\caption{Same as blue points in figure \ref{fig:Downswing differences}, but for the three velocity models shown in figure \ref{fig:Velocity models}; AK135 (blue crosses), EH (red crosses), WH (yellow crosses).}
-	\label{fig:Downswing models}
+	\includegraphics[width=0.49\textwidth]{figures/model_residuals}
+	\includegraphics[width=0.49\textwidth]{figures/model_velocities}
+	\caption{Manually measured residuals (left figure) and velocities (right figure) for real data (blue crosses, from Banda Sea event), EH model (red crosses) and WH model (yellow crosses). Red vertical lines indicate the true velocity for the WH (11.0 km/s) and EH (11.1 km/s) models. Error bars, excluded for clarity, are in the range $0.08 \pm 0.01 km/s$.}
+	\label{fig:Residual models}
 \end{figure}
+
+The right of figure \ref{fig:Residual models} also validates our earlier assumption that the true and model raypaths are identical below $10km$. The WKBJ ray path modelling used to produce synthetic seismograms takes into account raypaths. Given figure \ref{fig:Residual models} successfully reproduces the actual velocity at depths greater than $10km$, a difference in ray paths cannot have any significant contribution to measured residuals.
+
+%%%
+\subsection{Measuring the average velocity of an uppermost layer}
+In the previous section, we showed that there is a certain depth, $d_{min}$, below which we cannot trust PKiKP - PKIKP travel time measurements. In this study we take the simplest approach to determine $d_{min}$ by using a conservative value for the slowest realistically possible velocity model\footnote{In this case assumed to be our WH model.}.
+
+However, because the cutoff depth for an individual velocity model is a function of average velocity in the upper layer, it may be possible to measure this average velocity in the structure of the measured residuals. This is clearly illustrated in the left of figure \ref{fig:Residual models}. The WH and EH models have distinct structures below 10km. Comparing possible structures to measured residuals could allow measurement of the top layer below $10km$ depth.
+
+For this methdology to be possible the data from an individual event must travel to numerous seismic stations and have a large coverage in the $0km$ - $10km$ depth range. Even if this is the case, as in figure \ref{fig:Residual models}, data must have a very low scatter, unlike the data measured here. Extensive modelling would also have to be carried out to determine the theoretical residual structure as a function of the velocity model. Although not pursued here, we believe there is potential for further study here.
 
 %%%
 \subsection{Velocity perturbation calculation errors}
+\label{sec:Vel errors}
 The end goal of this study is to calculate velocity structure perturbations using equation \eqref{eq:Delta v}. The error in an individually measured observed velocity is
 \begin{equation}
-	\Delta v_{obs} = \Delta \delta v = \frac{v_{model}}{\left( t - \delta t\right )^{2}} t\Delta \delta t 
+	\Delta v_{obs} = \Delta \delta v = v_{model} \frac{t}{\left( t - \delta t\right )^{2}} \Delta \delta t 
 	\label{eq:Velocity error}
 \end{equation}
 
-Table \ref{tab:Error values} gives estimates for the values present in equation \eqref{eq:Velocity error} at a depth of 10km. $t$ is calculated from the AK135 model. $\delta t$ is a worst case estimate based on previous work (\cite{Waszek2011a}). A study perturbing about AK135 could not reduce this value, whereas a study perturbing about a more accurate model could. Finally, measure $\delta t$ two picks are made each on real (synthetic) seismograms which have a sample every 0.2s (0.1s). We attribute an error of 0.1s (0.05s) to one measurement. We also have a systematic error of $0.05s$ caused by the difference in a combined PKiKP measurement and the actual location of the individual PKiKP waveform. This is illustrated at depths below 10km on figure \ref{fig:Downswing models}.
+Table \ref{tab:Error values} gives estimates for the values present in equation \eqref{eq:Velocity error} at a depth of 10km. $v_{obs}$ and $t$ are taken and calculated from the AK135 model. $\delta t$ is a worst case estimate based on previous work (\cite{Waszek2011a}). A study perturbing about AK135 could not reduce this value, whereas a study perturbing about a more accurate model could. Finally, measure $\delta t$ two picks are made each on real (synthetic) seismograms which have a sample every 0.2s (0.1s). We attribute an error of 0.1s (0.05s) to one measurement. We also have a systematic error of $0.05s$ caused by the difference in a combined PKiKP measurement and the actual location of the individual PKiKP waveform. This is illustrated at depths below 10km on figure \ref{fig:Downswing differences}.
 
-Taking into account these errors we get $\Delta \delta t = 0.17s$. This is a partly a random error which could in theory be reduced arbitrarily close to $0.05s$ by increasing both the synthetic and real sampling rates. It is also reduced by including multiple measurements in a single velocity perturbation calculation.
+Taking into account these errors we get $\Delta \delta t = 0.17s$. This is a partly a random error, which could in theory be reduced arbitrarily close to $0.05s$ by increasing both the synthetic and real sampling rates. It is also reduced by including multiple measurements in a single velocity perturbation calculation.
 
-A value for the worst case error on individual velocity observations in this study\footnote{Corresponding to $\delta t = 1.2s$} is $\Delta v_{obs} = 0.07 km/s$, and the best case error\footnote{Corresponding to $\delta t = -1.2s$} is $\Delta v_{obs} = 0.06 km/s$. This could in theory be reduced to arbitrarily small values be reducing $\Delta \delta t$, as discussed in the previous paragraph.
+A value for the worst case error on individual velocity observations in this study\footnote{Corresponding to $\delta t = 1.2s$} is $\Delta v_{obs} = 0.07 km/s$, and the best case error\footnote{Corresponding to $\delta t = -1.2s$} is $\Delta v_{obs} = 0.06 km/s$. Calculated errors are dependant on $t$, which in turn is dependant on the depth of a ray. As $t \rightarrow \delta t$, as happens at shallow depths, $\Delta v_{obs}$ rapidly increases. This makes in increasingly harder to construct a well constrained model at shallow depths.
 
 \begin{table}
 \centering
@@ -231,9 +237,9 @@ A value for the worst case error on individual velocity observations in this stu
 \section{Residual Measurements}
 \label{sec:Resid measurements}
 
-In light of the analysis in the previous section, we now resume where we left off in section \ref{sec:Initial analysis} by making residual measurements. As before we proceed using the Banda Sea earthquake as an example, and present results for all earthquakes at the end.\footnote{See table \ref{tab:Events} for a full event listing and details}
+In light of the analysis in the previous section, we now resume where we left off in section \ref{sec:Initial analysis} by making residual measurements. We proceed using the Banda Sea earthquake as an example, and present results for all earthquakes later on.
 
-Real seismograms aligned using the same method used for aligning synthetics are shown in the bottom right of figure \ref{fig:Synth aligned}. Peak to peak measurements taken on both the real and synthetic data are shown in figure \ref{fig:Bandasea residuals}. In this figure we plot residual measurements below 10km to illustrate how the real data tapers off, as expected from our analysis on synthetic data in section \ref{sec:Limits}. From now on we only present data take at depths greater than 10km.
+Real seismograms aligned using the same method used for aligning synthetics are shown in the bottom right of figure \ref{fig:Synth aligned}. Peak to peak measurements are taken from the initial downswing to the final downswing. These are shown in figure \ref{fig:Bandasea residuals}. In this figure we plot residual measurements below 10km to illustrate how the real data tapers off to a constant value at shallow depths, as expected from our analysis of synthetic data in section \ref{sec:Limits}. From now on we only present data taken at depths greater than 10km.
 
 \begin{figure}
 	\centering
@@ -242,7 +248,7 @@ Real seismograms aligned using the same method used for aligning synthetics are 
 	\label{fig:Bandasea residuals}
 \end{figure}
 
-Figure \ref{fig:All longitude} shows all measurements as a function of longitude and depth. The vertical line at 15km represents the shallowest depth of previous measurements by \cite{Waszek2011a}. At depths below 15km we see largely positive residuals in the range $10^{\circ}$ to $-170^{\circ}$, and negative residuals in the range $-90^{\circ}$ to $10^{\circ}$. At depths below 15km we see largely positive residuals.
+Figure \ref{fig:All longitude} shows all measurements as a function of longitude and depth. The vertical line at 15km represents the shallowest depth of previous measurements by \cite{Waszek2011a}. The horizontal lines are used later to partition the data into 4 ranges. At depths below 15km we see largely positive residuals in the range $10^{\circ}$ to $-170^{\circ}$, and negative residuals in the range $-90^{\circ}$ to $10^{\circ}$. At depths below 15km we see largely positive residuals.
 
 \begin{figure}
 	\centering
@@ -251,11 +257,9 @@ Figure \ref{fig:All longitude} shows all measurements as a function of longitude
 	\label{fig:All longitude}
 \end{figure}
 
-Figure PUT FIGURE HERE shows measured residuals in the 10km - 15km depth range. We see a clear boundary at $0^{\circ}$; above this longitude there is a lack of measured residuals below 0.1s, whereas below this boundary residuals less than 0.1s are present. This boundary extends the results of \cite{Waszek2011a}, showing that at shallower depths the East Boundary continues to move westward. In the following section we use the $0^{\circ}$ boundary to partition our data for the purposes of calculating regional velocity models.
-
 %%%
 \subsection{Velocity models}
-To calculate regional velocity models we split our data set up into 4 longitude bins, as indicated on figure \ref{fig:All longitude} and given in table \ref{tab:Velocity models}. In each bin we take individual residual measurements in the range 10km - 15km and calculate velocity perturbations using equation \eqref{eq:Delta v}. In figure \ref{fig:Frac change} we show individual measurements of $v_{obs} / v_{model}$. Negative changes occur in the range [$-110^{\circ}$,$0^{\circ}$] as one would expect from previous research showing a slower western hemisphere. However, the changes are largely positive at all longitudes, indicating a fast layer in the top 10km - 15km of the inner core.
+To calculate regional velocity models we split our data set up into 4 longitude bins, as indicated on figure \ref{fig:All longitude} and given in table \ref{tab:Velocity models}. In each bin we take all individual residual measurements in the depth range 10km - 15km and calculate velocity perturbations using equation \eqref{eq:Delta v}. In figure \ref{fig:Frac change} we show measurements of $v_{obs} / v_{model}$. Negative changes occur in the range [$-110^{\circ}$,$0^{\circ}$] as one would expect from previous research showing a slower western hemisphere. However, the changes are largely positive at all longitudes, indicating a fast layer in the top 10km - 15km of the inner core.
 
 \begin{figure}
 	\centering
@@ -264,19 +268,17 @@ To calculate regional velocity models we split our data set up into 4 longitude 
 	\label{fig:Frac change}
 \end{figure}
 
-To calculate new velocity models, the mean of all the points in a given bin is taken. The error WORK OUT HOW TO WORK OUT THE ERROR
-
-Results of this process are given in table \ref{tab:Velocity models}. All observed velocities are greater than model velocities; we defer discussion on whether this is due to systematic error to PUT SECTION REFERENCE HERE. Variation in observed velocities is consistent with a slower Western Hemisphere and faster Western Hemisphere.
+To calculate new velocity models, the mean of all the points in a given bin is taken. The error is calculated as $\sigma_{v} = \Delta v_{obs}/\sqrt{N}$, where $\Delta v_{obs}$ is the error in one point\footnote{Calculation of $v_{obs}$ is explained in section \ref{sec:Vel errors}.} and $N$ is the number of points in a bin. Results of this process are given in table \ref{tab:Velocity models}. All observed velocities are greater than model velocities; we defer discussion on the cause of this to \ref{sec:Discussion}. Variation in observed velocities is consistent with a slower Western Hemisphere and faster Western Hemisphere.
 
 \begin{table}
 \centering
 \begin{tabular}{| c | c | c | c |}
 	\hline
-	Longitude Range			& $v_{obs}$ / km/s	& $v_{obs} - v_{model}$ / km/s	& $\delta v_{obs}$ / km/s	\\ \hline \hline
-	$150^{\circ}$ - $-170^{\circ}$	& 11.1017			& 0.0508					& 0.006				\\ \hline
-	$-90^{\circ}$ - $-75^{\circ}$	& 11.0681			& 0.0254					& 0.013				\\ \hline
-	$-30^{\circ}$ - $0^{\circ}$		& 11.0838			& 0.0411					& 0.007				\\ \hline
-	$0^{\circ}$ - $60^{\circ}$		& 11.0923			& 0.0496					& 0.016				\\
+	Longitude Range			& $v_{obs}$ / $km/s$	& $v_{obs} - v_{model}$ / $km/s$	& $\sigma_{v}$ / $km/s$	\\ \hline \hline
+	[$150^{\circ}$, $-170^{\circ}$]	& 11.1017				& 0.0508						& 0.006				\\ \hline
+	[$-90^{\circ}$, $-75^{\circ}$]	& 11.0681				& 0.0254						& 0.013				\\ \hline
+	[$-30^{\circ}$, $0^{\circ}$]		& 11.0838				& 0.0411						& 0.007				\\ \hline
+	[$0^{\circ}$, $60^{\circ}$]		& 11.0923				& 0.0496						& 0.016				\\
 	\hline
 \end{tabular}
 \caption{Calculated velocity perturbations for a 10km - 15km depth layer below the ICB. Longitude ranges are indicated on figure \ref{fig:All longitude}. All ranges have $v_{model} = 11.0427 km/s$.}
@@ -285,6 +287,7 @@ Results of this process are given in table \ref{tab:Velocity models}. All observ
 
 %%%%
 \section{Discussion and Conclusions}
+\label{sec:Discussion}
 
 %%%
 \subsection{PKIKP - PKiKP analysis limits}
