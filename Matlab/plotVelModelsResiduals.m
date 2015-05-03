@@ -31,9 +31,9 @@ whVelErr = ak135vel*times*0.17./((times - whResid).^2);
 figure;
 hold on;
 scatter(realResid,depths,'+');
-scatter(ehResid,depths,'+');
 scatter(whResid,depths,'+');
-l = legend('Real', 'EH (11.1 km/s)', 'WH (11.0 km/s)');
+scatter(ehResid,depths,'+');
+l = legend('Real', 'WH (11.0 km/s)', 'EH (11.1 km/s)');
 
 ax = gca;
 % Plot formatting
@@ -53,13 +53,13 @@ ax = gca;
 scatter(realVelChange,depths,'+');
 %herrorbar(realVelChange,depths,realVelErr,ax.ColorOrder(1,:));
 
-scatter(ehVelChange,depths,'+');
-%herrorbar(ehVelChange,depths,ehVelErr,ax.ColorOrder(2,:));
-
 scatter(whVelChange,depths,'+');
 %herrorbar(whVelChange,depths,whVelErr,ax.ColorOrder(3,:));
 
-l = legend('Real', 'EH (11.1 km/s)', 'WH (11.0 km/s)');
+scatter(ehVelChange,depths,'+');
+%herrorbar(ehVelChange,depths,ehVelErr,ax.ColorOrder(2,:));
+
+l = legend('Real', 'WH (11.0 km/s)', 'EH (11.1 km/s)');
 
 % Plot formatting
 l.Location = 'SouthEast';
